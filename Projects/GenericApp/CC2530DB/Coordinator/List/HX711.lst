@@ -1,0 +1,439 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:41:42 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2 #
+#                          .45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\Source #
+#                          \HX711.c                                           #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³Ì #
+#                          ÐòV2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wCoord #
+#                          .cfg" (-DCPU32MHZ -DROOT=__near_func               #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Pr #
+#                          ojects\GenericApp\Source\HX711.c" -D ZTOOL_P1 -D   #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          HAL_PA_LNA -D SERIAL_SUPPORTED=DEBUG -D            #
+#                          SENSOR_TYPE_Coord -D CHANLIST_C_R_E=25 -D          #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D FT_PAN_ID_C_R_C -D   #
+#                          ZigBee_C_R_E_Engineering -D ZDO_COORDINATOR=0 -D   #
+#                          xNV_RESTORE -lC "C:\Users\win7\Desktop\ZStack´«¸ÐÆ #
+#                          ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Projects\ #
+#                          GenericApp\CC2530DB\Coordinator\List\" -lA         #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Coordinator\List\" --diag_suppress             #
+#                          Pe001,Pa010 -o "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷ #
+#                          Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Projects\G #
+#                          enericApp\CC2530DB\Coordinator\Obj\" -e            #
+#                          --require_prototypes --debug --core=plain          #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack´« #
+#                          ¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸ #
+#                          Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV #
+#                          2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2 #
+#                          .45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Coordinator\List\HX711.lst                      #
+#    Object file        =  C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2 #
+#                          .45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Coordinator\Obj\HX711.r51                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack´«¸ÐÆ÷Í¸Ã÷´«ÊäÔ´³ÌÐòV2.45-13(´ø»ØÂë2018-5-20)\Projects\GenericApp\Source\HX711.c
+      1          #include <HX711.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      2          unsigned long  INzero; //ÁãµãÖµ
+   \                     INzero:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      3          unsigned long  AD_val;	//ADÖµ¾ø¶ÔÖµ
+   \                     AD_val:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      4          long AD_Compar;//ADÏà¶ÔÖµ
+   \                     AD_Compar:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          unsigned long ReadCount(char AB)
+   \                     ReadCount:
+      6          { 
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+      7          unsigned long Count;    
+      8          unsigned char i; 
+      9          CLR_ADSK() ; 
+   \   000005   C291         CLR     0x90.1
+     10          Count=0; 
+   \   000007   90....       MOV     DPTR,#__Constant_0
+   \   00000A   78..         MOV     R0,#?V0 + 0
+   \   00000C   12....       LCALL   ?L_MOV_X
+     11          while(!DATA); 
+   \                     ??ReadCount_0:
+   \   00000F   A292         MOV     C,0x90.2
+   \   000011   50FC         JNC     ??ReadCount_0
+     12          asm("NOP");
+   \   000013   00           NOP
+     13          while(DATA); 
+   \                     ??ReadCount_1:
+   \   000014   A292         MOV     C,0x90.2
+   \   000016   40FC         JC      ??ReadCount_1
+     14          for (i=0;i<24;i++){
+   \   000018   7A18         MOV     R2,#0x18
+     15          SET_ADSK() ; 
+   \                     ??ReadCount_2:
+   \   00001A   D291         SETB    0x90.1
+     16          Count=Count<<1; 
+   \   00001C   7401         MOV     A,#0x1
+   \   00001E   78..         MOV     R0,#?V0 + 0
+   \   000020   12....       LCALL   ?L_SHL
+     17          CLR_ADSK() ; 
+   \   000023   C291         CLR     0x90.1
+     18          if(DATA) Count++; 
+   \   000025   A292         MOV     C,0x90.2
+   \   000027   5008         JNC     ??ReadCount_3
+   \   000029   90....       MOV     DPTR,#__Constant_1
+   \   00002C   78..         MOV     R0,#?V0 + 0
+   \   00002E   12....       LCALL   ?L_ADD_X
+     19          } 
+   \                     ??ReadCount_3:
+   \   000031   1A           DEC     R2
+   \   000032   EA           MOV     A,R2
+   \   000033   70E5         JNZ     ??ReadCount_2
+     20          SET_ADSK() ; 
+   \   000035   D291         SETB    0x90.1
+     21          Count=Count^0x800000; 
+   \   000037   90....       MOV     DPTR,#__Constant_800000
+   \   00003A   78..         MOV     R0,#?V0 + 0
+   \   00003C   12....       LCALL   ?L_XOR_X
+     22          CLR_ADSK() ;
+   \   00003F   C291         CLR     0x90.1
+     23          if(AB==1)
+   \   000041   7401         MOV     A,#0x1
+   \   000043   69           XRL     A,R1
+   \   000044   7005         JNZ     ??ReadCount_4
+     24          {
+     25          SET_ADSK() ;
+   \   000046   D291         SETB    0x90.1
+     26          asm("NOP");
+   \   000048   00           NOP
+     27          CLR_ADSK() ;
+   \   000049   C291         CLR     0x90.1
+     28          } 
+     29          SET_ADSK(); 
+   \                     ??ReadCount_4:
+   \   00004B   D291         SETB    0x90.1
+     30          return(Count); 
+   \   00004D   AA..         MOV     R2,?V0 + 0
+   \   00004F   AB..         MOV     R3,?V0 + 1
+   \   000051   AC..         MOV     R4,?V0 + 2
+   \   000053   AD..         MOV     R5,?V0 + 3
+   \   000055                REQUIRE ?Subroutine0
+   \   000055                REQUIRE _A_P1
+   \   000055                ; // Fall through to label ?Subroutine0
+     31          } 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     32          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void AD_filter() ///////////////////////×Ô¶¯ÂË²¨////////////////////////////
+   \                     AD_filter:
+     34          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+     35          AD_val= ReadCount(0);
+   \   000005                ; Setup parameters for call to function ReadCount
+   \   000005   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000008   12....       LCALL   ?L_MOV_TO_X
+     36          AD_Compar=AD_val;
+   \   00000B   90....       MOV     DPTR,#AD_val
+   \   00000E   78..         MOV     R0,#?V0 + 0
+   \   000010   12....       LCALL   ?L_MOV_X
+   \   000013   90....       MOV     DPTR,#AD_Compar
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?L_MOV_TO_X
+     37          AD_Compar>>=8; 
+     38          AD_val>>=6;
+   \   00001B   90....       MOV     DPTR,#AD_val
+   \   00001E   78..         MOV     R0,#?V0 + 0
+   \   000020   12....       LCALL   ?L_MOV_X
+   \   000023   7406         MOV     A,#0x6
+   \   000025   78..         MOV     R0,#?V0 + 0
+   \   000027   12....       LCALL   ?UL_SHR
+   \   00002A   90....       MOV     DPTR,#AD_val
+   \   00002D   78..         MOV     R0,#?V0 + 0
+   \   00002F   12....       LCALL   ?L_MOV_TO_X
+     39          AD_Compar=AD_Compar-INzero;//------Òª
+   \   000032   90....       MOV     DPTR,#AD_Compar
+   \   000035   78..         MOV     R0,#?V0 + 0
+   \   000037   12....       LCALL   ?L_MOV_X
+   \   00003A   7408         MOV     A,#0x8
+   \   00003C   78..         MOV     R0,#?V0 + 0
+   \   00003E   12....       LCALL   ?SL_SHR
+   \   000041   90....       MOV     DPTR,#INzero
+   \   000044   78..         MOV     R0,#?V0 + 0
+   \   000046   12....       LCALL   ?L_SUB_X
+   \   000049   90....       MOV     DPTR,#AD_Compar
+   \   00004C   78..         MOV     R0,#?V0 + 0
+   \   00004E   12....       LCALL   ?L_MOV_TO_X
+     40          }
+   \   000051   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7900         MOV     R1,#0x0
+   \   000002   12....       LCALL   ??ReadCount?relay
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   8C..         MOV     ?V0 + 2,R4
+   \   00000B   8D..         MOV     ?V0 + 3,R5
+   \   00000D   90....       MOV     DPTR,#AD_val
+   \   000010   78..         MOV     R0,#?V0 + 0
+   \   000012   22           RET
+     41          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42           void Tozero()/////////////////////////¿ª»ú×Ô¶¯¹éÁã/////////////////////////
+   \                     Tozero:
+     43          {AD_val= ReadCount(0);
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005                ; Setup parameters for call to function ReadCount
+   \   000005   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000008   12....       LCALL   ?L_MOV_TO_X
+     44          AD_Compar=AD_val;
+     45          AD_Compar>>=8; 
+   \   00000B   90....       MOV     DPTR,#AD_val
+   \   00000E   78..         MOV     R0,#?V0 + 0
+   \   000010   12....       LCALL   ?L_MOV_X
+   \   000013   7408         MOV     A,#0x8
+   \   000015   78..         MOV     R0,#?V0 + 0
+   \   000017   12....       LCALL   ?SL_SHR
+   \   00001A   90....       MOV     DPTR,#AD_Compar
+   \   00001D   78..         MOV     R0,#?V0 + 0
+   \   00001F   12....       LCALL   ?L_MOV_TO_X
+     46          if(AD_Compar<80000)
+   \   000022   90....       MOV     DPTR,#__Constant_13880
+   \   000025   78..         MOV     R0,#?V0 + 0
+   \   000027   12....       LCALL   ?L_MOV_X
+   \   00002A   7583..       MOV     DPH,#((AD_Compar >> 8) & 0xff)
+   \   00002D   7582..       MOV     DPL,#(AD_Compar & 0xff)
+   \   000030   78..         MOV     R0,#?V0 + 0
+   \   000032   12....       LCALL   ?SL_GT_X
+   \   000035   5010         JNC     ??Tozero_0
+     47          {	
+     48          INzero=AD_Compar;
+   \   000037   90....       MOV     DPTR,#AD_Compar
+   \   00003A   78..         MOV     R0,#?V0 + 0
+   \   00003C   12....       LCALL   ?L_MOV_X
+   \   00003F   90....       MOV     DPTR,#INzero
+   \   000042   78..         MOV     R0,#?V0 + 0
+   \   000044   12....       LCALL   ?L_MOV_TO_X
+     49          }
+     50          } 
+   \                     ??Tozero_0:
+   \   000047   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_800000:
+   \   000000   00008000     DD 8388608
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_13880:
+   \   000000   80380100     DD 80000
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadCount?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadCount
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??AD_filter?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    AD_filter
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Tozero?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Tozero
+
+   Maximum stack usage in bytes:
+
+     Function       ISTACK PSTACK XSTACK
+     --------       ------ ------ ------
+     AD_filter          0      0     12
+       -> ReadCount     0      0     24
+     ReadCount          0      0     24
+     Tozero             2      0     12
+       -> ReadCount     0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label    Bytes
+     --------------    -----
+     _A_P1                1
+     INzero               4
+     AD_val               4
+     AD_Compar            4
+     ReadCount           85
+     ?Subroutine0         5
+     AD_filter           83
+     ?Subroutine1        19
+     Tozero              74
+     __Constant_0         4
+     __Constant_1         4
+     __Constant_800000    4
+     __Constant_13880     4
+     ??ReadCount?relay    6
+     ??AD_filter?relay    6
+     ??Tozero?relay       6
+
+ 
+ 266 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   1 byte  in segment SFR_AN
+  16 bytes in segment XDATA_ROM_C
+  12 bytes in segment XDATA_Z
+ 
+ 284 bytes of CODE  memory
+   0 bytes of CONST memory (+ 16 bytes shared)
+   0 bytes of DATA  memory (+  1 byte  shared)
+  12 bytes of XDATA memory
+
+Errors: none
+Warnings: none
