@@ -1,0 +1,56 @@
+2014-6-17日：
+一。
+GenericApp.h  下定义 CC2530_V30   
+#if defined( CC2530_V30 ) 定义CC2530_V30 
+Send_data[0] GenericApp.c 初始化函数更改
+路由发送默认为：0XFA
+终端发送默认为：0XFE
+
+GenericApp_SendTheMessage  发送函数 添加 5字节
+
+在 GenericApp_MessageMSGCB  函数  协调器串口发射 pkt->cmd.Data[1]+6 改成+11
+
+2014-6-20日：
+一。
+定义 位标志变量  unsigned char T_MGSbit=0;    // 状态信息 数据信息  连数据信息记录
+在GenericApp.c 初始化函数添加 T_MGbit的初始值设置
+GenericApp_application() 删除 内容添加到 GenericApp_SendTheMessage（）函数里
+
+二。
+添加  //按类别触发命令  if((pkt->cmd.Data[0]==0xFD)&&(pkt->cmd.Data[6]==SENSOR_TYPE))
+删除   else  
+      if((pkt->cmd.Data[2]==0XFF)&&(pkt->cmd.Data[3]==0XFF))
+      { GenericApp_applicationbuf=0;
+       GenericApp_SendTheMessage();
+      }
+三。
+替换 if((pkt->cmd.Data[0]==0xFD)&&(pkt->cmd.Data[6]==类型))成 if((pkt->cmd.Data[0]==0xFD)&&(pkt->cmd.Data[6]==SENSOR_TYPE))
+四。
+搜索 if((pkt->cmd.Data[0]==0xFD)&&(pkt->cmd.Data[6]==SENSOR_TYPE))
+在      
+if((pkt->cmd.Data[7]==Send_data[4])&&(pkt->cmd.Data[8]==Send_data[5]))
+#endif    
+      {T_MGSbit|=0X20; //xx1x xxx0 应答 正常 状态位
+
+ 下添加 T_MGSbit|=0X20; //xx1x xxx0 应答 正常 状态位
+
+五。
+在
+//定时3
+if((pkt->cmd.Data[0]==0xFD)&&(pkt->cmd.Data[6]==0X00))
+下添加 T_MGSbit状态位
+六。
+添加 按MAC地址单次取数据命令 (采集类型)
+添加 //OLED屏显示内容
+更改网络表
+  uint8 CskipRtrs[MAX_NODE_DEPTH+1] = {10,5,5,5,5,0};
+  uint8 CskipChldrn[MAX_NODE_DEPTH+1] = {40,10,10,10,10,0};
+  网络最大数 70
+2014-6-21日：
+添加类型 0x25 FTlink红外学习节点
+GenericApp.c  定义 uint8 Send_data[128]
+2014-6-25日：
+一。
+更改 LED 蜂鸣器节点程序
+更改 主机C_C 串口接收
+更改 'K' 类型状态T_MG

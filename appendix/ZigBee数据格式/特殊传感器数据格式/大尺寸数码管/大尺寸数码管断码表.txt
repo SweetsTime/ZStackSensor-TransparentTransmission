@@ -1,0 +1,41 @@
+FD 10 00 00 00 01 6E 0F 0F 01 02 FC 60 6C CC AD B7 07 00 4B 12 00 
+
+类型	默认	默认	数据个数	十位	个位
+6E 	0F 0F   01 	 02 		H 	L 
+
+0 fc  
+1 60
+2 da  
+3 F2  
+4 66
+5 b6  
+6 BE  
+7 E0
+8 fe
+9 F6   
+
+
+GND  P1_7   P1_5(P1_6)  P1_3(P2_0)  5V
+GND   DAT   LCK移位   	DCK存储
+
+中尺寸数码管断码表
+类型	默认	默认	数据个数	十位	个位
+6E 	0F 0F   01 	 02 		H 	L 
+
+0 fc  
+1 60
+2 da  
+3 F2  
+4 66
+5 b6  
+6 BE  
+7 E0
+8 fe
+9 F6   
+
+
+GND  P1_7   P1_5(P1_6)  P1_3(P2_0)  5V
+GND   DAT   LCK移位 	DCK存储
+
+数码管 P1口 顺序  
+DCK LCK DAT GND 5V

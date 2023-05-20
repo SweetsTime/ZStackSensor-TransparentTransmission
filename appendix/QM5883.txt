@@ -1,0 +1,28 @@
+QMC5883
+HMC5883
+
+
+if(((Send_data[9]>T_MUMPT1)?( Send_data[9]-T_MUMPT1):(T_MUMPT1-Send_data[9]))>0X5A) //x角度大于5
+  {T_MUMPT1=Send_data[9];
+  GenericApp_applicationbuf=6001;
+  }
+
+
+void Init_HMC5883(void)
+{ HMC5883_DATAOUT;
+    // Single_Write_HMC5883(0x02,0x00);  //
+     // Single_Write_HMC5883(0x01,0xE0);  //
+Single_Write_HMC5883(0x0B,0X01);  //
+Single_Write_HMC5883(0x20,0X40);  //
+Single_Write_HMC5883(0x21,0X01);  //
+Single_Write_HMC5883(0x09,0X1D);  //
+}
+
+ // HMC5883_SendByte(0x03);                   //发送存储单元地址，从0x32开始	
+    HMC5883_SendByte(0x00);                   //发送存储单元地址，从0x32开始	
+
+
+
+//#define	SlaveAddress   0x3C	  //定义器件在IIC总线中的从地址
+#define	SlaveAddress   0x1A	  //定义器件在IIC总线中的从地址
+
