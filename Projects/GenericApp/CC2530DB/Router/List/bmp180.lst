@@ -1,0 +1,1703 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:44:01 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\Source #
+#                          \bmp180.c                                          #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wRoute #
+#                          r.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pr #
+#                          ojects\GenericApp\Source\bmp180.c" -D ZTOOL_P1 -D  #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          xNV_RESTORE -D SERIAL_SUPPORTED=DEBUG -D           #
+#                          SENSOR_TYPE=0X31 -D CHANLIST_C_R_E=25 -D           #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D                      #
+#                          ZigBee_C_R_E_Engineering -D ZigBee_C_R_E_IEEE -D   #
+#                          xSENSOR_TYPE_R_E=0X01 -lC                          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\List\" -lA "C:\Users\win7\Desktop\ZStac #
+#                          k传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pro #
+#                          jects\GenericApp\CC2530DB\Router\List\"            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\Obj\" -e --require_prototypes --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\List\bmp180.lst                          #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\Obj\bmp180.r51                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Projects\GenericApp\Source\bmp180.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include "bmp180.h"
+      3          #include "delay.h"
+      4          #define dev_addr_r  0xef//读寄存器地址
+      5          #define BMP180_SLAVE_ADDR  0xee//写寄存器地址
+      6          #define OSS 0
+      7          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          int16_t ac1;
+   \                     ac1:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          int16_t ac2;
+   \                     ac2:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          int16_t ac3;
+   \                     ac3:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     11          uint16_t ac4;
+   \                     ac4:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     12          uint16_t ac5;
+   \                     ac5:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     13          uint16_t ac6;
+   \                     ac6:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     14          int16_t b1;
+   \                     b1:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     15          int16_t b2;
+   \                     b2:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     16          int16_t mb;
+   \                     mb:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     17          int16_t mc;
+   \                     mc:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     18          int16_t md;
+   \                     md:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     19          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     20            short num = 8;
+   \                     num:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     21          int16_t num1 = 4000;
+   \                     num1:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num1>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     22          int16_t num2 = 2;
+   \                     num2:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num2>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     23          uint16_t num3 = 32768;
+   \                     num3:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num3>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     24          uint16_t num4 = 50000;
+   \                     num4:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num4>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     25          uint16_t num5 = 3038;
+   \                     num5:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num5>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     26          int16_t num6 = -7357;
+   \                     num6:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num6>`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     27          int16_t num7 = 3791;
+   \                     num7:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num7>`
+   \   000002                REQUIRE __INIT_XDATA_I
+     28          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     29          int16_t num8 = 10;
+   \                     num8:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num8>`
+   \   000002                REQUIRE __INIT_XDATA_I
+     30          
+     31              
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     32          long pressure;
+   \                     pressure:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     33          long temperature;
+   \                     temperature:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+     34              
+     35          void I2C2_GPIO_Config(void);
+     36          void I2C2_Start(void);
+     37          void I2C2_Stop(void);
+     38          void Sendack(uint8_t h);
+     39          uint8_t I2C2_Check_ack(void);
+     40          uint8_t I2C2_Write_Byte(uint8_t b);
+     41          uint8_t I2C2_Read_Byte(void);
+     42          void I2C2_Write(uint8_t Slave_Addr, uint8_t REG_Address,uint8_t REG_data);
+     43          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void I2C2_GPIO_Config(void)
+   \                     I2C2_GPIO_Config:
+     45          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     46            P1DIR |= 0x18; //配置1.3 1.4端口为输出模式
+   \   000000   43FE18       ORL     0xfe,#0x18
+   \   000003   E5FE         MOV     A,0xfe
+     47          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P1DIR
+     48          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     49          void I2C2_Start(void)
+   \                     I2C2_Start:
+     50          {   
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     51            SDA_H;    
+   \   000004   D294         SETB    0x90.4
+     52            SCL_H;   
+   \   000006   D293         SETB    0x90.3
+     53            halMcuWaitUs(20);
+   \   000008                ; Setup parameters for call to function halMcuWaitUs
+   \   000008   7A14         MOV     R2,#0x14
+   \   00000A   7B00         MOV     R3,#0x0
+   \   00000C   12....       LCALL   ??halMcuWaitUs?relay
+     54            SDA_L;   
+   \   00000F   C294         CLR     0x90.4
+     55            halMcuWaitUs(20);//大于4个微秒
+   \   000011                ; Setup parameters for call to function halMcuWaitUs
+   \   000011   7A14         MOV     R2,#0x14
+   \   000013   7B00         MOV     R3,#0x0
+   \   000015   12....       LCALL   ??halMcuWaitUs?relay
+     56            SCL_L;
+   \   000018   C293         CLR     0x90.3
+     57          }
+   \   00001A   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   00001D                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     58          
+     59          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          void I2C2_Stop(void)
+   \                     I2C2_Stop:
+     61          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     62              
+     63            SCL_L;   
+   \   000004   C293         CLR     0x90.3
+     64            SDA_L;   
+   \   000006   C294         CLR     0x90.4
+     65            SCL_H;
+   \   000008   D293         SETB    0x90.3
+     66            halMcuWaitUs(20);//大于4个微秒  
+   \   00000A                ; Setup parameters for call to function halMcuWaitUs
+   \   00000A   7A14         MOV     R2,#0x14
+   \   00000C   7B00         MOV     R3,#0x0
+   \   00000E   12....       LCALL   ??halMcuWaitUs?relay
+     67            SDA_H;
+   \   000011   D294         SETB    0x90.4
+     68            halMcuWaitUs(20);//大于4个微秒
+   \   000013                ; Setup parameters for call to function halMcuWaitUs
+   \   000013   7A14         MOV     R2,#0x14
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   12....       LCALL   ??halMcuWaitUs?relay
+     69          }
+   \   00001A   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   00001D                REQUIRE _A_P1
+     70          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     71          void Sendack(uint8_t h)
+   \                     Sendack:
+     72          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     73              
+     74            SCL_L;
+   \   000006   C293         CLR     0x90.3
+     75            if(h==0)
+   \   000008   7004         JNZ     ??Sendack_0
+     76              SDA_L;//有应答信号
+   \   00000A   C294         CLR     0x90.4
+   \   00000C   8002         SJMP    ??Sendack_1
+     77            else
+     78              SDA_H;    
+   \                     ??Sendack_0:
+   \   00000E   D294         SETB    0x90.4
+     79            halMcuWaitUs(20);
+   \                     ??Sendack_1:
+   \   000010                ; Setup parameters for call to function halMcuWaitUs
+   \   000010   12....       LCALL   ?Subroutine5 & 0xFFFF
+     80            SCL_H;   
+     81            halMcuWaitUs(20);   
+     82            SCL_L;
+   \                     ??CrossCallReturnLabel_7:
+   \   000013   C293         CLR     0x90.3
+     83          
+     84          }
+   \   000015   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000018                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7A14         MOV     R2,#0x14
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??halMcuWaitUs?relay
+   \   000007   D293         SETB    0x90.3
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009                ; Setup parameters for call to function halMcuWaitUs
+   \   000009   7A14         MOV     R2,#0x14
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??halMcuWaitUs?relay
+   \   000010   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     85          
+     86          
+     87          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     88          uint8_t I2C2_Check_ack(void)
+   \                     I2C2_Check_ack:
+     89          
+     90          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     91            uint8_t count = 0;
+   \   000005   7E00         MOV     R6,#0x0
+     92            SCL_L;   
+   \   000007   C293         CLR     0x90.3
+     93            SDA_H;//要读低电平需先拉高再读,否则读到的是错误数据,很重要！
+   \   000009   D294         SETB    0x90.4
+     94            halMcuWaitUs(20); 
+   \   00000B                ; Setup parameters for call to function halMcuWaitUs
+   \   00000B   12....       LCALL   ?Subroutine5 & 0xFFFF
+     95            SCL_H;
+     96            halMcuWaitUs(20);  
+     97            
+     98            while(SDA_read)
+   \                     ??CrossCallReturnLabel_8:
+   \   00000E   A294         MOV     C,0x90.4
+   \   000010   5014         JNC     ??I2C2_Check_ack_0
+     99            {
+    100              count++;
+   \   000012   0E           INC     R6
+    101              if(count > 250)
+   \   000013   EE           MOV     A,R6
+   \   000014   C3           CLR     C
+   \   000015   94FB         SUBB    A,#-0x5
+   \   000017   40F5         JC      ??CrossCallReturnLabel_8
+    102              {
+    103                SCL_L;   
+   \   000019   C293         CLR     0x90.3
+    104                halMcuWaitUs(20); 
+   \   00001B                ; Setup parameters for call to function halMcuWaitUs
+   \   00001B   7A14         MOV     R2,#0x14
+   \   00001D   7B00         MOV     R3,#0x0
+   \   00001F   12....       LCALL   ??halMcuWaitUs?relay
+    105                return 1;
+   \   000022   7901         MOV     R1,#0x1
+   \   000024   800B         SJMP    ??I2C2_Check_ack_1
+    106              }
+    107            }
+    108            SCL_L;   
+   \                     ??I2C2_Check_ack_0:
+   \   000026   C293         CLR     0x90.3
+    109            halMcuWaitUs(20);
+   \   000028                ; Setup parameters for call to function halMcuWaitUs
+   \   000028   7A14         MOV     R2,#0x14
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   12....       LCALL   ??halMcuWaitUs?relay
+    110            return 0;
+   \   00002F   7900         MOV     R1,#0x0
+   \                     ??I2C2_Check_ack_1:
+   \   000031   80..         SJMP    ?Subroutine1
+   \   000033                REQUIRE _A_P1
+    111          
+    112          }
+    113          
+    114          
+    115          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    116          uint8_t I2C2_Write_Byte(uint8_t b)
+   \                     I2C2_Write_Byte:
+    117          
+    118          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    119              
+    120            uint8_t e=8;
+   \   000007   7F08         MOV     R7,#0x8
+   \   000009   8016         SJMP    ??I2C2_Write_Byte_0
+    121              
+    122            while(e--)
+    123            {
+    124                  
+    125              SCL_L;
+    126              halMcuWaitUs(20);    
+    127              if(b&0x80)
+    128                SDA_H;      
+    129              else 
+    130                SDA_L;    
+   \                     ??I2C2_Write_Byte_1:
+   \   00000B   C294         CLR     0x90.4
+    131              halMcuWaitUs(20);
+   \                     ??I2C2_Write_Byte_2:
+   \   00000D                ; Setup parameters for call to function halMcuWaitUs
+   \   00000D   7A14         MOV     R2,#0x14
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   ??halMcuWaitUs?relay
+    132              b<<=1;      
+   \   000014   EE           MOV     A,R6
+   \   000015   C3           CLR     C
+   \   000016   33           RLC     A
+   \   000017   FE           MOV     R6,A
+    133              SCL_H;
+   \   000018   D293         SETB    0x90.3
+    134              halMcuWaitUs(20);
+   \   00001A                ; Setup parameters for call to function halMcuWaitUs
+   \   00001A   7A14         MOV     R2,#0x14
+   \   00001C   7B00         MOV     R3,#0x0
+   \   00001E   12....       LCALL   ??halMcuWaitUs?relay
+   \                     ??I2C2_Write_Byte_0:
+   \   000021   8F..         MOV     ?V0 + 0,R7
+   \   000023   1F           DEC     R7
+   \   000024   E5..         MOV     A,?V0 + 0
+   \   000026   C293         CLR     0x90.3
+   \   000028   7A14         MOV     R2,#0x14
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   600C         JZ      ??I2C2_Write_Byte_3
+   \   00002E   12....       LCALL   ??halMcuWaitUs?relay
+   \   000031   EE           MOV     A,R6
+   \   000032   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000034   50D5         JNC     ??I2C2_Write_Byte_1
+   \   000036   D294         SETB    0x90.4
+   \   000038   80D3         SJMP    ??I2C2_Write_Byte_2
+    135            }
+    136              
+    137            SCL_L;
+   \                     ??I2C2_Write_Byte_3:
+   \   00003A   12....       LCALL   ??halMcuWaitUs?relay
+    138            halMcuWaitUs(20);   
+    139            return(I2C2_Check_ack());
+   \   00003D                ; Setup parameters for call to function I2C2_Check_ack
+   \   00003D   12....       LCALL   ??I2C2_Check_ack?relay
+   \   000040                REQUIRE ?Subroutine1
+   \   000040                REQUIRE _A_P1
+   \   000040                ; // Fall through to label ?Subroutine1
+    140          
+    141          }
+    142          
+    143          
+    144          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    145          uint8_t I2C2_Read_Byte(void)
+   \                     I2C2_Read_Byte:
+    146          
+    147          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    148              
+    149            uint8_t i=8;   
+   \   000005   7F08         MOV     R7,#0x8
+    150            uint8_t c=0;   
+   \   000007   7E00         MOV     R6,#0x0
+    151            SCL_H;
+   \   000009   8013         SJMP    ??I2C2_Read_Byte_0
+    152            halMcuWaitUs(20);    
+    153            while(i--)
+    154            {       
+    155              c<<=1;        
+    156                    
+    157              if(SDA_read)
+    158                c|=0x01;       
+    159              else c&=0xfe;   
+   \                     ??I2C2_Read_Byte_1:
+   \   00000B   C2E0         CLR     0xE0 /* A   */.0
+   \                     ??I2C2_Read_Byte_2:
+   \   00000D   FE           MOV     R6,A
+    160              halMcuWaitUs(20);
+   \   00000E                ; Setup parameters for call to function halMcuWaitUs
+   \   00000E   7A14         MOV     R2,#0x14
+   \   000010   7B00         MOV     R3,#0x0
+   \   000012   12....       LCALL   ??halMcuWaitUs?relay
+    161              SCL_L;       
+   \   000015   C293         CLR     0x90.3
+    162              halMcuWaitUs(20);     
+   \   000017                ; Setup parameters for call to function halMcuWaitUs
+   \   000017   7A14         MOV     R2,#0x14
+   \   000019   7B00         MOV     R3,#0x0
+   \   00001B   12....       LCALL   ??halMcuWaitUs?relay
+    163              SCL_H; 
+   \                     ??I2C2_Read_Byte_0:
+   \   00001E   D293         SETB    0x90.3
+    164              halMcuWaitUs(20);
+   \   000020                ; Setup parameters for call to function halMcuWaitUs
+   \   000020   7A14         MOV     R2,#0x14
+   \   000022   7B00         MOV     R3,#0x0
+   \   000024   12....       LCALL   ??halMcuWaitUs?relay
+   \   000027   EF           MOV     A,R7
+   \   000028   1F           DEC     R7
+   \   000029   600B         JZ      ??I2C2_Read_Byte_3
+   \   00002B   EE           MOV     A,R6
+   \   00002C   C3           CLR     C
+   \   00002D   33           RLC     A
+   \   00002E   A294         MOV     C,0x90.4
+   \   000030   50D9         JNC     ??I2C2_Read_Byte_1
+   \   000032   D2E0         SETB    0xE0 /* A   */.0
+   \   000034   80D7         SJMP    ??I2C2_Read_Byte_2
+    165            }   
+    166            SCL_L;   
+   \                     ??I2C2_Read_Byte_3:
+   \   000036   C293         CLR     0x90.3
+    167            return c;
+   \   000038   EE           MOV     A,R6
+   \   000039   F9           MOV     R1,A
+   \   00003A   80..         SJMP    ?Subroutine1
+   \   00003C                REQUIRE _A_P1
+    168          
+    169          }
+    170          
+    171          
+    172          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    173          void I2C2_Write(uint8_t Slave_Addr, uint8_t REG_Address,uint8_t REG_data)
+   \                     I2C2_Write:
+    174          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FE           MOV     R6,A
+    175              
+    176            I2C2_Start();
+   \   00000B                ; Setup parameters for call to function I2C2_Start
+   \   00000B   12....       LCALL   ??I2C2_Start?relay
+    177              
+    178            I2C2_Write_Byte(Slave_Addr);
+   \   00000E                ; Setup parameters for call to function I2C2_Write_Byte
+   \   00000E   A9..         MOV     R1,?V0 + 0
+   \   000010   12....       LCALL   ??I2C2_Write_Byte?relay
+    179              
+    180            I2C2_Write_Byte(REG_Address);
+   \   000013                ; Setup parameters for call to function I2C2_Write_Byte
+   \   000013   EF           MOV     A,R7
+   \   000014   F9           MOV     R1,A
+   \   000015   12....       LCALL   ??I2C2_Write_Byte?relay
+    181              
+    182            I2C2_Write_Byte(REG_data);
+   \   000018                ; Setup parameters for call to function I2C2_Write_Byte
+   \   000018   EE           MOV     A,R6
+   \   000019   F9           MOV     R1,A
+   \   00001A   12....       LCALL   ??I2C2_Write_Byte?relay
+    183              
+    184            I2C2_Stop();
+   \   00001D                ; Setup parameters for call to function I2C2_Stop
+   \   00001D   12....       LCALL   ??I2C2_Stop?relay
+    185          
+    186          }
+   \   000020   80..         SJMP    ?Subroutine1
+    187          int16_t BMP180_Read_2B(uint8_t addr);
+    188          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          int16_t BMP180_Read_2B(uint8_t addr)
+   \                     BMP180_Read_2B:
+    190          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    191              uint8_t msb = 0, lsb = 0;
+   \   000007   7F00         MOV     R7,#0x0
+   \   000009   8F..         MOV     ?V0 + 0,R7
+    192              I2C2_Start();//起始信号
+   \   00000B                ; Setup parameters for call to function I2C2_Start
+   \   00000B   12....       LCALL   ??I2C2_Start?relay
+    193              if(I2C2_Write_Byte(BMP180_SLAVE_ADDR) == 0)//发送设备地址+写信号
+   \   00000E                ; Setup parameters for call to function I2C2_Write_Byte
+   \   00000E   79EE         MOV     R1,#-0x12
+   \   000010   12....       LCALL   ??I2C2_Write_Byte?relay
+   \   000013   E9           MOV     A,R1
+   \   000014   7025         JNZ     ??BMP180_Read_2B_0
+    194              {
+    195                I2C2_Write_Byte(addr);//发送存储单元地址
+   \   000016                ; Setup parameters for call to function I2C2_Write_Byte
+   \   000016   EE           MOV     A,R6
+   \   000017   F9           MOV     R1,A
+   \   000018   12....       LCALL   ??I2C2_Write_Byte?relay
+    196                I2C2_Start();//起始信号
+   \   00001B                ; Setup parameters for call to function I2C2_Start
+   \   00001B   12....       LCALL   ??I2C2_Start?relay
+    197                I2C2_Write_Byte(dev_addr_r);//发送设备地址+读信号
+   \   00001E                ; Setup parameters for call to function I2C2_Write_Byte
+   \   00001E   79EF         MOV     R1,#-0x11
+   \   000020   12....       LCALL   ??I2C2_Write_Byte?relay
+    198                msb=I2C2_Read_Byte();
+   \   000023                ; Setup parameters for call to function I2C2_Read_Byte
+   \   000023   12....       LCALL   ??I2C2_Read_Byte?relay
+   \   000026   E9           MOV     A,R1
+   \   000027   FF           MOV     R7,A
+    199                Sendack(0);
+   \   000028                ; Setup parameters for call to function Sendack
+   \   000028   7900         MOV     R1,#0x0
+   \   00002A   12....       LCALL   ??Sendack?relay
+    200                lsb=I2C2_Read_Byte();
+   \   00002D                ; Setup parameters for call to function I2C2_Read_Byte
+   \   00002D   12....       LCALL   ??I2C2_Read_Byte?relay
+   \   000030   E9           MOV     A,R1
+   \   000031   F5..         MOV     ?V0 + 0,A
+    201                Sendack(1);
+   \   000033                ; Setup parameters for call to function Sendack
+   \   000033   7901         MOV     R1,#0x1
+   \   000035   12....       LCALL   ??Sendack?relay
+    202                I2C2_Stop();
+   \   000038                ; Setup parameters for call to function I2C2_Stop
+   \   000038   12....       LCALL   ??I2C2_Stop?relay
+    203              }
+    204              return (short)((msb << 8) | lsb);
+   \                     ??BMP180_Read_2B_0:
+   \   00003B   EF           MOV     A,R7
+   \   00003C   AA..         MOV     R2,?V0 + 0
+   \   00003E   FB           MOV     R3,A
+   \   00003F                REQUIRE ?Subroutine2
+   \   00003F                ; // Fall through to label ?Subroutine2
+    205          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    206          long BMP180_Read_TEMP(void);             
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    207          long BMP180_Read_TEMP(void)
+   \                     BMP180_Read_TEMP:
+    208          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    209              //int16_t temp;
+    210              I2C2_Write(BMP180_SLAVE_ADDR, 0xF4, 0x2E);
+   \   000004                ; Setup parameters for call to function I2C2_Write
+   \   000004   7B2E         MOV     R3,#0x2e
+   \   000006   12....       LCALL   ?Subroutine3 & 0xFFFF
+    211              halMcuWaitMs(200); 
+    212              return (long)BMP180_Read_2B(0xF6);
+   \                     ??CrossCallReturnLabel_0:
+   \   000009   EB           MOV     A,R3
+   \   00000A   33           RLC     A
+   \   00000B   95E0         SUBB    A,0xE0 /* A   */
+   \   00000D   FC           MOV     R4,A
+   \   00000E   FD           MOV     R5,A
+   \   00000F                REQUIRE ?Subroutine0
+   \   00000F                ; // Fall through to label ?Subroutine0
+    213          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7AF4         MOV     R2,#-0xc
+   \   000002   79EE         MOV     R1,#-0x12
+   \   000004   12....       LCALL   ??I2C2_Write?relay
+   \   000007                ; Setup parameters for call to function halMcuWaitMs
+   \   000007                ; Setup parameters for call to function halMcuWaitMs
+   \   000007   7AC8         MOV     R2,#-0x38
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??halMcuWaitMs?relay
+   \   00000E                ; Setup parameters for call to function BMP180_Read_2B
+   \   00000E                ; Setup parameters for call to function BMP180_Read_2B
+   \   00000E   79F6         MOV     R1,#-0xa
+   \   000010   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000013   22           RET
+    214          long BMP180_Read_Pressure(void);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    215          long BMP180_Read_Pressure(void)
+   \                     BMP180_Read_Pressure:
+    216          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    217              //long pressure;
+    218              I2C2_Write(BMP180_SLAVE_ADDR, 0xF4, (0x34 + (OSS << 6)));
+   \   000005                ; Setup parameters for call to function I2C2_Write
+   \   000005   7B34         MOV     R3,#0x34
+   \   000007   12....       LCALL   ?Subroutine3 & 0xFFFF
+    219              halMcuWaitMs(200);
+    220              return ((long)(BMP180_Read_2B(0xF6)&0x0000ffff));
+   \                     ??CrossCallReturnLabel_1:
+   \   00000A   7C00         MOV     R4,#0x0
+   \   00000C   7D00         MOV     R5,#0x0
+   \   00000E   80..         SJMP    ?Subroutine2
+    221          }
+    222          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    223          void Init_BMP180(void)
+   \                     Init_BMP180:
+    224          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    225              I2C2_GPIO_Config();
+   \   000004   43FE18       ORL     0xfe,#0x18
+   \   000007   E5FE         MOV     A,0xfe
+    226              ac1 = BMP180_Read_2B(0xAA);
+   \   000009                ; Setup parameters for call to function BMP180_Read_2B
+   \   000009   79AA         MOV     R1,#-0x56
+   \   00000B   12....       LCALL   ??BMP180_Read_2B?relay
+   \   00000E   90....       MOV     DPTR,#ac1
+   \   000011   12....       LCALL   ?Subroutine6 & 0xFFFF
+    227              ac2 = BMP180_Read_2B(0xAC);
+   \                     ??CrossCallReturnLabel_9:
+   \   000014                ; Setup parameters for call to function BMP180_Read_2B
+   \   000014   79AC         MOV     R1,#-0x54
+   \   000016   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000019   90....       MOV     DPTR,#ac2
+   \   00001C   12....       LCALL   ?Subroutine6 & 0xFFFF
+    228              ac3 = BMP180_Read_2B(0xAE);
+   \                     ??CrossCallReturnLabel_10:
+   \   00001F                ; Setup parameters for call to function BMP180_Read_2B
+   \   00001F   79AE         MOV     R1,#-0x52
+   \   000021   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000024   90....       MOV     DPTR,#ac3
+   \   000027   12....       LCALL   ?Subroutine6 & 0xFFFF
+    229              ac4 = BMP180_Read_2B(0xB0);
+   \                     ??CrossCallReturnLabel_11:
+   \   00002A                ; Setup parameters for call to function BMP180_Read_2B
+   \   00002A   79B0         MOV     R1,#-0x50
+   \   00002C   12....       LCALL   ??BMP180_Read_2B?relay
+   \   00002F   90....       MOV     DPTR,#ac4
+   \   000032   12....       LCALL   ?Subroutine6 & 0xFFFF
+    230              ac5 = BMP180_Read_2B(0xB2);
+   \                     ??CrossCallReturnLabel_12:
+   \   000035                ; Setup parameters for call to function BMP180_Read_2B
+   \   000035   79B2         MOV     R1,#-0x4e
+   \   000037   12....       LCALL   ??BMP180_Read_2B?relay
+   \   00003A   90....       MOV     DPTR,#ac5
+   \   00003D   12....       LCALL   ?Subroutine6 & 0xFFFF
+    231              ac6 = BMP180_Read_2B(0xB4);
+   \                     ??CrossCallReturnLabel_13:
+   \   000040                ; Setup parameters for call to function BMP180_Read_2B
+   \   000040   79B4         MOV     R1,#-0x4c
+   \   000042   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000045   90....       MOV     DPTR,#ac6
+   \   000048   12....       LCALL   ?Subroutine6 & 0xFFFF
+    232              b1 =  BMP180_Read_2B(0xB6);
+   \                     ??CrossCallReturnLabel_14:
+   \   00004B                ; Setup parameters for call to function BMP180_Read_2B
+   \   00004B   79B6         MOV     R1,#-0x4a
+   \   00004D   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000050   90....       MOV     DPTR,#b1
+   \   000053   12....       LCALL   ?Subroutine6 & 0xFFFF
+    233              b2 =  BMP180_Read_2B(0xB8);
+   \                     ??CrossCallReturnLabel_15:
+   \   000056                ; Setup parameters for call to function BMP180_Read_2B
+   \   000056   79B8         MOV     R1,#-0x48
+   \   000058   12....       LCALL   ??BMP180_Read_2B?relay
+   \   00005B   90....       MOV     DPTR,#b2
+   \   00005E   12....       LCALL   ?Subroutine6 & 0xFFFF
+    234              mb =  BMP180_Read_2B(0xBA);
+   \                     ??CrossCallReturnLabel_16:
+   \   000061                ; Setup parameters for call to function BMP180_Read_2B
+   \   000061   79BA         MOV     R1,#-0x46
+   \   000063   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000066   90....       MOV     DPTR,#mb
+   \   000069   12....       LCALL   ?Subroutine6 & 0xFFFF
+    235              mc =  BMP180_Read_2B(0xBC);
+   \                     ??CrossCallReturnLabel_17:
+   \   00006C                ; Setup parameters for call to function BMP180_Read_2B
+   \   00006C   79BC         MOV     R1,#-0x44
+   \   00006E   12....       LCALL   ??BMP180_Read_2B?relay
+   \   000071   90....       MOV     DPTR,#mc
+   \   000074   12....       LCALL   ?Subroutine6 & 0xFFFF
+    236              md =  BMP180_Read_2B(0xBE);
+   \                     ??CrossCallReturnLabel_18:
+   \   000077                ; Setup parameters for call to function BMP180_Read_2B
+   \   000077   79BE         MOV     R1,#-0x42
+   \   000079   12....       LCALL   ??BMP180_Read_2B?relay
+   \   00007C   90....       MOV     DPTR,#md
+   \   00007F   12....       LCALL   ?Subroutine6 & 0xFFFF
+    237          }
+   \                     ??CrossCallReturnLabel_19:
+   \   000082   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   000085                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   EA           MOV     A,R2
+   \   000001   F0           MOVX    @DPTR,A
+   \   000002   A3           INC     DPTR
+   \   000003   EB           MOV     A,R3
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   22           RET
+    238          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    239          void Multiple_Read_BMP180()
+   \                     Multiple_Read_BMP180:
+    240          { 
+   \   000000   74E8         MOV     A,#-0x18
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 24
+   \   000005                ; Auto size: 4
+   \   000005   74FC         MOV     A,#-0x4
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    241              long ut;
+    242              long up;
+    243              long x1, x2, b5, b6, x3, b3, p,b7;
+    244              long xx1,xx2,bb4,bb3,bbb3;
+    245              unsigned long b4;
+    246              unsigned int tempe;
+    247              
+    248              ut = BMP180_Read_TEMP();
+   \   00000A                ; Setup parameters for call to function BMP180_Read_TEMP
+   \   00000A   12....       LCALL   ??BMP180_Read_TEMP?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+    249              up = BMP180_Read_Pressure();
+   \   000011                ; Setup parameters for call to function BMP180_Read_Pressure
+   \   000011   12....       LCALL   ??BMP180_Read_Pressure?relay
+   \   000014   8A..         MOV     ?V0 + 8,R2
+   \   000016   8B..         MOV     ?V0 + 9,R3
+    250          
+    251              xx1 = (int32_t)ut - ac6;
+    252              x1 = (xx1 * ac5) >> 15;
+   \   000018   90....       MOV     DPTR,#ac6
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F8           MOV     R0,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F9           MOV     R1,A
+   \   000020   E5..         MOV     A,?V0 + 0
+   \   000022   C3           CLR     C
+   \   000023   98           SUBB    A,R0
+   \   000024   F5..         MOV     ?V0 + 12,A
+   \   000026   E5..         MOV     A,?V0 + 1
+   \   000028   99           SUBB    A,R1
+   \   000029   F5..         MOV     ?V0 + 13,A
+   \   00002B   75..00       MOV     ?V0 + 14,#0x0
+   \   00002E   75..00       MOV     ?V0 + 15,#0x0
+   \   000031   90....       MOV     DPTR,#ac5
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   F5..         MOV     ?V0 + 0,A
+   \   000037   A3           INC     DPTR
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   F5..         MOV     ?V0 + 1,A
+   \   00003B   75..00       MOV     ?V0 + 2,#0x0
+   \   00003E   75..00       MOV     ?V0 + 3,#0x0
+   \   000041   78..         MOV     R0,#?V0 + 12
+   \   000043   79..         MOV     R1,#?V0 + 0
+   \   000045   12....       LCALL   ?L_MUL
+   \   000048   740F         MOV     A,#0xf
+   \   00004A   78..         MOV     R0,#?V0 + 12
+   \   00004C   12....       LCALL   ?SL_SHR
+    253              xx2 = (int32_t)mc;
+    254              x2 = (xx2 << 11)/(x1 + md);
+    255              b5 = x1 + x2;
+   \   00004F   C0..         PUSH    ?V0 + 12
+   \   000051   C0..         PUSH    ?V0 + 13
+   \   000053   C0..         PUSH    ?V0 + 14
+   \   000055   C0..         PUSH    ?V0 + 15
+   \   000057   90....       MOV     DPTR,#mc
+   \   00005A   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   00005D   740B         MOV     A,#0xb
+   \   00005F   78..         MOV     R0,#?V0 + 0
+   \   000061   12....       LCALL   ?L_SHL
+   \   000064   90....       MOV     DPTR,#md
+   \   000067   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   00006A   78..         MOV     R0,#?V0 + 12
+   \   00006C   79..         MOV     R1,#?V0 + 4
+   \   00006E   12....       LCALL   ?L_ADD
+   \   000071   78..         MOV     R0,#?V0 + 0
+   \   000073   79..         MOV     R1,#?V0 + 12
+   \   000075   12....       LCALL   ?L_DIV_MOD
+   \   000078   D0..         POP     ?V0 + 7
+   \   00007A   D0..         POP     ?V0 + 6
+   \   00007C   D0..         POP     ?V0 + 5
+   \   00007E   D0..         POP     ?V0 + 4
+   \   000080   78..         MOV     R0,#?V0 + 4
+   \   000082   79..         MOV     R1,#?V0 + 0
+   \   000084   12....       LCALL   ?L_ADD
+    256              tempe = b5 + num;
+    257              temperature = tempe >> 4;
+   \   000087   85....       MOV     ?V0 + 0,?V0 + 4
+   \   00008A   85....       MOV     ?V0 + 1,?V0 + 5
+   \   00008D   90....       MOV     DPTR,#num
+   \   000090   E0           MOVX    A,@DPTR
+   \   000091   25..         ADD     A,?V0 + 0
+   \   000093   F5..         MOV     ?V0 + 0,A
+   \   000095   A3           INC     DPTR
+   \   000096   E0           MOVX    A,@DPTR
+   \   000097   35..         ADDC    A,?V0 + 1
+   \   000099   F5..         MOV     ?V0 + 1,A
+   \   00009B   7404         MOV     A,#0x4
+   \   00009D   78..         MOV     R0,#?V0 + 0
+   \   00009F   12....       LCALL   ?US_SHR
+   \   0000A2   90....       MOV     DPTR,#temperature
+   \   0000A5   E5..         MOV     A,?V0 + 0
+   \   0000A7   F0           MOVX    @DPTR,A
+   \   0000A8   A3           INC     DPTR
+   \   0000A9   E5..         MOV     A,?V0 + 1
+   \   0000AB   F0           MOVX    @DPTR,A
+   \   0000AC   A3           INC     DPTR
+   \   0000AD   E4           CLR     A
+   \   0000AE   F0           MOVX    @DPTR,A
+   \   0000AF   A3           INC     DPTR
+   \   0000B0   F0           MOVX    @DPTR,A
+    258              //temperature = ((b5 + 8) >> 4);
+    259          
+    260              //dat->press = BMP085_Read_Pressure();
+    261              b6 = b5 - num1;
+   \   0000B1   90....       MOV     DPTR,#num1
+   \   0000B4   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   0000B7   78..         MOV     R0,#?V0 + 4
+   \   0000B9   79..         MOV     R1,#?V0 + 0
+   \   0000BB   12....       LCALL   ?L_SUB
+   \   0000BE   85..82       MOV     DPL,?XSP + 0
+   \   0000C1   85..83       MOV     DPH,?XSP + 1
+   \   0000C4   78..         MOV     R0,#?V0 + 4
+   \   0000C6   12....       LCALL   ?L_MOV_TO_X
+    262              x1 = (b2 * (b6 * b6) >> 12) >> 11;
+    263              x2 = (ac2 * b6) >> 11;
+    264              x3 = x1 + x2;
+    265              bb3 = (int32_t)ac1;
+    266              bbb3 = ((bb3 * num2 * num2 + x3) << OSS) + num2;
+    267              b3 = bbb3 / num2 / num2;
+    268              x1 = (ac3 * b6) >> 13;
+    269              x2 = (b1 * ((b6 * b6) >> 12)) >> 16;
+    270              x3 = ((x1 + x2) + num2) >> 2;
+    271              bb4 = ((uint32_t)(x3 + num3));
+    272              b4 = (bb4 * ac4) >> 15;
+   \   0000C9   90....       MOV     DPTR,#num2
+   \   0000CC   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   0000CF   90....       MOV     DPTR,#ac3
+   \   0000D2   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0000D5   85..82       MOV     DPL,?XSP + 0
+   \   0000D8   85..83       MOV     DPH,?XSP + 1
+   \   0000DB   78..         MOV     R0,#?V0 + 12
+   \   0000DD   12....       LCALL   ?L_MOV_X
+   \   0000E0   78..         MOV     R0,#?V0 + 4
+   \   0000E2   79..         MOV     R1,#?V0 + 12
+   \   0000E4   12....       LCALL   ?L_MUL
+   \   0000E7   740D         MOV     A,#0xd
+   \   0000E9   78..         MOV     R0,#?V0 + 4
+   \   0000EB   12....       LCALL   ?SL_SHR
+   \   0000EE   C0..         PUSH    ?V0 + 4
+   \   0000F0   C0..         PUSH    ?V0 + 5
+   \   0000F2   C0..         PUSH    ?V0 + 6
+   \   0000F4   C0..         PUSH    ?V0 + 7
+   \   0000F6   90....       MOV     DPTR,#b1
+   \   0000F9   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   0000FC   C0..         PUSH    ?V0 + 4
+   \   0000FE   C0..         PUSH    ?V0 + 5
+   \   000100   C0..         PUSH    ?V0 + 6
+   \   000102   C0..         PUSH    ?V0 + 7
+   \   000104   85..82       MOV     DPL,?XSP + 0
+   \   000107   85..83       MOV     DPH,?XSP + 1
+   \   00010A   78..         MOV     R0,#?V0 + 12
+   \   00010C   12....       LCALL   ?L_MOV_X
+   \   00010F   85..82       MOV     DPL,?XSP + 0
+   \   000112   85..83       MOV     DPH,?XSP + 1
+   \   000115   78..         MOV     R0,#?V0 + 4
+   \   000117   12....       LCALL   ?L_MOV_X
+   \   00011A   78..         MOV     R0,#?V0 + 12
+   \   00011C   79..         MOV     R1,#?V0 + 4
+   \   00011E   12....       LCALL   ?L_MUL
+   \   000121   740C         MOV     A,#0xc
+   \   000123   78..         MOV     R0,#?V0 + 12
+   \   000125   12....       LCALL   ?SL_SHR
+   \   000128   D0..         POP     ?V0 + 7
+   \   00012A   D0..         POP     ?V0 + 6
+   \   00012C   D0..         POP     ?V0 + 5
+   \   00012E   D0..         POP     ?V0 + 4
+   \   000130   78..         MOV     R0,#?V0 + 4
+   \   000132   79..         MOV     R1,#?V0 + 12
+   \   000134   12....       LCALL   ?L_MUL
+   \   000137   7410         MOV     A,#0x10
+   \   000139   78..         MOV     R0,#?V0 + 4
+   \   00013B   12....       LCALL   ?SL_SHR
+   \   00013E   D0..         POP     ?V0 + 15
+   \   000140   D0..         POP     ?V0 + 14
+   \   000142   D0..         POP     ?V0 + 13
+   \   000144   D0..         POP     ?V0 + 12
+   \   000146   78..         MOV     R0,#?V0 + 12
+   \   000148   79..         MOV     R1,#?V0 + 4
+   \   00014A   12....       LCALL   ?L_ADD
+   \   00014D   78..         MOV     R0,#?V0 + 12
+   \   00014F   79..         MOV     R1,#?V0 + 0
+   \   000151   12....       LCALL   ?L_ADD
+   \   000154   7402         MOV     A,#0x2
+   \   000156   78..         MOV     R0,#?V0 + 12
+   \   000158   12....       LCALL   ?SL_SHR
+   \   00015B   90....       MOV     DPTR,#num3
+   \   00015E   E0           MOVX    A,@DPTR
+   \   00015F   25..         ADD     A,?V0 + 12
+   \   000161   F5..         MOV     ?V0 + 4,A
+   \   000163   A3           INC     DPTR
+   \   000164   E0           MOVX    A,@DPTR
+   \   000165   35..         ADDC    A,?V0 + 13
+   \   000167   F5..         MOV     ?V0 + 5,A
+   \   000169   75..00       MOV     ?V0 + 6,#0x0
+   \   00016C   75..00       MOV     ?V0 + 7,#0x0
+   \   00016F   90....       MOV     DPTR,#ac4
+   \   000172   E0           MOVX    A,@DPTR
+   \   000173   F5..         MOV     ?V0 + 12,A
+   \   000175   A3           INC     DPTR
+   \   000176   E0           MOVX    A,@DPTR
+   \   000177   F5..         MOV     ?V0 + 13,A
+   \   000179   75..00       MOV     ?V0 + 14,#0x0
+   \   00017C   75..00       MOV     ?V0 + 15,#0x0
+   \   00017F   78..         MOV     R0,#?V0 + 4
+   \   000181   79..         MOV     R1,#?V0 + 12
+   \   000183   12....       LCALL   ?L_MUL
+   \   000186   740F         MOV     A,#0xf
+   \   000188   78..         MOV     R0,#?V0 + 4
+   \   00018A   12....       LCALL   ?SL_SHR
+    273              b7 = ((uint32_t)up - b3) * (num4 >> OSS);
+   \   00018D   F5..         MOV     ?V0 + 10,A
+   \   00018F   F5..         MOV     ?V0 + 11,A
+   \   000191   C0..         PUSH    ?V0 + 8
+   \   000193   C0..         PUSH    ?V0 + 9
+   \   000195   C0..         PUSH    ?V0 + 10
+   \   000197   C0..         PUSH    ?V0 + 11
+   \   000199   90....       MOV     DPTR,#ac1
+   \   00019C   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   00019F   78..         MOV     R0,#?V0 + 8
+   \   0001A1   79..         MOV     R1,#?V0 + 0
+   \   0001A3   12....       LCALL   ?L_MUL
+   \   0001A6   78..         MOV     R0,#?V0 + 8
+   \   0001A8   79..         MOV     R1,#?V0 + 0
+   \   0001AA   12....       LCALL   ?L_MUL
+   \   0001AD   C0..         PUSH    ?V0 + 8
+   \   0001AF   C0..         PUSH    ?V0 + 9
+   \   0001B1   C0..         PUSH    ?V0 + 10
+   \   0001B3   C0..         PUSH    ?V0 + 11
+   \   0001B5   90....       MOV     DPTR,#b2
+   \   0001B8   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   0001BB   85..82       MOV     DPL,?XSP + 0
+   \   0001BE   85..83       MOV     DPH,?XSP + 1
+   \   0001C1   78..         MOV     R0,#?V0 + 12
+   \   0001C3   12....       LCALL   ?L_MOV_X
+   \   0001C6   78..         MOV     R0,#?V0 + 8
+   \   0001C8   79..         MOV     R1,#?V0 + 12
+   \   0001CA   12....       LCALL   ?L_MUL
+   \   0001CD   85..82       MOV     DPL,?XSP + 0
+   \   0001D0   85..83       MOV     DPH,?XSP + 1
+   \   0001D3   78..         MOV     R0,#?V0 + 12
+   \   0001D5   12....       LCALL   ?L_MOV_X
+   \   0001D8   78..         MOV     R0,#?V0 + 8
+   \   0001DA   79..         MOV     R1,#?V0 + 12
+   \   0001DC   12....       LCALL   ?L_MUL
+   \   0001DF   7417         MOV     A,#0x17
+   \   0001E1   78..         MOV     R0,#?V0 + 8
+   \   0001E3   12....       LCALL   ?SL_SHR
+   \   0001E6   D0..         POP     ?V0 + 15
+   \   0001E8   D0..         POP     ?V0 + 14
+   \   0001EA   D0..         POP     ?V0 + 13
+   \   0001EC   D0..         POP     ?V0 + 12
+   \   0001EE   78..         MOV     R0,#?V0 + 12
+   \   0001F0   79..         MOV     R1,#?V0 + 8
+   \   0001F2   12....       LCALL   ?L_ADD
+   \   0001F5   C0..         PUSH    ?V0 + 12
+   \   0001F7   C0..         PUSH    ?V0 + 13
+   \   0001F9   C0..         PUSH    ?V0 + 14
+   \   0001FB   C0..         PUSH    ?V0 + 15
+   \   0001FD   90....       MOV     DPTR,#ac2
+   \   000200   E0           MOVX    A,@DPTR
+   \   000201   F5..         MOV     ?V0 + 12,A
+   \   000203   A3           INC     DPTR
+   \   000204   E0           MOVX    A,@DPTR
+   \   000205   F5..         MOV     ?V0 + 13,A
+   \   000207   33           RLC     A
+   \   000208   95E0         SUBB    A,0xE0 /* A   */
+   \   00020A   F5..         MOV     ?V0 + 14,A
+   \   00020C   F5..         MOV     ?V0 + 15,A
+   \   00020E   85..82       MOV     DPL,?XSP + 0
+   \   000211   85..83       MOV     DPH,?XSP + 1
+   \   000214   78..         MOV     R0,#?V0 + 8
+   \   000216   12....       LCALL   ?L_MOV_X
+   \   000219   78..         MOV     R0,#?V0 + 12
+   \   00021B   79..         MOV     R1,#?V0 + 8
+   \   00021D   12....       LCALL   ?L_MUL
+   \   000220   740B         MOV     A,#0xb
+   \   000222   78..         MOV     R0,#?V0 + 12
+   \   000224   12....       LCALL   ?SL_SHR
+   \   000227   D0..         POP     ?V0 + 11
+   \   000229   D0..         POP     ?V0 + 10
+   \   00022B   D0..         POP     ?V0 + 9
+   \   00022D   D0..         POP     ?V0 + 8
+   \   00022F   78..         MOV     R0,#?V0 + 8
+   \   000231   79..         MOV     R1,#?V0 + 12
+   \   000233   12....       LCALL   ?L_ADD
+   \   000236   78..         MOV     R0,#?V0 + 8
+   \   000238   79..         MOV     R1,#?V0 + 0
+   \   00023A   12....       LCALL   ?L_ADD
+   \   00023D   85....       MOV     ?V0 + 12,?V0 + 0
+   \   000240   85....       MOV     ?V0 + 13,?V0 + 1
+   \   000243   85....       MOV     ?V0 + 14,?V0 + 2
+   \   000246   85....       MOV     ?V0 + 15,?V0 + 3
+   \   000249   78..         MOV     R0,#?V0 + 8
+   \   00024B   79..         MOV     R1,#?V0 + 12
+   \   00024D   12....       LCALL   ?L_DIV_MOD
+   \   000250   85....       MOV     ?V0 + 12,?V0 + 0
+   \   000253   85....       MOV     ?V0 + 13,?V0 + 1
+   \   000256   85....       MOV     ?V0 + 14,?V0 + 2
+   \   000259   85....       MOV     ?V0 + 15,?V0 + 3
+   \   00025C   78..         MOV     R0,#?V0 + 8
+   \   00025E   79..         MOV     R1,#?V0 + 12
+   \   000260   12....       LCALL   ?L_DIV_MOD
+   \   000263   D0..         POP     ?V0 + 15
+   \   000265   D0..         POP     ?V0 + 14
+   \   000267   D0..         POP     ?V0 + 13
+   \   000269   D0..         POP     ?V0 + 12
+   \   00026B   78..         MOV     R0,#?V0 + 12
+   \   00026D   79..         MOV     R1,#?V0 + 8
+   \   00026F   12....       LCALL   ?L_SUB
+   \   000272   90....       MOV     DPTR,#num4
+   \   000275   E0           MOVX    A,@DPTR
+   \   000276   F5..         MOV     ?V0 + 8,A
+   \   000278   A3           INC     DPTR
+   \   000279   E0           MOVX    A,@DPTR
+   \   00027A   F5..         MOV     ?V0 + 9,A
+   \   00027C   75..00       MOV     ?V0 + 10,#0x0
+   \   00027F   75..00       MOV     ?V0 + 11,#0x0
+   \   000282   78..         MOV     R0,#?V0 + 12
+   \   000284   79..         MOV     R1,#?V0 + 8
+   \   000286   12....       LCALL   ?L_MUL
+    274              if( b7 < 0x80000000)
+   \   000289   90....       MOV     DPTR,#__Constant_80000000
+   \   00028C   78..         MOV     R0,#?V0 + 8
+   \   00028E   12....       LCALL   ?L_MOV_X
+   \   000291   78..         MOV     R0,#?V0 + 8
+   \   000293   79..         MOV     R1,#?V0 + 12
+   \   000295   12....       LCALL   ?UL_GT
+   \   000298   78..         MOV     R0,#?V0 + 12
+   \   00029A   500E         JNC     ??Multiple_Read_BMP180_0
+    275                  p = (b7 * num2) / b4 ;
+   \   00029C   79..         MOV     R1,#?V0 + 0
+   \   00029E   12....       LCALL   ?L_MUL
+   \   0002A1   78..         MOV     R0,#?V0 + 12
+   \   0002A3   79..         MOV     R1,#?V0 + 4
+   \   0002A5   12....       LCALL   ?UL_DIV_MOD
+   \   0002A8   8012         SJMP    ??Multiple_Read_BMP180_1
+    276              else
+    277                  p = (b7 / b4) * num2;
+   \                     ??Multiple_Read_BMP180_0:
+   \   0002AA   79..         MOV     R1,#?V0 + 4
+   \   0002AC   12....       LCALL   ?UL_DIV_MOD
+   \   0002AF   90....       MOV     DPTR,#(num2 + 1)
+   \   0002B2   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   0002B5   78..         MOV     R0,#?V0 + 12
+   \   0002B7   79..         MOV     R1,#?V0 + 0
+   \   0002B9   12....       LCALL   ?L_MUL
+    278              x1 = (p >> 8) * (p >> 8);
+    279              x1 = (x1 * num5) >> 16;
+    280              x2 = (num6 * p) >> 16;
+    281              pressure = p + ((x1 + x2 + num7) >> 4);
+   \                     ??Multiple_Read_BMP180_1:
+   \   0002BC   85....       MOV     ?V0 + 4,?V0 + 12
+   \   0002BF   85....       MOV     ?V0 + 5,?V0 + 13
+   \   0002C2   85....       MOV     ?V0 + 6,?V0 + 14
+   \   0002C5   85....       MOV     ?V0 + 7,?V0 + 15
+   \   0002C8   7408         MOV     A,#0x8
+   \   0002CA   78..         MOV     R0,#?V0 + 4
+   \   0002CC   12....       LCALL   ?SL_SHR
+   \   0002CF   85....       MOV     ?V0 + 0,?V0 + 4
+   \   0002D2   85....       MOV     ?V0 + 1,?V0 + 5
+   \   0002D5   85....       MOV     ?V0 + 2,?V0 + 6
+   \   0002D8   85....       MOV     ?V0 + 3,?V0 + 7
+   \   0002DB   78..         MOV     R0,#?V0 + 0
+   \   0002DD   79..         MOV     R1,#?V0 + 4
+   \   0002DF   12....       LCALL   ?L_MUL
+   \   0002E2   90....       MOV     DPTR,#num5
+   \   0002E5   E0           MOVX    A,@DPTR
+   \   0002E6   F5..         MOV     ?V0 + 4,A
+   \   0002E8   A3           INC     DPTR
+   \   0002E9   E0           MOVX    A,@DPTR
+   \   0002EA   F5..         MOV     ?V0 + 5,A
+   \   0002EC   75..00       MOV     ?V0 + 6,#0x0
+   \   0002EF   75..00       MOV     ?V0 + 7,#0x0
+   \   0002F2   78..         MOV     R0,#?V0 + 0
+   \   0002F4   79..         MOV     R1,#?V0 + 4
+   \   0002F6   12....       LCALL   ?L_MUL
+   \   0002F9   7410         MOV     A,#0x10
+   \   0002FB   78..         MOV     R0,#?V0 + 0
+   \   0002FD   12....       LCALL   ?SL_SHR
+   \   000300   90....       MOV     DPTR,#num6
+   \   000303   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000306   78..         MOV     R0,#?V0 + 4
+   \   000308   79..         MOV     R1,#?V0 + 12
+   \   00030A   12....       LCALL   ?L_MUL
+   \   00030D   7410         MOV     A,#0x10
+   \   00030F   78..         MOV     R0,#?V0 + 4
+   \   000311   12....       LCALL   ?SL_SHR
+   \   000314   78..         MOV     R0,#?V0 + 0
+   \   000316   79..         MOV     R1,#?V0 + 4
+   \   000318   12....       LCALL   ?L_ADD
+   \   00031B   90....       MOV     DPTR,#num7
+   \   00031E   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000321   78..         MOV     R0,#?V0 + 0
+   \   000323   79..         MOV     R1,#?V0 + 4
+   \   000325   12....       LCALL   ?L_ADD
+   \   000328   7404         MOV     A,#0x4
+   \   00032A   78..         MOV     R0,#?V0 + 0
+   \   00032C   12....       LCALL   ?SL_SHR
+   \   00032F   78..         MOV     R0,#?V0 + 12
+   \   000331   79..         MOV     R1,#?V0 + 0
+   \   000333   12....       LCALL   ?L_ADD
+   \   000336   90....       MOV     DPTR,#pressure
+   \   000339   78..         MOV     R0,#?V0 + 12
+   \   00033B   12....       LCALL   ?L_MOV_TO_X
+    282          
+    283             // *press = pressure;
+    284             // *temp = t_integer;
+    285          }
+   \   00033E   7404         MOV     A,#0x4
+   \   000340   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000343   7F10         MOV     R7,#0x10
+   \   000345   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 8,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 9,A
+   \   000007   33           RLC     A
+   \   000008   95E0         SUBB    A,0xE0 /* A   */
+   \   00000A   F5..         MOV     ?V0 + 10,A
+   \   00000C   F5..         MOV     ?V0 + 11,A
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 0,A
+   \   000003   A3           INC     DPTR
+   \   000004                REQUIRE ??Subroutine9_0
+   \   000004                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 1,A
+   \   000003   33           RLC     A
+   \   000004   95E0         SUBB    A,0xE0 /* A   */
+   \   000006   F5..         MOV     ?V0 + 2,A
+   \   000008   F5..         MOV     ?V0 + 3,A
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F5..         MOV     ?V0 + 4,A
+   \   000003   A3           INC     DPTR
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   F5..         MOV     ?V0 + 5,A
+   \   000007   33           RLC     A
+   \   000008   95E0         SUBB    A,0xE0 /* A   */
+   \   00000A   F5..         MOV     ?V0 + 6,A
+   \   00000C   F5..         MOV     ?V0 + 7,A
+   \   00000E   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num>`:
+   \   000000   0800         DW 8
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num1>`:
+   \   000000   A00F         DW 4000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num2>`:
+   \   000000   0200         DW 2
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num3>`:
+   \   000000   0080         DW 32768
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num4>`:
+   \   000000   50C3         DW 50000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num5>`:
+   \   000000   DE0B         DW 3038
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num6>`:
+   \   000000   43E3         DW -7357
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num7>`:
+   \   000000   CF0E         DW 3791
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num8>`:
+   \   000000   0A00         DW 10
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_80000000:
+   \   000000   00000080     DD 2147483648
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_GPIO_Config?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_GPIO_Config
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Sendack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Sendack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Check_ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Check_ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Write_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Write_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Read_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Read_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C2_Write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C2_Write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??BMP180_Read_2B?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    BMP180_Read_2B
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??BMP180_Read_TEMP?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    BMP180_Read_TEMP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??BMP180_Read_Pressure?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    BMP180_Read_Pressure
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Init_BMP180?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Init_BMP180
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Multiple_Read_BMP180?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Multiple_Read_BMP180
+
+   Maximum stack usage in bytes:
+
+     Function                  ISTACK PSTACK XSTACK
+     --------                  ------ ------ ------
+     BMP180_Read_2B                0      0     20
+       -> I2C2_Start               0      0     20
+       -> I2C2_Write_Byte          0      0     20
+       -> I2C2_Write_Byte          0      0     20
+       -> I2C2_Start               0      0     20
+       -> I2C2_Write_Byte          0      0     20
+       -> I2C2_Read_Byte           0      0     20
+       -> Sendack                  0      0     20
+       -> I2C2_Read_Byte           0      0     20
+       -> Sendack                  0      0     20
+       -> I2C2_Stop                0      0     20
+     BMP180_Read_Pressure          0      0     38
+       -> I2C2_Write               0      0     20
+       -> halMcuWaitMs             0      0     20
+       -> BMP180_Read_2B           0      0     20
+     BMP180_Read_TEMP              2      0     28
+       -> I2C2_Write               4      0      0
+       -> halMcuWaitMs             4      0      0
+       -> BMP180_Read_2B           4      0      0
+     I2C2_Check_ack                0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+     I2C2_GPIO_Config              0      0      0
+     I2C2_Read_Byte                0      0     19
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+     I2C2_Start                    2      0     10
+       -> halMcuWaitUs             4      0      0
+       -> halMcuWaitUs             4      0      0
+     I2C2_Stop                     2      0     10
+       -> halMcuWaitUs             4      0      0
+       -> halMcuWaitUs             4      0      0
+     I2C2_Write                    0      0     19
+       -> I2C2_Start               0      0     18
+       -> I2C2_Write_Byte          0      0     18
+       -> I2C2_Write_Byte          0      0     18
+       -> I2C2_Write_Byte          0      0     18
+       -> I2C2_Stop                0      0     18
+     I2C2_Write_Byte               0      0     19
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+       -> I2C2_Check_ack           0      0     18
+     Init_BMP180                   2      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+       -> BMP180_Read_2B           4      0      0
+     Multiple_Read_BMP180          8      0     28
+       -> BMP180_Read_TEMP         0      0     56
+       -> BMP180_Read_Pressure     0      0     56
+     Sendack                       0      0     19
+       -> halMcuWaitUs             0      0     18
+       -> halMcuWaitUs             0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label               Bytes
+     --------------               -----
+     _A_P1                           1
+     P1DIR                           1
+     ac1                             2
+     ac2                             2
+     ac3                             2
+     ac4                             2
+     ac5                             2
+     ac6                             2
+     b1                              2
+     b2                              2
+     mb                              2
+     mc                              2
+     md                              2
+     num                             2
+     num1                            2
+     num2                            2
+     num3                            2
+     num4                            2
+     num5                            2
+     num6                            2
+     num7                            2
+     num8                            2
+     pressure                        4
+     temperature                     4
+     I2C2_GPIO_Config                8
+     I2C2_Start                     29
+     ?Subroutine0                    7
+     I2C2_Stop                      29
+     Sendack                        24
+     ?Subroutine5                   17
+     ?Subroutine1                    5
+     I2C2_Check_ack                 51
+     I2C2_Write_Byte                64
+     I2C2_Read_Byte                 60
+     I2C2_Write                     34
+     BMP180_Read_2B                 63
+     ?Subroutine2                    5
+     BMP180_Read_TEMP               15
+     ?Subroutine3                   20
+     BMP180_Read_Pressure           16
+     Init_BMP180                   133
+     ?Subroutine6                    6
+     Multiple_Read_BMP180          840
+     ?Subroutine8                   15
+     ?Subroutine7                    4
+     ??Subroutine9_0                11
+     ?Subroutine4                   15
+     ?<Initializer for num>          2
+     ?<Initializer for num1>         2
+     ?<Initializer for num2>         2
+     ?<Initializer for num3>         2
+     ?<Initializer for num4>         2
+     ?<Initializer for num5>         2
+     ?<Initializer for num6>         2
+     ?<Initializer for num7>         2
+     ?<Initializer for num8>         2
+     __Constant_80000000             4
+     ??I2C2_GPIO_Config?relay        6
+     ??I2C2_Start?relay              6
+     ??I2C2_Stop?relay               6
+     ??Sendack?relay                 6
+     ??I2C2_Check_ack?relay          6
+     ??I2C2_Write_Byte?relay         6
+     ??I2C2_Read_Byte?relay          6
+     ??I2C2_Write?relay              6
+     ??BMP180_Read_2B?relay          6
+     ??BMP180_Read_TEMP?relay        6
+     ??BMP180_Read_Pressure?relay    6
+     ??Init_BMP180?relay             6
+     ??Multiple_Read_BMP180?relay    6
+
+ 
+ 1 471 bytes in segment BANKED_CODE
+    78 bytes in segment BANK_RELAYS
+     2 bytes in segment SFR_AN
+    18 bytes in segment XDATA_I
+    18 bytes in segment XDATA_ID
+     4 bytes in segment XDATA_ROM_C
+    30 bytes in segment XDATA_Z
+ 
+ 1 567 bytes of CODE  memory
+     0 bytes of CONST memory (+ 4 bytes shared)
+     0 bytes of DATA  memory (+ 2 bytes shared)
+    48 bytes of XDATA memory
+
+Errors: none
+Warnings: none

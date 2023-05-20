@@ -1,0 +1,2469 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:43:43 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\Source #
+#                          \lcd12232.c                                        #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wRoute #
+#                          r.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pr #
+#                          ojects\GenericApp\Source\lcd12232.c" -D ZTOOL_P1   #
+#                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D        #
+#                          xNV_RESTORE -D SERIAL_SUPPORTED=DEBUG -D           #
+#                          SENSOR_TYPE=0X31 -D CHANLIST_C_R_E=25 -D           #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D                      #
+#                          ZigBee_C_R_E_Engineering -D ZigBee_C_R_E_IEEE -D   #
+#                          xSENSOR_TYPE_R_E=0X01 -lC                          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\List\" -lA "C:\Users\win7\Desktop\ZStac #
+#                          k传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pro #
+#                          jects\GenericApp\CC2530DB\Router\List\"            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\Obj\" -e --require_prototypes --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\List\lcd12232.lst                        #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\Obj\lcd12232.r51                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Projects\GenericApp\Source\lcd12232.c
+      1          /*******************************************************************************
+      2           * 文件名称：LCD.h
+      3           * 功    能：LCD驱动
+      4           *           驱动12232点阵图形液晶
+      5           * 硬件连接：液晶模块与CC2530的硬件连接关系如下：
+      6           *                液晶模块                         CC2530
+      7           *
+      8           *               SPI-CLK(PIN2) 串行数据             P1.2
+      9           *               SPI-MOSI(PIN3)移位寄存器时钟输入   P1.5
+     10           *               GPH(PIN5)   存储寄存器时钟输入     P1.6
+     11           * 作    者：w
+     12           * 公    司：无锡泛太科技有限公司
+     13           ******************************************************************************/
+     14          
+     15          
+     16          /* 包含头文件 */
+     17          /********************************************************************/
+     18          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+     19          #include "LCD12232.H"
+     20          /********************************************************************/
+
+   \                                 In  segment CODE_C, align 1
+     21          static const unsigned char __code ASCII[] =   
+   \                     ASCII:
+   \   000000   F8FC04C4     DB 248, 252, 4, 196, 36, 252, 248, 0, 7, 15, 9, 8, 8, 15, 7, 0, 0, 16
+   \            24FCF800
+   \            070F0908
+   \            080F0700
+   \            0010    
+   \   000012   18FCFC00     DB 24, 252, 252, 0, 0, 0, 0, 8, 8, 15, 15, 8, 8, 0, 8, 12, 132, 196
+   \            00000008
+   \            080F0F08
+   \            0800080C
+   \            84C4    
+   \   000024   643C1800     DB 100, 60, 24, 0, 14, 15, 9, 8, 8, 12, 12, 0, 8, 12, 68, 68, 68, 252
+   \            0E0F0908
+   \            080C0C00
+   \            080C4444
+   \            44FC    
+   \   000036   B800040C     DB 184, 0, 4, 12, 8, 8, 8, 15, 7, 0, 192, 224, 176, 152, 252, 252, 128
+   \            0808080F
+   \            0700C0E0
+   \            B098FCFC
+   \            80      
+   \   000047   00000000     DB 0, 0, 0, 0, 8, 15, 15, 8, 0, 124, 124, 68, 68, 196, 196, 132, 0, 4
+   \            080F0F08
+   \            007C7C44
+   \            44C4C484
+   \            0004    
+   \   000059   0C080808     DB 12, 8, 8, 8, 15, 7, 0, 240, 248, 76, 68, 68, 192, 128, 0, 7, 15, 8
+   \            0F0700F0
+   \            F84C4444
+   \            C0800007
+   \            0F08    
+   \   00006B   08080F07     DB 8, 8, 15, 7, 0, 12, 12, 4, 132, 196, 124, 60, 0, 0, 0, 15, 15, 0, 0
+   \            000C0C04
+   \            84C47C3C
+   \            0000000F
+   \            0F0000  
+   \   00007E   0000B8FC     DB 0, 0, 184, 252, 68, 68, 68, 252, 184, 0, 7, 15, 8, 8, 8, 15, 7, 0
+   \            444444FC
+   \            B800070F
+   \            0808080F
+   \            0700    
+   \   000090   387C4444     DB 56, 124, 68, 68, 68, 252, 248, 0, 0, 8, 8, 8, 12, 7, 3, 0, 224, 240
+   \            44FCF800
+   \            00080808
+   \            0C070300
+   \            E0F0    
+   \   0000A2   988C98F0     DB 152, 140, 152, 240, 224, 0, 15, 15, 0, 0, 0, 15, 15, 0, 4, 252, 252
+   \            E0000F0F
+   \            0000000F
+   \            0F0004FC
+   \            FC      
+   \   0000B3   4444FCB8     DB 68, 68, 252, 184, 0, 8, 15, 15, 8, 8, 15, 7, 0, 240, 248, 12, 4, 4
+   \            00080F0F
+   \            08080F07
+   \            00F0F80C
+   \            0404    
+   \   0000C5   0C180003     DB 12, 24, 0, 3, 7, 12, 8, 8, 12, 6, 0, 4, 252, 252, 4, 12, 248, 240, 0
+   \            070C0808
+   \            0C060004
+   \            FCFC040C
+   \            F8F000  
+   \   0000D8   080F0F08     DB 8, 15, 15, 8, 12, 7, 3, 0, 4, 252, 252, 68, 228, 12, 28, 0, 8, 15
+   \            0C070300
+   \            04FCFC44
+   \            E40C1C00
+   \            080F    
+   \   0000EA   0F08080C     DB 15, 8, 8, 12, 14, 0, 4, 252, 252, 68, 228, 12, 28, 0, 8, 15, 15, 8
+   \            0E0004FC
+   \            FC44E40C
+   \            1C00080F
+   \            0F08    
+   \   0000FC   00000000     DB 0, 0, 0, 0, 32, 96, 192, 128, 192, 96, 32, 0, 8, 12, 7, 3, 7, 12, 8
+   \            2060C080
+   \            C0602000
+   \            080C0703
+   \            070C08  
+   \   00010F   000C3CF0     DB 0, 12, 60, 240, 192, 240, 60, 12, 0, 12, 15, 3, 0, 3, 15, 12, 0
+   \            C0F03C0C
+   \            000C0F03
+   \            00030F0C
+   \            00      
+     22          {      
+     23          	0xF8,0xFC,0x04,0xC4,0x24,0xFC,0xF8,0x00,  // -0-
+     24          	0x07,0x0F,0x09,0x08,0x08,0x0F,0x07,0x00,
+     25          
+     26          	0x00,0x10,0x18,0xFC,0xFC,0x00,0x00,0x00,  // -1-
+     27          	0x00,0x08,0x08,0x0F,0x0F,0x08,0x08,0x00,
+     28          
+     29          	0x08,0x0C,0x84,0xC4,0x64,0x3C,0x18,0x00,  // -2-
+     30          	0x0E,0x0F,0x09,0x08,0x08,0x0C,0x0C,0x00,
+     31          
+     32          	0x08,0x0C,0x44,0x44,0x44,0xFC,0xB8,0x00,  // -3-
+     33          	0x04,0x0C,0x08,0x08,0x08,0x0F,0x07,0x00,
+     34          
+     35          	0xC0,0xE0,0xB0,0x98,0xFC,0xFC,0x80,0x00,  // -4-
+     36          	0x00,0x00,0x00,0x08,0x0F,0x0F,0x08,0x00,
+     37          
+     38          	0x7C,0x7C,0x44,0x44,0xC4,0xC4,0x84,0x00,  // -5-
+     39          	0x04,0x0C,0x08,0x08,0x08,0x0F,0x07,0x00,
+     40          
+     41          	0xF0,0xF8,0x4C,0x44,0x44,0xC0,0x80,0x00,  // -6-
+     42          	0x07,0x0F,0x08,0x08,0x08,0x0F,0x07,0x00,
+     43          
+     44          	0x0C,0x0C,0x04,0x84,0xC4,0x7C,0x3C,0x00,  // -7-
+     45          	0x00,0x00,0x0F,0x0F,0x00,0x00,0x00,0x00,
+     46          
+     47          	0xB8,0xFC,0x44,0x44,0x44,0xFC,0xB8,0x00,  // -8-
+     48          	0x07,0x0F,0x08,0x08,0x08,0x0F,0x07,0x00,
+     49          
+     50          	0x38,0x7C,0x44,0x44,0x44,0xFC,0xF8,0x00,  // -9-
+     51          	0x00,0x08,0x08,0x08,0x0C,0x07,0x03,0x00,
+     52          
+     53          	
+     54          
+     55          	0xE0,0xF0,0x98,0x8C,0x98,0xF0,0xE0,0x00,  // -A-
+     56          	0x0F,0x0F,0x00,0x00,0x00,0x0F,0x0F,0x00,
+     57          
+     58          	0x04,0xFC,0xFC,0x44,0x44,0xFC,0xB8,0x00,  // -B-
+     59          	0x08,0x0F,0x0F,0x08,0x08,0x0F,0x07,0x00,
+     60          
+     61          	0xF0,0xF8,0x0C,0x04,0x04,0x0C,0x18,0x00,  // -C-
+     62          	0x03,0x07,0x0C,0x08,0x08,0x0C,0x06,0x00,
+     63          
+     64          	0x04,0xFC,0xFC,0x04,0x0C,0xF8,0xF0,0x00,  // -D-
+     65          	0x08,0x0F,0x0F,0x08,0x0C,0x07,0x03,0x00,
+     66          
+     67          	0x04,0xFC,0xFC,0x44,0xE4,0x0C,0x1C,0x00,  // -E-
+     68          	0x08,0x0F,0x0F,0x08,0x08,0x0C,0x0E,0x00,
+     69          
+     70          	0x04,0xFC,0xFC,0x44,0xE4,0x0C,0x1C,0x00,  // -F-
+     71          	0x08,0x0F,0x0F,0x08,0x00,0x00,0x00,0x00,
+     72                  
+     73                  0x20,0x60,0xC0,0x80,0xC0,0x60,0x20,0x00,  // -x-
+     74          	0x08,0x0C,0x07,0x03,0x07,0x0C,0x08,0x00,
+     75                  
+     76                  0x0C,0x3C,0xF0,0xC0,0xF0,0x3C,0x0C,0x00,  // -X-
+     77          	0x0C,0x0F,0x03,0x00,0x03,0x0F,0x0C,0x00,
+     78                  
+     79          };
+     80          
+     81          //汉字库: 宋粗体16.dot 纵向取模下高位,数据排列:从左到右从上到下
+     82          //左半屏显示字模
+
+   \                                 In  segment CODE_C, align 1
+     83          static const unsigned char __code wuxifan[]={ 
+   \                     wuxifan:
+   \   000000   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \            00000000
+   \            00000000
+   \            00000000
+   \            000000  
+   \   000017   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 66, 66, 66, 66, 254, 66, 194, 66
+   \            00000000
+   \            00004042
+   \            424242FE
+   \            42C242  
+   \   00002A   43426040     DB 67, 66, 96, 64, 0, 0, 0, 128, 64, 32, 24, 6, 1, 0, 63, 64, 64, 64
+   \            00000080
+   \            40201806
+   \            01003F40
+   \            4040    
+   \   00003C   40407000     DB 64, 64, 112, 0, 128, 64, 112, 207, 72, 72, 0, 254, 74, 74, 74, 74
+   \            804070CF
+   \            484800FE
+   \            4A4A4A4A
+   \   00004C   7F820000     DB 127, 130, 0, 0, 0, 2, 2, 127, 34, 18, 36, 19, 73, 39, 89, 135, 65
+   \            0002027F
+   \            22122413
+   \            49275987
+   \            41      
+   \   00005D   3F010010     DB 63, 1, 0, 16, 98, 4, 140, 0, 68, 68, 68, 76, 116, 66, 67, 194, 64, 0
+   \            62048C00
+   \            4444444C
+   \            744243C2
+   \            4000    
+   \   00006F   000404FE     DB 0, 4, 4, 254, 1, 32, 16, 16, 40, 68, 66, 65, 65, 64, 96, 32, 0
+   \            01201010
+   \            28444241
+   \            41406020
+   \            00      
+     84                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+     85                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+     86                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+     87                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 ,
+     88                
+     89                0x00,0x40,0x42,0x42,0x42,0x42,0xFE,0x42,
+     90                0xC2,0x42,0x43,0x42,0x60,0x40,0x00,0x00,
+     91                0x00,0x80,0x40,0x20,0x18,0x06,0x01,0x00,
+     92                0x3F,0x40,0x40,0x40,0x40,0x40,0x70,0x00,
+     93          
+     94                0x80,0x40,0x70,0xCF,0x48,0x48,0x00,0xFE,
+     95                0x4A,0x4A,0x4A,0x4A,0x7F,0x82,0x00,0x00,
+     96                0x00,0x02,0x02,0x7F,0x22,0x12,0x24,0x13,
+     97                0x49,0x27,0x59,0x87,0x41,0x3F,0x01,0x00,
+     98          
+     99                0x10,0x62,0x04,0x8C,0x00,0x44,0x44,0x44,
+    100                0x4C,0x74,0x42,0x43,0xC2,0x40,0x00,0x00,
+    101                0x04,0x04,0xFE,0x01,0x20,0x10,0x10,0x28,
+    102                0x44,0x42,0x41,0x41,0x40,0x60,0x20,0x00
+    103                        
+    104          };
+    105           
+    106          //右半屏显示字模
+
+   \                                 In  segment CODE_C, align 1
+    107           static const unsigned char __code taikeji[]={ 
+   \                     taikeji:
+   \   000000   20202020     DB 32, 32, 32, 32, 32, 32, 32, 255, 32, 32, 32, 32, 32, 48, 32, 0, 64
+   \            202020FF
+   \            20202020
+   \            20302000
+   \            40      
+   \   000011   40202010     DB 64, 32, 32, 16, 12, 11, 48, 3, 12, 16, 16, 32, 96, 32, 0, 36, 36, 36
+   \            0C0B3003
+   \            0C101020
+   \            60200024
+   \            2424    
+   \   000023   A4FEA322     DB 164, 254, 163, 34, 0, 36, 72, 0, 255, 0, 128, 0, 0, 16, 8, 6, 1, 255
+   \            00244800
+   \            FF008000
+   \            00100806
+   \            01FF    
+   \   000035   00010202     DB 0, 1, 2, 2, 2, 2, 255, 1, 1, 1, 0, 16, 16, 16, 255, 16, 16, 136, 136
+   \            0202FF01
+   \            01010010
+   \            1010FF10
+   \            108888  
+   \   000048   88FF8888     DB 136, 255, 136, 136, 140, 8, 0, 0, 4, 68, 130, 127, 1, 128, 129, 70
+   \            8C080000
+   \            0444827F
+   \            01808146
+   \   000058   28102826     DB 40, 16, 40, 38, 65, 192, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            41C04000
+   \            00000000
+   \            00000000
+   \            00000000
+   \   00006C   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \            00000000
+   \            00000000
+   \            00000000
+    108          
+    109                0x20,0x20,0x20,0x20,0x20,0x20,0x20,0xFF,
+    110                0x20,0x20,0x20,0x20,0x20,0x30,0x20,0x00,
+    111                0x40,0x40,0x20,0x20,0x10,0x0C,0x0B,0x30,
+    112                0x03,0x0C,0x10,0x10,0x20,0x60,0x20,0x00,
+    113          
+    114                0x24,0x24,0x24,0xA4,0xFE,0xA3,0x22,0x00,
+    115                0x24,0x48,0x00,0xFF,0x00,0x80,0x00,0x00,
+    116                0x10,0x08,0x06,0x01,0xFF,0x00,0x01,0x02,
+    117                0x02,0x02,0x02,0xFF,0x01,0x01,0x01,0x00,
+    118                
+    119                0x10,0x10,0x10,0xFF,0x10,0x10,0x88,0x88,
+    120                0x88,0xFF,0x88,0x88,0x8C,0x08,0x00,0x00,
+    121                0x04,0x44,0x82,0x7F,0x01,0x80,0x81,0x46,
+    122                0x28,0x10,0x28,0x26,0x41,0xC0,0x40,0x00,
+    123            
+    124                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    125                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    126                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    127                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+    128                  
+    129          
+    130          };
+    131                        
+
+   \                                 In  segment CODE_C, align 1
+    132          static const unsigned char __code bmp01[]={
+   \                     bmp01:
+   \   000000   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \            00000000
+   \            00000000
+   \            00000000
+   \            000000  
+   \   000017   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 146, 84, 48, 255, 80, 148, 50, 216
+   \            00000000
+   \            00109254
+   \            30FF5094
+   \            32D8    
+   \   000029   171010F0     DB 23, 16, 16, 240, 24, 16, 0, 2, 130, 78, 51, 34, 82, 142, 64, 35, 20
+   \            18100002
+   \            824E3322
+   \            528E4023
+   \            14      
+   \   00003A   081661C0     DB 8, 22, 97, 192, 64, 0, 16, 16, 16, 255, 144, 80, 254, 146, 146, 146
+   \            40001010
+   \            10FF9050
+   \            FE929292
+   \   00004A   F29292DF     DB 242, 146, 146, 223, 130, 0, 2, 66, 129, 127, 64, 56, 7, 252, 68, 68
+   \            82000242
+   \            817F4038
+   \            07FC4444
+   \   00005A   474444FE     DB 71, 68, 68, 254, 4, 0, 0, 0, 0, 0, 96, 96, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            04000000
+   \            00006060
+   \            00000000
+   \            00000000
+   \            00      
+   \   00006F   00000000     DB 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   \            00030300
+   \            00000000
+   \            00000000
+   \            00      
+    133                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    134                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    135                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    136                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    137                
+    138                
+    139                0x10,0x92,0x54,0x30,0xFF,0x50,0x94,0x32,
+    140                0xD8,0x17,0x10,0x10,0xF0,0x18,0x10,0x00,
+    141                0x02,0x82,0x4E,0x33,0x22,0x52,0x8E,0x40,
+    142                0x23,0x14,0x08,0x16,0x61,0xC0,0x40,0x00,
+    143          
+    144                0x10,0x10,0x10,0xFF,0x90,0x50,0xFE,0x92,
+    145                0x92,0x92,0xF2,0x92,0x92,0xDF,0x82,0x00,
+    146                0x02,0x42,0x81,0x7F,0x40,0x38,0x07,0xFC,
+    147                0x44,0x44,0x47,0x44,0x44,0xFE,0x04,0x00,
+    148                  
+    149                0x00,0x00,0x00,0x00,0x60,0x60,0x00,0x00,
+    150                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+    151                0x00,0x00,0x00,0x00,0x03,0x03,0x00,0x00,
+    152                0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+    153          };
+    154          
+    155          /*********************************************************************
+    156           * 函数名称：LCD_SPISendData
+    157           * 功    能：通过串行SPI口输送一个byte的数据置模组
+    158           * 入口参数：Data  要传送的数据
+    159           * 出口参数：temp
+    160           * 返 回 值：SPI接到数据
+    161           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          void LCD_SPISendData(unsigned char Dat)
+   \                     LCD_SPISendData:
+    163          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    164            unsigned char i;
+    165          
+    166            for(i = 0; i < 8; i++)
+   \   000000   7A08         MOV     R2,#0x8
+    167            {
+    168              L_SPImosi();
+   \                     ??LCD_SPISendData_0:
+   \   000002   C295         CLR     0x90.5
+    169              
+    170              SPIdata=((Dat&0x80)>>7);
+   \   000004   E9           MOV     A,R1
+   \   000005   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000007   9296         MOV     0x90.6,C
+    171              NOP();
+   \   000009   00           NOP
+    172              NOP();
+   \   00000A   00           NOP
+    173              Dat<<=1;		   //数据左移一位
+   \   00000B   C3           CLR     C
+   \   00000C   33           RLC     A
+   \   00000D   F9           MOV     R1,A
+    174              H_SPImosi();
+   \   00000E   D295         SETB    0x90.5
+    175            }
+   \   000010   1A           DEC     R2
+   \   000011   EA           MOV     A,R2
+   \   000012   70EE         JNZ     ??LCD_SPISendData_0
+    176          }
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE _A_P1
+    177          /*********************************************************************
+    178           * 函数名称：LCD_SPIOUT
+    179           * 功    能：595数据输出
+    180           * 入口参数：
+    181           * 出口参数：
+    182           * 返 回 值：
+    183           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    184          void LCD_SPIOUT()
+   \                     LCD_SPIOUT:
+    185          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    186             L_GPH();
+   \   000000   C293         CLR     0x90.3
+    187              NOP();
+   \   000002   00           NOP
+    188              NOP();
+   \   000003   00           NOP
+    189             H_GPH();
+   \   000004   D293         SETB    0x90.3
+    190          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE _A_P1
+    191          /*********************************************************************
+    192           * 函数名称：
+    193           * 功    能：595数据输出
+    194           * 入口参数：
+    195           * 出口参数：
+    196           * 返 回 值：
+    197           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    198          void SendDataMI16(unsigned char MI,unsigned char NI)
+   \                     SendDataMI16:
+    199          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL   ?Subroutine11 & 0xFFFF
+    200            LCD_SPISendData(MI);
+    201            LCD_SPISendData(NI);
+    202            LCD_SPIOUT();
+    203              NOP();
+    204              NOP();
+    205            LCD_SPISendData(0x10);
+   \                     ??CrossCallReturnLabel_16:
+   \   000008                ; Setup parameters for call to function LCD_SPISendData
+   \   000008   7910         MOV     R1,#0x10
+   \   00000A   02....       LJMP    ?Subroutine0 & 0xFFFF
+    206            LCD_SPISendData(NI);
+    207            LCD_SPIOUT();
+    208          
+    209          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   EA           MOV     A,R2
+   \   000001   FE           MOV     R6,A
+   \   000002                ; Setup parameters for call to function LCD_SPISendData
+   \   000002                ; Setup parameters for call to function LCD_SPISendData
+   \   000002   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_43:
+   \   000005   00           NOP
+   \   000006   00           NOP
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ?Subroutine25 & 0xFFFF
+   \                     ??CrossCallReturnLabel_44:
+   \   000003                REQUIRE ??Subroutine28_0
+   \   000003                ; // Fall through to label ??Subroutine28_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine28_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine25:
+   \   000000   12....       LCALL   ??LCD_SPISendData?relay
+   \   000003                ; Setup parameters for call to function LCD_SPISendData
+   \   000003                ; Setup parameters for call to function LCD_SPISendData
+   \   000003                ; Setup parameters for call to function LCD_SPISendData
+   \   000003                ; Setup parameters for call to function LCD_SPISendData
+   \   000003   EE           MOV     A,R6
+   \   000004   F9           MOV     R1,A
+   \   000005   12....       LCALL   ??LCD_SPISendData?relay
+   \   000008                ; Setup parameters for call to function LCD_SPIOUT
+   \   000008                ; Setup parameters for call to function LCD_SPIOUT
+   \   000008                ; Setup parameters for call to function LCD_SPIOUT
+   \   000008                ; Setup parameters for call to function LCD_SPIOUT
+   \   000008   12....       LCALL   ??LCD_SPIOUT?relay
+   \   00000B   22           RET
+    210          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    211          void SendDataMD16(unsigned char MD,unsigned char ND)
+   \                     SendDataMD16:
+    212          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL   ?Subroutine11 & 0xFFFF
+    213            LCD_SPISendData(MD);
+    214            LCD_SPISendData(ND);
+    215            LCD_SPIOUT();
+    216              NOP();
+    217              NOP();
+    218            LCD_SPISendData(0x18);
+   \                     ??CrossCallReturnLabel_17:
+   \   000008                ; Setup parameters for call to function LCD_SPISendData
+   \   000008   7918         MOV     R1,#0x18
+   \   00000A   02....       LJMP    ?Subroutine0 & 0xFFFF
+    219            LCD_SPISendData(ND);
+    220            LCD_SPIOUT();
+    221          
+    222          }
+    223          /*********************************************************************
+    224           * 函数名称：lcd初始化
+    225           * 功    能：
+    226           * 入口参数：无
+    227           * 出口参数：无
+    228           * 返 回 值：无
+    229           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    230          void LCD_lni(void)
+   \                     LCD_lni:
+    231          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    232            SendDataMI16(witch_MI,0XE2);
+   \   000004                ; Setup parameters for call to function SendDataMI16
+   \   000004   7AE2         MOV     R2,#-0x1e
+   \   000006   7911         MOV     R1,#0x11
+   \   000008   12....       LCALL   ??SendDataMI16?relay
+    233            SendDataMI16(witch_SI,0XE2);//复位
+   \   00000B                ; Setup parameters for call to function SendDataMI16
+   \   00000B   7AE2         MOV     R2,#-0x1e
+   \   00000D   7912         MOV     R1,#0x12
+   \   00000F   12....       LCALL   ??SendDataMI16?relay
+    234            
+    235            SendDataMI16(witch_MI,0XAE);
+   \   000012                ; Setup parameters for call to function SendDataMI16
+   \   000012   7AAE         MOV     R2,#-0x52
+   \   000014   7911         MOV     R1,#0x11
+   \   000016   12....       LCALL   ??SendDataMI16?relay
+    236            SendDataMI16(witch_SI,0XAE);//POWER SAVE
+   \   000019                ; Setup parameters for call to function SendDataMI16
+   \   000019   7AAE         MOV     R2,#-0x52
+   \   00001B   7912         MOV     R1,#0x12
+   \   00001D   12....       LCALL   ??SendDataMI16?relay
+    237            
+    238            SendDataMI16(witch_MI,0XA4);
+   \   000020                ; Setup parameters for call to function SendDataMI16
+   \   000020   7AA4         MOV     R2,#-0x5c
+   \   000022   7911         MOV     R1,#0x11
+   \   000024   12....       LCALL   ??SendDataMI16?relay
+    239            SendDataMI16(witch_SI,0XA4);//动态驱动
+   \   000027                ; Setup parameters for call to function SendDataMI16
+   \   000027   7AA4         MOV     R2,#-0x5c
+   \   000029   7912         MOV     R1,#0x12
+   \   00002B   12....       LCALL   ??SendDataMI16?relay
+    240            
+    241            SendDataMI16(witch_MI,0Xa9);
+   \   00002E                ; Setup parameters for call to function SendDataMI16
+   \   00002E   7AA9         MOV     R2,#-0x57
+   \   000030   7911         MOV     R1,#0x11
+   \   000032   12....       LCALL   ??SendDataMI16?relay
+    242            SendDataMI16(witch_SI,0Xa9);//1/32占空比
+   \   000035                ; Setup parameters for call to function SendDataMI16
+   \   000035   7AA9         MOV     R2,#-0x57
+   \   000037   7912         MOV     R1,#0x12
+   \   000039   12....       LCALL   ??SendDataMI16?relay
+    243            
+    244            SendDataMI16(witch_MI,0XA0); 
+   \   00003C                ; Setup parameters for call to function SendDataMI16
+   \   00003C   7AA0         MOV     R2,#-0x60
+   \   00003E   7911         MOV     R1,#0x11
+   \   000040   12....       LCALL   ??SendDataMI16?relay
+    245            SendDataMI16(witch_SI,0XA0); 
+   \   000043                ; Setup parameters for call to function SendDataMI16
+   \   000043   7AA0         MOV     R2,#-0x60
+   \   000045   7912         MOV     R1,#0x12
+   \   000047   12....       LCALL   ??SendDataMI16?relay
+    246            
+    247            SendDataMI16(witch_MI,0XEE); 
+   \   00004A                ; Setup parameters for call to function SendDataMI16
+   \   00004A   7AEE         MOV     R2,#-0x12
+   \   00004C   7911         MOV     R1,#0x11
+   \   00004E   12....       LCALL   ??SendDataMI16?relay
+    248            SendDataMI16(witch_SI,0XEE);//写模式
+   \   000051                ; Setup parameters for call to function SendDataMI16
+   \   000051   7AEE         MOV     R2,#-0x12
+   \   000053   7912         MOV     R1,#0x12
+   \   000055   12....       LCALL   ??SendDataMI16?relay
+    249            
+    250            SendDataMI16(witch_MI,0X00);
+   \   000058                ; Setup parameters for call to function SendDataMI16
+   \   000058   7A00         MOV     R2,#0x0
+   \   00005A   7911         MOV     R1,#0x11
+   \   00005C   12....       LCALL   ??SendDataMI16?relay
+    251            SendDataMI16(witch_MI,0Xc0);
+   \   00005F                ; Setup parameters for call to function SendDataMI16
+   \   00005F   7AC0         MOV     R2,#-0x40
+   \   000061   7911         MOV     R1,#0x11
+   \   000063   12....       LCALL   ??SendDataMI16?relay
+    252            
+    253            SendDataMI16(witch_SI,0X00);
+   \   000066                ; Setup parameters for call to function SendDataMI16
+   \   000066   7A00         MOV     R2,#0x0
+   \   000068   7912         MOV     R1,#0x12
+   \   00006A   12....       LCALL   ??SendDataMI16?relay
+    254            SendDataMI16(witch_SI,0XC0);
+   \   00006D                ; Setup parameters for call to function SendDataMI16
+   \   00006D   7AC0         MOV     R2,#-0x40
+   \   00006F   7912         MOV     R1,#0x12
+   \   000071   12....       LCALL   ??SendDataMI16?relay
+    255            
+    256            SendDataMI16(witch_MI,0XAF);
+   \   000074                ; Setup parameters for call to function SendDataMI16
+   \   000074   7AAF         MOV     R2,#-0x51
+   \   000076   7911         MOV     R1,#0x11
+   \   000078   12....       LCALL   ??SendDataMI16?relay
+    257            SendDataMI16(witch_SI,0XAF);
+   \   00007B                ; Setup parameters for call to function SendDataMI16
+   \   00007B   7AAF         MOV     R2,#-0x51
+   \   00007D   7912         MOV     R1,#0x12
+   \   00007F   12....       LCALL   ??SendDataMI16?relay
+    258          }
+   \   000082   D083         POP     DPH
+   \   000084   D082         POP     DPL
+   \   000086   02....       LJMP    ?BRET
+    259          /*********************************************************************
+    260           * 函数名称：设置数据页
+    261           * 功    能：
+    262           * 入口参数：无
+    263           * 出口参数：无
+    264           * 返 回 值：无
+    265           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          void Setpage(unsigned char page0,unsigned char page1)
+   \                     Setpage:
+    267          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    268              SendDataMI16(witch_MI,0xB8|page1);
+   \   000009                ; Setup parameters for call to function SendDataMI16
+   \   000009   74B8         MOV     A,#-0x48
+   \   00000B   4F           ORL     A,R7
+   \   00000C   FA           MOV     R2,A
+   \   00000D   7911         MOV     R1,#0x11
+   \   00000F   12....       LCALL   ??SendDataMI16?relay
+    269              SendDataMI16(witch_SI,0XB8|page0);
+   \   000012                ; Setup parameters for call to function SendDataMI16
+   \   000012   74B8         MOV     A,#-0x48
+   \   000014   4E           ORL     A,R6
+   \   000015                REQUIRE ?Subroutine2
+   \   000015                ; // Fall through to label ?Subroutine2
+    270          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   FA           MOV     R2,A
+   \   000001   7912         MOV     R1,#0x12
+   \   000003   12....       LCALL   ??SendDataMI16?relay
+   \   000006   80..         SJMP    ??Subroutine28_0
+    271          /*********************************************************************
+    272           * 函数名称：设置数据地址
+    273           * 功    能：
+    274           * 入口参数：无
+    275           * 出口参数：无
+    276           * 返 回 值：无
+    277           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    278          void Setadderss(unsigned char adderss0,unsigned char adderss1)
+   \                     Setadderss:
+    279          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    280              SendDataMI16(witch_MI,adderss1&0x7f);
+   \   000009                ; Setup parameters for call to function SendDataMI16
+   \   000009   747F         MOV     A,#0x7f
+   \   00000B   5F           ANL     A,R7
+   \   00000C   FA           MOV     R2,A
+   \   00000D   7911         MOV     R1,#0x11
+   \   00000F   12....       LCALL   ??SendDataMI16?relay
+    281              SendDataMI16(witch_SI,adderss0&0x7f);
+   \   000012                ; Setup parameters for call to function SendDataMI16
+   \   000012   747F         MOV     A,#0x7f
+   \   000014   5E           ANL     A,R6
+   \   000015   80..         SJMP    ?Subroutine2
+    282          }
+    283          /*********************************************************************
+    284           * 函数名称：写数据在主页
+    285           * 功    能：
+    286           * 入口参数：无
+    287           * 出口参数：无
+    288           * 返 回 值：无
+    289           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    290          void Putchar0(unsigned char ch)
+   \                     Putchar0:
+    291          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    292            SendDataMD16(witch_MD,ch);
+   \   000006                ; Setup parameters for call to function SendDataMD16
+   \   000006   FA           MOV     R2,A
+   \   000007   7919         MOV     R1,#0x19
+   \   000009                REQUIRE ?Subroutine3
+   \   000009                ; // Fall through to label ?Subroutine3
+    293          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??SendDataMD16?relay
+   \   000003   80..         SJMP    ??Subroutine28_0
+    294          /*********************************************************************
+    295           * 函数名称：写数据在副页
+    296           * 功    能：
+    297           * 入口参数：无
+    298           * 出口参数：无
+    299           * 返 回 值：无
+    300           ********************************************************************/                                                             
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    301          void Putchar1(unsigned char ch)
+   \                     Putchar1:
+    302          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    303            SendDataMD16(witch_SD,ch);
+   \   000006                ; Setup parameters for call to function SendDataMD16
+   \   000006   FA           MOV     R2,A
+   \   000007   791A         MOV     R1,#0x1a
+   \   000009   80..         SJMP    ?Subroutine3
+    304          }
+    305          /*********************************************************************
+    306           * 函数名称：lcd清屏
+    307           * 功    能：
+    308           * 入口参数：无
+    309           * 出口参数：无
+    310           * 返 回 值：无
+    311           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    312          void LCD_clrscr(void)
+   \                     LCD_clrscr:
+    313          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    314            unsigned char i,page;
+    315            for(page=0;page<4;page++)
+   \   000005   7E00         MOV     R6,#0x0
+    316            {
+    317              Setpage(page,page);
+   \                     ??LCD_clrscr_0:
+   \   000007                ; Setup parameters for call to function Setpage
+   \   000007   EE           MOV     A,R6
+   \   000008   FA           MOV     R2,A
+   \   000009   F9           MOV     R1,A
+   \   00000A   12....       LCALL   ??Setpage?relay
+    318              Setadderss(0,0);
+   \   00000D                ; Setup parameters for call to function Setadderss
+   \   00000D   7A00         MOV     R2,#0x0
+   \   00000F   7900         MOV     R1,#0x0
+   \   000011   12....       LCALL   ??Setadderss?relay
+    319                for(i=0;i<61;i++)
+   \   000014   7F3D         MOV     R7,#0x3d
+    320                {
+    321                  Putchar0(0);
+   \                     ??LCD_clrscr_1:
+   \   000016                ; Setup parameters for call to function Putchar0
+   \   000016   7900         MOV     R1,#0x0
+   \   000018   12....       LCALL   ??Putchar0?relay
+    322                  Putchar1(0);
+   \   00001B                ; Setup parameters for call to function Putchar1
+   \   00001B   7900         MOV     R1,#0x0
+   \   00001D   12....       LCALL   ??Putchar1?relay
+    323                }
+   \   000020   1F           DEC     R7
+   \   000021   EF           MOV     A,R7
+   \   000022   70F2         JNZ     ??LCD_clrscr_1
+    324                  
+    325            }
+   \   000024   0E           INC     R6
+   \   000025   EE           MOV     A,R6
+   \   000026   C3           CLR     C
+   \   000027   9404         SUBB    A,#0x4
+   \   000029   40DC         JC      ??LCD_clrscr_0
+    326          }
+   \   00002B   80..         SJMP    ??Subroutine28_0
+    327          /*********************************************************************
+    328           * 函数名称：lcd左半屏上面显示4个汉字
+    329           * 功    能：
+    330           * 入口参数：无
+    331           * 出口参数：无
+    332           * 返 回 值：无
+    333           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    334          void show_left_up()
+   \                     show_left_up:
+    335          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    336          	int page=0;
+    337          	int col=0;
+    338          	for(page=0;page<2;page++)
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+    339                  {
+    340          	Setadderss(0,0);
+   \                     ??show_left_up_0:
+   \   00000B                ; Setup parameters for call to function Setadderss
+   \   00000B   7A00         MOV     R2,#0x0
+   \   00000D   7900         MOV     R1,#0x0
+   \   00000F   12....       LCALL   ??Setadderss?relay
+    341          	if(page==0||page==2)
+   \   000012   E5..         MOV     A,?V0 + 0
+   \   000014   7002         JNZ     ??show_left_up_1
+   \   000016   E5..         MOV     A,?V0 + 1
+   \                     ??show_left_up_1:
+   \   000018   7E00         MOV     R6,#0x0
+   \   00001A   7F00         MOV     R7,#0x0
+   \   00001C   6060         JZ      ??show_left_up_2
+    342          	{
+    343          		for(col=0;col<16;col++)
+    344          		{
+    345          			Setpage(0,page);
+    346          			Putchar0(wuxifan[col%16]);
+    347          		}
+    348                          for(col=16;col<32;col++)
+    349          		{
+    350          			Setpage(0,page);
+    351          			Putchar0(wuxifan[col%16+32]);
+    352          		}
+    353                             for(col=32;col<48;col++)
+    354          		{
+    355          			Setpage(0,page);
+    356          			Putchar0(wuxifan[col%16+64]);
+    357          		}
+    358                             for(col=48;col<64;col++)
+    359          		{
+    360          			Setpage(0,page);
+    361          			Putchar0(wuxifan[col%16+96]);
+    362          		}
+    363                          
+    364          	}
+    365          	else
+    366          	{
+    367          		for(col=0;col<16;col++)
+    368          		{
+    369          			Setpage(0,page);
+   \                     ??show_left_up_3:
+   \   00001E                ; Setup parameters for call to function Setpage
+   \   00001E   12....       LCALL   ?Subroutine4 & 0xFFFF
+    370          			Putchar0(wuxifan[col%16+16]);
+    371          			
+    372          		}
+   \                     ??CrossCallReturnLabel_45:
+   \   000021   12....       LCALL   ?S_DIV_MOD
+   \   000024   EA           MOV     A,R2
+   \   000025   24..         ADD     A,#((wuxifan + 16) & 0xff)
+   \   000027   F582         MOV     DPL,A
+   \   000029   EB           MOV     A,R3
+   \   00002A   34..         ADDC    A,#(((wuxifan + 16) >> 8) & 0xff)
+   \   00002C   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00002F   40ED         JC      ??show_left_up_3
+    373                          for(col=16;col<32;col++)
+   \   000031   7E10         MOV     R6,#0x10
+   \   000033   7F00         MOV     R7,#0x0
+    374          		{
+    375          			Setpage(0,page);
+   \                     ??show_left_up_4:
+   \   000035                ; Setup parameters for call to function Setpage
+   \   000035   12....       LCALL   ?Subroutine4 & 0xFFFF
+    376          			Putchar0(wuxifan[col%16+48]);
+    377          			
+    378          		}
+   \                     ??CrossCallReturnLabel_46:
+   \   000038   12....       LCALL   ?S_DIV_MOD
+   \   00003B   EA           MOV     A,R2
+   \   00003C   24..         ADD     A,#((wuxifan + 48) & 0xff)
+   \   00003E   F582         MOV     DPL,A
+   \   000040   EB           MOV     A,R3
+   \   000041   34..         ADDC    A,#(((wuxifan + 48) >> 8) & 0xff)
+   \   000043   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000046   40ED         JC      ??show_left_up_4
+    379                          for(col=32;col<48;col++)
+   \   000048   7E20         MOV     R6,#0x20
+   \   00004A   7F00         MOV     R7,#0x0
+    380          		{
+    381          			Setpage(0,page);
+   \                     ??show_left_up_5:
+   \   00004C                ; Setup parameters for call to function Setpage
+   \   00004C   12....       LCALL   ?Subroutine4 & 0xFFFF
+    382          			Putchar0(wuxifan[col%16+80]);
+    383          			
+    384          		}
+   \                     ??CrossCallReturnLabel_47:
+   \   00004F   12....       LCALL   ?S_DIV_MOD
+   \   000052   EA           MOV     A,R2
+   \   000053   24..         ADD     A,#((wuxifan + 80) & 0xff)
+   \   000055   F582         MOV     DPL,A
+   \   000057   EB           MOV     A,R3
+   \   000058   34..         ADDC    A,#(((wuxifan + 80) >> 8) & 0xff)
+   \   00005A   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00005D   40ED         JC      ??show_left_up_5
+    385                          for(col=48;col<64;col++)
+   \   00005F   7E30         MOV     R6,#0x30
+   \   000061   7F00         MOV     R7,#0x0
+    386          		{
+    387          			Setpage(0,page);
+   \                     ??show_left_up_6:
+   \   000063                ; Setup parameters for call to function Setpage
+   \   000063   12....       LCALL   ?Subroutine4 & 0xFFFF
+    388          			Putchar0(wuxifan[col%16+112]);
+    389          			
+    390          		}
+    391          	}
+   \                     ??CrossCallReturnLabel_48:
+   \   000066   12....       LCALL   ?S_DIV_MOD
+   \   000069   EA           MOV     A,R2
+   \   00006A   24..         ADD     A,#((wuxifan + 112) & 0xff)
+   \   00006C   F582         MOV     DPL,A
+   \   00006E   EB           MOV     A,R3
+   \   00006F   34..         ADDC    A,#(((wuxifan + 112) >> 8) & 0xff)
+   \   000071   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000074   40ED         JC      ??show_left_up_6
+   \                     ??show_left_up_7:
+   \   000076   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000079   4090         JC      ??show_left_up_0
+    392                  }
+    393          }
+   \   00007B   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \                     ??show_left_up_2:
+   \   00007E                ; Setup parameters for call to function Setpage
+   \   00007E   7A00         MOV     R2,#0x0
+   \   000080   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_53:
+   \   000083   12....       LCALL   ?S_DIV_MOD
+   \   000086   EA           MOV     A,R2
+   \   000087   24..         ADD     A,#(wuxifan & 0xff)
+   \   000089   F582         MOV     DPL,A
+   \   00008B   EB           MOV     A,R3
+   \   00008C   34..         ADDC    A,#((wuxifan >> 8) & 0xff)
+   \   00008E   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000091   40EB         JC      ??show_left_up_2
+   \   000093   7E10         MOV     R6,#0x10
+   \   000095   7F00         MOV     R7,#0x0
+   \                     ??show_left_up_8:
+   \   000097                ; Setup parameters for call to function Setpage
+   \   000097   7A00         MOV     R2,#0x0
+   \   000099   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_54:
+   \   00009C   12....       LCALL   ?S_DIV_MOD
+   \   00009F   EA           MOV     A,R2
+   \   0000A0   24..         ADD     A,#((wuxifan + 32) & 0xff)
+   \   0000A2   F582         MOV     DPL,A
+   \   0000A4   EB           MOV     A,R3
+   \   0000A5   34..         ADDC    A,#(((wuxifan + 32) >> 8) & 0xff)
+   \   0000A7   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   0000AA   40EB         JC      ??show_left_up_8
+   \   0000AC   7E20         MOV     R6,#0x20
+   \   0000AE   7F00         MOV     R7,#0x0
+   \                     ??show_left_up_9:
+   \   0000B0                ; Setup parameters for call to function Setpage
+   \   0000B0   7A00         MOV     R2,#0x0
+   \   0000B2   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_55:
+   \   0000B5   12....       LCALL   ?S_DIV_MOD
+   \   0000B8   EA           MOV     A,R2
+   \   0000B9   24..         ADD     A,#((wuxifan + 64) & 0xff)
+   \   0000BB   F582         MOV     DPL,A
+   \   0000BD   EB           MOV     A,R3
+   \   0000BE   34..         ADDC    A,#(((wuxifan + 64) >> 8) & 0xff)
+   \   0000C0   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0000C3   40EB         JC      ??show_left_up_9
+   \   0000C5   7E30         MOV     R6,#0x30
+   \   0000C7   7F00         MOV     R7,#0x0
+   \                     ??show_left_up_10:
+   \   0000C9                ; Setup parameters for call to function Setpage
+   \   0000C9   7A00         MOV     R2,#0x0
+   \   0000CB   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_56:
+   \   0000CE   12....       LCALL   ?S_DIV_MOD
+   \   0000D1   EA           MOV     A,R2
+   \   0000D2   24..         ADD     A,#((wuxifan + 96) & 0xff)
+   \   0000D4   F582         MOV     DPL,A
+   \   0000D6   EB           MOV     A,R3
+   \   0000D7   34..         ADDC    A,#(((wuxifan + 96) >> 8) & 0xff)
+   \   0000D9   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   0000DC   5098         JNC     ??show_left_up_7
+   \   0000DE   80E9         SJMP    ??show_left_up_10
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   AA..         MOV     R2,?V0 + 0
+   \   000002                REQUIRE ??Subroutine29_0
+   \   000002                ; // Fall through to label ??Subroutine29_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine29_0:
+   \   000000   7900         MOV     R1,#0x0
+   \   000002                REQUIRE ??Subroutine30_0
+   \   000002                ; // Fall through to label ??Subroutine30_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine30_0:
+   \   000000   12....       LCALL   ??Setpage?relay
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar0
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003   EE           MOV     A,R6
+   \   000004   F8           MOV     R0,A
+   \   000005   EF           MOV     A,R7
+   \   000006   F9           MOV     R1,A
+   \   000007   7A10         MOV     R2,#0x10
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine19:
+   \   000000   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_41:
+   \   000003   9402         SUBB    A,#0x2
+   \   000005   E5..         MOV     A,?V0 + 1
+   \   000007   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_82:
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_37:
+   \   000003   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_89:
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine26:
+   \   000000   9440         SUBB    A,#0x40
+   \   000002                REQUIRE ??Subroutine31_0
+   \   000002                ; // Fall through to label ??Subroutine31_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine31_0:
+   \   000000   EF           MOV     A,R7
+   \   000001                REQUIRE ??Subroutine32_0
+   \   000001                ; // Fall through to label ??Subroutine32_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine32_0:
+   \   000000   9400         SUBB    A,#0x0
+   \   000002   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000004   65D0         XRL     A,PSW
+   \   000006   33           RLC     A
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_38:
+   \   000003   9430         SUBB    A,#0x30
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_85:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_39:
+   \   000003   9420         SUBB    A,#0x20
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_84:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine23:
+   \   000000   F583         MOV     DPH,A
+   \   000002   E4           CLR     A
+   \   000003   93           MOVC    A,@A+DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   12....       LCALL   ??Putchar0?relay
+   \   000008   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_80:
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine27:
+   \   000000   EE           MOV     A,R6
+   \   000001   2401         ADD     A,#0x1
+   \   000003   0E           INC     R6
+   \   000004   EF           MOV     A,R7
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   FF           MOV     R7,A
+   \   000008   C3           CLR     C
+   \   000009   EE           MOV     A,R6
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ?Subroutine23 & 0xFFFF
+   \                     ??CrossCallReturnLabel_40:
+   \   000003   9410         SUBB    A,#0x10
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_83:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine24:
+   \   000000   E5..         MOV     A,?V0 + 0
+   \   000002   2401         ADD     A,#0x1
+   \   000004   F5..         MOV     ?V0 + 0,A
+   \   000006   E5..         MOV     A,?V0 + 1
+   \   000008   3400         ADDC    A,#0x0
+   \   00000A   F5..         MOV     ?V0 + 1,A
+   \   00000C   C3           CLR     C
+   \   00000D   E5..         MOV     A,?V0 + 0
+   \   00000F   22           RET
+    394          /*********************************************************************
+    395           * 函数名称：lcd右半屏上面显示4个汉字
+    396           * 功    能：
+    397           * 入口参数：无
+    398           * 出口参数：无
+    399           * 返 回 值：无
+    400           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    401          void show_right_up()
+   \                     show_right_up:
+    402          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    403          	int page=0;
+    404          	int col=0;
+    405          	for(page=0;page<2;page++)
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+    406                  {
+    407          	Setadderss(0,0);
+   \                     ??show_right_up_0:
+   \   00000B                ; Setup parameters for call to function Setadderss
+   \   00000B   7A00         MOV     R2,#0x0
+   \   00000D   7900         MOV     R1,#0x0
+   \   00000F   12....       LCALL   ??Setadderss?relay
+    408          	if(page==0||page==2)
+   \   000012   E5..         MOV     A,?V0 + 0
+   \   000014   7002         JNZ     ??show_right_up_1
+   \   000016   E5..         MOV     A,?V0 + 1
+   \                     ??show_right_up_1:
+   \   000018   7E00         MOV     R6,#0x0
+   \   00001A   7F00         MOV     R7,#0x0
+   \   00001C   6070         JZ      ??show_right_up_2
+    409          	{
+    410          		for(col=0;col<16;col++)
+    411          		{
+    412                              Setpage(page,0);
+    413                             Putchar1(taikeji[col%16]);
+    414          		}
+    415          
+    416                          for(col=16;col<32;col++)
+    417          		{
+    418                              Setpage(page,0);
+    419                             Putchar1(taikeji[col%16+32]);
+    420          		}
+    421                          for(col=32;col<48;col++)
+    422          		{
+    423                              Setpage(page,0);
+    424                             Putchar1(taikeji[col%16+64]);
+    425          		}
+    426                          for(col=48;col<64;col++)
+    427          		{
+    428                              Setpage(page,0);
+    429                             Putchar1(taikeji[col%16+96]);
+    430          		}
+    431          	}
+    432          	else
+    433          	{
+    434          		for(col=0;col<16;col++)
+    435          		{
+    436                              Setpage(page,0);
+   \                     ??show_right_up_3:
+   \   00001E                ; Setup parameters for call to function Setpage
+   \   00001E   7A00         MOV     R2,#0x0
+   \   000020   A9..         MOV     R1,?V0 + 0
+   \   000022   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+    437                              Putchar1(taikeji[col%16+16]);
+    438          			
+    439          		}
+   \                     ??CrossCallReturnLabel_65:
+   \   000025   12....       LCALL   ?S_DIV_MOD
+   \   000028   EA           MOV     A,R2
+   \   000029   24..         ADD     A,#((taikeji + 16) & 0xff)
+   \   00002B   F582         MOV     DPL,A
+   \   00002D   EB           MOV     A,R3
+   \   00002E   34..         ADDC    A,#(((taikeji + 16) >> 8) & 0xff)
+   \   000030   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   000033   40E9         JC      ??show_right_up_3
+    440                          for(col=16;col<32;col++)
+   \   000035   7E10         MOV     R6,#0x10
+   \   000037   7F00         MOV     R7,#0x0
+    441          		{
+    442          			Setpage(page,0);
+   \                     ??show_right_up_4:
+   \   000039                ; Setup parameters for call to function Setpage
+   \   000039   7A00         MOV     R2,#0x0
+   \   00003B   A9..         MOV     R1,?V0 + 0
+   \   00003D   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+    443          			Putchar1(taikeji[col%16+48]);
+    444          			
+    445          		}
+   \                     ??CrossCallReturnLabel_66:
+   \   000040   12....       LCALL   ?S_DIV_MOD
+   \   000043   EA           MOV     A,R2
+   \   000044   24..         ADD     A,#((taikeji + 48) & 0xff)
+   \   000046   F582         MOV     DPL,A
+   \   000048   EB           MOV     A,R3
+   \   000049   34..         ADDC    A,#(((taikeji + 48) >> 8) & 0xff)
+   \   00004B   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_23:
+   \   00004E   40E9         JC      ??show_right_up_4
+    446                          for(col=32;col<48;col++)
+   \   000050   7E20         MOV     R6,#0x20
+   \   000052   7F00         MOV     R7,#0x0
+    447          		{
+    448          			Setpage(page,0);
+   \                     ??show_right_up_5:
+   \   000054                ; Setup parameters for call to function Setpage
+   \   000054   7A00         MOV     R2,#0x0
+   \   000056   A9..         MOV     R1,?V0 + 0
+   \   000058   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+    449          			Putchar1(taikeji[col%16+80]);
+    450          			
+    451          		}
+   \                     ??CrossCallReturnLabel_67:
+   \   00005B   12....       LCALL   ?S_DIV_MOD
+   \   00005E   EA           MOV     A,R2
+   \   00005F   24..         ADD     A,#((taikeji + 80) & 0xff)
+   \   000061   F582         MOV     DPL,A
+   \   000063   EB           MOV     A,R3
+   \   000064   34..         ADDC    A,#(((taikeji + 80) >> 8) & 0xff)
+   \   000066   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_25:
+   \   000069   40E9         JC      ??show_right_up_5
+    452                          for(col=48;col<64;col++)
+   \   00006B   7E30         MOV     R6,#0x30
+   \   00006D   7F00         MOV     R7,#0x0
+    453          		{
+    454          			Setpage(page,0);
+   \                     ??show_right_up_6:
+   \   00006F                ; Setup parameters for call to function Setpage
+   \   00006F   7A00         MOV     R2,#0x0
+   \   000071   A9..         MOV     R1,?V0 + 0
+   \   000073   12....       LCALL   ??Subroutine30_0 & 0xFFFF
+    455          			Putchar1(taikeji[col%16+112]);
+    456          	        }
+    457                  }
+   \                     ??CrossCallReturnLabel_68:
+   \   000076   12....       LCALL   ?S_DIV_MOD
+   \   000079   EA           MOV     A,R2
+   \   00007A   24..         ADD     A,#((taikeji + 112) & 0xff)
+   \   00007C   F582         MOV     DPL,A
+   \   00007E   EB           MOV     A,R3
+   \   00007F   34..         ADDC    A,#(((taikeji + 112) >> 8) & 0xff)
+   \   000081   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_27:
+   \   000084   40E9         JC      ??show_right_up_6
+   \                     ??show_right_up_7:
+   \   000086   12....       LCALL   ?Subroutine19 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000089   4080         JC      ??show_right_up_0
+    458                  }
+    459          }
+   \   00008B   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \                     ??show_right_up_2:
+   \   00008E                ; Setup parameters for call to function Setpage
+   \   00008E   7A00         MOV     R2,#0x0
+   \   000090   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_57:
+   \   000093   12....       LCALL   ?S_DIV_MOD
+   \   000096   EA           MOV     A,R2
+   \   000097   24..         ADD     A,#(taikeji & 0xff)
+   \   000099   F582         MOV     DPL,A
+   \   00009B   EB           MOV     A,R3
+   \   00009C   34..         ADDC    A,#((taikeji >> 8) & 0xff)
+   \   00009E   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   0000A1   40EB         JC      ??show_right_up_2
+   \   0000A3   7E10         MOV     R6,#0x10
+   \   0000A5   7F00         MOV     R7,#0x0
+   \                     ??show_right_up_8:
+   \   0000A7                ; Setup parameters for call to function Setpage
+   \   0000A7   7A00         MOV     R2,#0x0
+   \   0000A9   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_58:
+   \   0000AC   12....       LCALL   ?S_DIV_MOD
+   \   0000AF   EA           MOV     A,R2
+   \   0000B0   24..         ADD     A,#((taikeji + 32) & 0xff)
+   \   0000B2   F582         MOV     DPL,A
+   \   0000B4   EB           MOV     A,R3
+   \   0000B5   34..         ADDC    A,#(((taikeji + 32) >> 8) & 0xff)
+   \   0000B7   12....       LCALL   ?Subroutine15 & 0xFFFF
+   \                     ??CrossCallReturnLabel_24:
+   \   0000BA   40EB         JC      ??show_right_up_8
+   \   0000BC   7E20         MOV     R6,#0x20
+   \   0000BE   7F00         MOV     R7,#0x0
+   \                     ??show_right_up_9:
+   \   0000C0                ; Setup parameters for call to function Setpage
+   \   0000C0   7A00         MOV     R2,#0x0
+   \   0000C2   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_59:
+   \   0000C5   12....       LCALL   ?S_DIV_MOD
+   \   0000C8   EA           MOV     A,R2
+   \   0000C9   24..         ADD     A,#((taikeji + 64) & 0xff)
+   \   0000CB   F582         MOV     DPL,A
+   \   0000CD   EB           MOV     A,R3
+   \   0000CE   34..         ADDC    A,#(((taikeji + 64) >> 8) & 0xff)
+   \   0000D0   12....       LCALL   ?Subroutine16 & 0xFFFF
+   \                     ??CrossCallReturnLabel_26:
+   \   0000D3   40EB         JC      ??show_right_up_9
+   \   0000D5   7E30         MOV     R6,#0x30
+   \   0000D7   7F00         MOV     R7,#0x0
+   \                     ??show_right_up_10:
+   \   0000D9                ; Setup parameters for call to function Setpage
+   \   0000D9   7A00         MOV     R2,#0x0
+   \   0000DB   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_60:
+   \   0000DE   12....       LCALL   ?S_DIV_MOD
+   \   0000E1   EA           MOV     A,R2
+   \   0000E2   24..         ADD     A,#((taikeji + 96) & 0xff)
+   \   0000E4   F582         MOV     DPL,A
+   \   0000E6   EB           MOV     A,R3
+   \   0000E7   34..         ADDC    A,#(((taikeji + 96) >> 8) & 0xff)
+   \   0000E9   12....       LCALL   ?Subroutine17 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   0000EC   5098         JNC     ??show_right_up_7
+   \   0000EE   80E9         SJMP    ??show_right_up_10
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine17:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_74:
+   \   000003   12....       LCALL   ?Subroutine26 & 0xFFFF
+   \                     ??CrossCallReturnLabel_90:
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine16:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_75:
+   \   000003   9430         SUBB    A,#0x30
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_88:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine15:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_76:
+   \   000003   9420         SUBB    A,#0x20
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_87:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine22:
+   \   000000   F583         MOV     DPH,A
+   \   000002   E4           CLR     A
+   \   000003   93           MOVC    A,@A+DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   12....       LCALL   ??Putchar1?relay
+   \   000008   12....       LCALL   ?Subroutine27 & 0xFFFF
+   \                     ??CrossCallReturnLabel_79:
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_78:
+   \   000003   9410         SUBB    A,#0x10
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_86:
+   \   000008   22           RET
+    460          
+    461          /*********************************************************************
+    462           * 函数名称：lcd左半屏下面显示4个汉字
+    463           * 功    能：
+    464           * 入口参数：无
+    465           * 出口参数：无
+    466           * 返 回 值：无
+    467           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    468          void show_left_down()
+   \                     show_left_down:
+    469          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    470          	int page=0;
+    471          	int col=0;
+    472          	for(page=2;page<4;page++)
+   \   000005   75..02       MOV     ?V0 + 0,#0x2
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+    473                  {
+    474          	Setadderss(0,0);
+   \                     ??show_left_down_0:
+   \   00000B                ; Setup parameters for call to function Setadderss
+   \   00000B   7A00         MOV     R2,#0x0
+   \   00000D   7900         MOV     R1,#0x0
+   \   00000F   12....       LCALL   ??Setadderss?relay
+    475          	if(page==0||page==2)
+   \   000012   7402         MOV     A,#0x2
+   \   000014   65..         XRL     A,?V0 + 0
+   \   000016   7002         JNZ     ??show_left_down_1
+   \   000018   E5..         MOV     A,?V0 + 1
+   \                     ??show_left_down_1:
+   \   00001A   7E00         MOV     R6,#0x0
+   \   00001C   7F00         MOV     R7,#0x0
+   \   00001E   7062         JNZ     ??show_left_down_2
+    476          	{
+    477          		for(col=0;col<16;col++)
+    478          		{
+    479          			Setpage(0,page);
+   \                     ??show_left_down_3:
+   \   000020                ; Setup parameters for call to function Setpage
+   \   000020   7A02         MOV     R2,#0x2
+   \   000022   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+    480          			Putchar0(bmp01[col%16]);
+    481          		}
+   \                     ??CrossCallReturnLabel_61:
+   \   000025   12....       LCALL   ?S_DIV_MOD
+   \   000028   EA           MOV     A,R2
+   \   000029   24..         ADD     A,#(bmp01 & 0xff)
+   \   00002B   F582         MOV     DPL,A
+   \   00002D   EB           MOV     A,R3
+   \   00002E   34..         ADDC    A,#((bmp01 >> 8) & 0xff)
+   \   000030   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000033   40EB         JC      ??show_left_down_3
+    482                          for(col=16;col<32;col++)
+   \   000035   7E10         MOV     R6,#0x10
+   \   000037   7F00         MOV     R7,#0x0
+    483          		{
+    484          			Setpage(0,page);
+   \                     ??show_left_down_4:
+   \   000039                ; Setup parameters for call to function Setpage
+   \   000039   7A02         MOV     R2,#0x2
+   \   00003B   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+    485          			Putchar0(bmp01[col%16+32]);
+    486          		}
+   \                     ??CrossCallReturnLabel_62:
+   \   00003E   12....       LCALL   ?S_DIV_MOD
+   \   000041   EA           MOV     A,R2
+   \   000042   24..         ADD     A,#((bmp01 + 32) & 0xff)
+   \   000044   F582         MOV     DPL,A
+   \   000046   EB           MOV     A,R3
+   \   000047   34..         ADDC    A,#(((bmp01 + 32) >> 8) & 0xff)
+   \   000049   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00004C   40EB         JC      ??show_left_down_4
+    487                             for(col=32;col<48;col++)
+   \   00004E   7E20         MOV     R6,#0x20
+   \   000050   7F00         MOV     R7,#0x0
+    488          		{
+    489          			Setpage(0,page);
+   \                     ??show_left_down_5:
+   \   000052                ; Setup parameters for call to function Setpage
+   \   000052   7A02         MOV     R2,#0x2
+   \   000054   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+    490          			Putchar0(bmp01[col%16+64]);
+    491          		}
+   \                     ??CrossCallReturnLabel_63:
+   \   000057   12....       LCALL   ?S_DIV_MOD
+   \   00005A   EA           MOV     A,R2
+   \   00005B   24..         ADD     A,#((bmp01 + 64) & 0xff)
+   \   00005D   F582         MOV     DPL,A
+   \   00005F   EB           MOV     A,R3
+   \   000060   34..         ADDC    A,#(((bmp01 + 64) >> 8) & 0xff)
+   \   000062   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   000065   40EB         JC      ??show_left_down_5
+    492                             for(col=48;col<64;col++)
+   \   000067   7E30         MOV     R6,#0x30
+   \   000069   7F00         MOV     R7,#0x0
+    493          		{
+    494          			Setpage(0,page);
+   \                     ??show_left_down_6:
+   \   00006B                ; Setup parameters for call to function Setpage
+   \   00006B   7A02         MOV     R2,#0x2
+   \   00006D   12....       LCALL   ??Subroutine29_0 & 0xFFFF
+    495          			Putchar0(bmp01[col%16+96]);
+    496          		}
+    497                          
+    498          	}
+   \                     ??CrossCallReturnLabel_64:
+   \   000070   12....       LCALL   ?S_DIV_MOD
+   \   000073   EA           MOV     A,R2
+   \   000074   24..         ADD     A,#((bmp01 + 96) & 0xff)
+   \   000076   F582         MOV     DPL,A
+   \   000078   EB           MOV     A,R3
+   \   000079   34..         ADDC    A,#(((bmp01 + 96) >> 8) & 0xff)
+   \   00007B   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00007E   505A         JNC     ??show_left_down_7
+   \   000080   80E9         SJMP    ??show_left_down_6
+    499          	else
+    500          	{
+    501          		for(col=0;col<16;col++)
+    502          		{
+    503          			Setpage(0,page);
+   \                     ??show_left_down_2:
+   \   000082                ; Setup parameters for call to function Setpage
+   \   000082   12....       LCALL   ?Subroutine4 & 0xFFFF
+    504          			Putchar0(bmp01[col%16+16]);
+    505          			
+    506          		}
+   \                     ??CrossCallReturnLabel_49:
+   \   000085   12....       LCALL   ?S_DIV_MOD
+   \   000088   EA           MOV     A,R2
+   \   000089   24..         ADD     A,#((bmp01 + 16) & 0xff)
+   \   00008B   F582         MOV     DPL,A
+   \   00008D   EB           MOV     A,R3
+   \   00008E   34..         ADDC    A,#(((bmp01 + 16) >> 8) & 0xff)
+   \   000090   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000093   40ED         JC      ??show_left_down_2
+    507                          for(col=16;col<32;col++)
+   \   000095   7E10         MOV     R6,#0x10
+   \   000097   7F00         MOV     R7,#0x0
+    508          		{
+    509          			Setpage(0,page);
+   \                     ??show_left_down_8:
+   \   000099                ; Setup parameters for call to function Setpage
+   \   000099   12....       LCALL   ?Subroutine4 & 0xFFFF
+    510          			Putchar0(bmp01[col%16+48]);
+    511          			
+    512          		}
+   \                     ??CrossCallReturnLabel_50:
+   \   00009C   12....       LCALL   ?S_DIV_MOD
+   \   00009F   EA           MOV     A,R2
+   \   0000A0   24..         ADD     A,#((bmp01 + 48) & 0xff)
+   \   0000A2   F582         MOV     DPL,A
+   \   0000A4   EB           MOV     A,R3
+   \   0000A5   34..         ADDC    A,#(((bmp01 + 48) >> 8) & 0xff)
+   \   0000A7   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000AA   40ED         JC      ??show_left_down_8
+    513                          for(col=32;col<48;col++)
+   \   0000AC   7E20         MOV     R6,#0x20
+   \   0000AE   7F00         MOV     R7,#0x0
+    514          		{
+    515          			Setpage(0,page);
+   \                     ??show_left_down_9:
+   \   0000B0                ; Setup parameters for call to function Setpage
+   \   0000B0   12....       LCALL   ?Subroutine4 & 0xFFFF
+    516          			Putchar0(bmp01[col%16+80]);
+    517          			
+    518          		}
+   \                     ??CrossCallReturnLabel_51:
+   \   0000B3   12....       LCALL   ?S_DIV_MOD
+   \   0000B6   EA           MOV     A,R2
+   \   0000B7   24..         ADD     A,#((bmp01 + 80) & 0xff)
+   \   0000B9   F582         MOV     DPL,A
+   \   0000BB   EB           MOV     A,R3
+   \   0000BC   34..         ADDC    A,#(((bmp01 + 80) >> 8) & 0xff)
+   \   0000BE   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   0000C1   40ED         JC      ??show_left_down_9
+    519                          for(col=48;col<64;col++)
+   \   0000C3   7E30         MOV     R6,#0x30
+   \   0000C5   7F00         MOV     R7,#0x0
+    520          		{
+    521          			Setpage(0,page);
+   \                     ??show_left_down_10:
+   \   0000C7                ; Setup parameters for call to function Setpage
+   \   0000C7   12....       LCALL   ?Subroutine4 & 0xFFFF
+    522          			Putchar0(bmp01[col%16+112]);
+    523          			
+    524          		}
+    525          	}
+    526                  }
+   \                     ??CrossCallReturnLabel_52:
+   \   0000CA   12....       LCALL   ?S_DIV_MOD
+   \   0000CD   EA           MOV     A,R2
+   \   0000CE   24..         ADD     A,#((bmp01 + 112) & 0xff)
+   \   0000D0   F582         MOV     DPL,A
+   \   0000D2   EB           MOV     A,R3
+   \   0000D3   34..         ADDC    A,#(((bmp01 + 112) >> 8) & 0xff)
+   \   0000D5   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   0000D8   40ED         JC      ??show_left_down_10
+   \                     ??show_left_down_7:
+   \   0000DA   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_29:
+   \   0000DD   5003         JNC     $+5
+   \   0000DF   02....       LJMP    ??show_left_down_0 & 0xFFFF
+    527          }
+   \   0000E2                REQUIRE ?Subroutine1
+   \   0000E2                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine18:
+   \   000000   12....       LCALL   ?Subroutine24 & 0xFFFF
+   \                     ??CrossCallReturnLabel_42:
+   \   000003   9404         SUBB    A,#0x4
+   \   000005   E5..         MOV     A,?V0 + 1
+   \   000007   12....       LCALL   ??Subroutine32_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_81:
+   \   00000A   22           RET
+    528          /*********************************************************************
+    529           * 函数名称：lcd右半屏下面显示4个汉字
+    530           * 功    能：
+    531           * 入口参数：无
+    532           * 出口参数：无
+    533           * 返 回 值：无
+    534           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    535          void show_right_down(unsigned char number)
+   \                     show_right_down:
+    536          { 
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+    537            int page=0;
+    538          	int col=0;
+    539          	for(page=2;page<4;page++)
+   \   000005   75..02       MOV     ?V0 + 0,#0x2
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+   \   00000B   89..         MOV     ?V0 + 4,R1
+   \   00000D   740F         MOV     A,#0xf
+   \   00000F   55..         ANL     A,?V0 + 4
+   \   000011   F5..         MOV     ?V0 + 4,A
+   \   000013   75..00       MOV     ?V0 + 5,#0x0
+   \   000016   7404         MOV     A,#0x4
+   \   000018   78..         MOV     R0,#?V0 + 4
+   \   00001A   12....       LCALL   ?S_SHL
+   \   00001D   85....       MOV     ?V0 + 6,?V0 + 4
+   \   000020   E9           MOV     A,R1
+   \   000021   C4           SWAP    A
+   \   000022   540F         ANL     A,#0xf
+   \   000024   F5..         MOV     ?V0 + 8,A
+   \   000026   75..00       MOV     ?V0 + 9,#0x0
+   \   000029   7404         MOV     A,#0x4
+   \   00002B   78..         MOV     R0,#?V0 + 8
+   \   00002D   12....       LCALL   ?S_SHL
+   \   000030   85....       MOV     ?V0 + 4,?V0 + 8
+   \   000033   800A         SJMP    ??show_right_down_0
+    540                  {
+    541          	
+    542          	if(page==0||page==2)
+   \                     ??show_right_down_1:
+   \   000035   7402         MOV     A,#0x2
+   \   000037   65..         XRL     A,?V0 + 0
+   \   000039   7002         JNZ     ??show_right_down_2
+   \   00003B   E5..         MOV     A,?V0 + 1
+   \                     ??show_right_down_2:
+   \   00003D   705E         JNZ     ??show_right_down_3
+    543          	{        Setadderss(0,0);
+   \                     ??show_right_down_0:
+   \   00003F                ; Setup parameters for call to function Setadderss
+   \   00003F   12....       LCALL   ?Subroutine10 & 0xFFFF
+    544          		for(col=0;col<8;col++)
+    545          		{
+    546                              Setpage(page,0);
+   \                     ??CrossCallReturnLabel_95:
+   \   000042                ; Setup parameters for call to function Setpage
+   \   000042   12....       LCALL   ?Subroutine9 & 0xFFFF
+    547                             Putchar1(ASCII[0*16+col%8]);
+    548          		} 
+   \                     ??CrossCallReturnLabel_100:
+   \   000045   12....       LCALL   ?S_DIV_MOD
+   \   000048   EA           MOV     A,R2
+   \   000049   24..         ADD     A,#(ASCII & 0xff)
+   \   00004B   F582         MOV     DPL,A
+   \   00004D   EB           MOV     A,R3
+   \   00004E   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_69:
+   \   000051   40EF         JC      ??CrossCallReturnLabel_95
+    549                          Setadderss(8,0);
+   \   000053                ; Setup parameters for call to function Setadderss
+   \   000053   7A00         MOV     R2,#0x0
+   \   000055   7908         MOV     R1,#0x8
+   \   000057   12....       LCALL   ??Subroutine35_0 & 0xFFFF
+    550          		for(col=0;col<8;col++)
+    551          		{
+    552                              Setpage(page,0);
+   \                     ??CrossCallReturnLabel_97:
+   \   00005A                ; Setup parameters for call to function Setpage
+   \   00005A   12....       LCALL   ?Subroutine9 & 0xFFFF
+    553                             Putchar1(ASCII[0X10*16+col%8]);
+    554          		}
+   \                     ??CrossCallReturnLabel_101:
+   \   00005D   12....       LCALL   ?S_DIV_MOD
+   \   000060   EA           MOV     A,R2
+   \   000061   24..         ADD     A,#(ASCII & 0xff)
+   \   000063   F582         MOV     DPL,A
+   \   000065   EB           MOV     A,R3
+   \   000066   34..         ADDC    A,#(((ASCII + 256) >> 8) & 0xff)
+   \   000068   12....       LCALL   ??Subroutine33_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_71:
+   \   00006B   40ED         JC      ??CrossCallReturnLabel_97
+    555                          Setadderss(16,0);
+   \   00006D                ; Setup parameters for call to function Setadderss
+   \   00006D   7A00         MOV     R2,#0x0
+   \   00006F   7910         MOV     R1,#0x10
+   \   000071   12....       LCALL   ??Subroutine35_0 & 0xFFFF
+    556          		for(col=0;col<8;col++)
+    557          		{
+    558                              Setpage(page,0);
+   \                     ??CrossCallReturnLabel_98:
+   \   000074                ; Setup parameters for call to function Setpage
+   \   000074   12....       LCALL   ?Subroutine9 & 0xFFFF
+    559                            Putchar1(ASCII[(number>>4)*16+col%8]);
+    560          		}
+   \                     ??CrossCallReturnLabel_102:
+   \   000077   12....       LCALL   ?S_DIV_MOD
+   \   00007A   EA           MOV     A,R2
+   \   00007B   25..         ADD     A,?V0 + 4
+   \   00007D   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_35:
+   \   000080   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_70:
+   \   000083   40EF         JC      ??CrossCallReturnLabel_98
+    561                          Setadderss(24,0);
+   \   000085                ; Setup parameters for call to function Setadderss
+   \   000085   12....       LCALL   ?Subroutine12 & 0xFFFF
+    562                          for(col=8;col<16;col++)
+    563          		{
+    564                              Setpage(page,0);
+   \                     ??CrossCallReturnLabel_92:
+   \   000088                ; Setup parameters for call to function Setpage
+   \   000088   12....       LCALL   ?Subroutine9 & 0xFFFF
+    565                             Putchar1(ASCII[(number&0x0f)*16+col%8]);
+    566          		}
+    567          	}
+   \                     ??CrossCallReturnLabel_103:
+   \   00008B   12....       LCALL   ?S_DIV_MOD
+   \   00008E   EA           MOV     A,R2
+   \   00008F   25..         ADD     A,?V0 + 6
+   \   000091   12....       LCALL   ?Subroutine21 & 0xFFFF
+   \                     ??CrossCallReturnLabel_36:
+   \   000094   34..         ADDC    A,#((ASCII >> 8) & 0xff)
+   \   000096   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000099   506E         JNC     ??show_right_down_4
+   \   00009B   80EB         SJMP    ??CrossCallReturnLabel_92
+    568                  else
+    569          	{         Setadderss(0,0);
+   \                     ??show_right_down_3:
+   \   00009D                ; Setup parameters for call to function Setadderss
+   \   00009D   12....       LCALL   ?Subroutine10 & 0xFFFF
+    570          		for(col=0;col<8;col++)
+    571          		{
+    572          			Setpage(page,0);
+   \                     ??CrossCallReturnLabel_96:
+   \   0000A0                ; Setup parameters for call to function Setpage
+   \   0000A0   7A00         MOV     R2,#0x0
+   \   0000A2   A9..         MOV     R1,?V0 + 0
+   \   0000A4   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+    573          			Putchar1(ASCII[0*16+col%8+8]);
+    574          			
+    575          		}
+   \                     ??CrossCallReturnLabel_104:
+   \   0000A7   12....       LCALL   ?S_DIV_MOD
+   \   0000AA   EA           MOV     A,R2
+   \   0000AB   24..         ADD     A,#((ASCII + 8) & 0xff)
+   \   0000AD   F582         MOV     DPL,A
+   \   0000AF   EB           MOV     A,R3
+   \   0000B0   34..         ADDC    A,#(((ASCII + 8) >> 8) & 0xff)
+   \   0000B2   12....       LCALL   ??Subroutine33_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_72:
+   \   0000B5   40E9         JC      ??CrossCallReturnLabel_96
+    576                          Setadderss(8,0);
+   \   0000B7                ; Setup parameters for call to function Setadderss
+   \   0000B7   7A00         MOV     R2,#0x0
+   \   0000B9   7908         MOV     R1,#0x8
+   \   0000BB   12....       LCALL   ??Subroutine34_0 & 0xFFFF
+    577                          for(col=8;col<16;col++)
+    578          		{
+    579          			Setpage(page,0);
+   \                     ??CrossCallReturnLabel_94:
+   \   0000BE                ; Setup parameters for call to function Setpage
+   \   0000BE   7A00         MOV     R2,#0x0
+   \   0000C0   A9..         MOV     R1,?V0 + 0
+   \   0000C2   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+    580          			Putchar1(ASCII[0X10*16+col%8+8]);
+    581          			
+    582          		}
+   \                     ??CrossCallReturnLabel_105:
+   \   0000C5   12....       LCALL   ?S_DIV_MOD
+   \   0000C8   EA           MOV     A,R2
+   \   0000C9   24..         ADD     A,#((ASCII + 8) & 0xff)
+   \   0000CB   F582         MOV     DPL,A
+   \   0000CD   EB           MOV     A,R3
+   \   0000CE   34..         ADDC    A,#(((ASCII + 264) >> 8) & 0xff)
+   \   0000D0   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_21:
+   \   0000D3   40E9         JC      ??CrossCallReturnLabel_94
+    583                           Setadderss(16,0);
+   \   0000D5                ; Setup parameters for call to function Setadderss
+   \   0000D5   7A00         MOV     R2,#0x0
+   \   0000D7   7910         MOV     R1,#0x10
+   \   0000D9   12....       LCALL   ??Subroutine35_0 & 0xFFFF
+    584          		for(col=0;col<8;col++)
+    585          		{
+    586          			Setpage(page,0);
+   \                     ??CrossCallReturnLabel_99:
+   \   0000DC                ; Setup parameters for call to function Setpage
+   \   0000DC   7A00         MOV     R2,#0x0
+   \   0000DE   A9..         MOV     R1,?V0 + 0
+   \   0000E0   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+    587          			Putchar1(ASCII[(number>>4)*16+col%8+8]);
+    588          			
+    589          		}
+   \                     ??CrossCallReturnLabel_106:
+   \   0000E3   12....       LCALL   ?S_DIV_MOD
+   \   0000E6   EA           MOV     A,R2
+   \   0000E7   25..         ADD     A,?V0 + 4
+   \   0000E9   12....       LCALL   ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_33:
+   \   0000EC   12....       LCALL   ??Subroutine33_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_73:
+   \   0000EF   40EB         JC      ??CrossCallReturnLabel_99
+    590                          Setadderss(24,0);
+   \   0000F1                ; Setup parameters for call to function Setadderss
+   \   0000F1   12....       LCALL   ?Subroutine12 & 0xFFFF
+    591                          for(col=8;col<16;col++)
+    592          		{
+    593          			Setpage(page,0);
+   \                     ??CrossCallReturnLabel_93:
+   \   0000F4                ; Setup parameters for call to function Setpage
+   \   0000F4   7A00         MOV     R2,#0x0
+   \   0000F6   A9..         MOV     R1,?V0 + 0
+   \   0000F8   12....       LCALL   ??Subroutine36_0 & 0xFFFF
+    594          			Putchar1(ASCII[(number&0x0f)*16+col%8+8]);
+    595          			
+    596          		}
+    597                  
+    598                  }
+    599          	
+    600                         
+    601                  }
+   \                     ??CrossCallReturnLabel_107:
+   \   0000FB   12....       LCALL   ?S_DIV_MOD
+   \   0000FE   EA           MOV     A,R2
+   \   0000FF   25..         ADD     A,?V0 + 6
+   \   000101   12....       LCALL   ?Subroutine20 & 0xFFFF
+   \                     ??CrossCallReturnLabel_34:
+   \   000104   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   000107   40EB         JC      ??CrossCallReturnLabel_93
+   \                     ??show_right_down_4:
+   \   000109   12....       LCALL   ?Subroutine18 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   00010C   5003         JNC     $+5
+   \   00010E   02....       LJMP    ??show_right_down_1 & 0xFFFF
+    602              
+    603          
+    604          }
+   \   000111   7F0A         MOV     R7,#0xa
+   \   000113   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine21:
+   \   000000   F8           MOV     R0,A
+   \   000001   EB           MOV     A,R3
+   \   000002   3400         ADDC    A,#0x0
+   \   000004   F9           MOV     R1,A
+   \   000005   E8           MOV     A,R0
+   \   000006   24..         ADD     A,#(ASCII & 0xff)
+   \   000008   F582         MOV     DPL,A
+   \   00000A   E9           MOV     A,R1
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine20:
+   \   000000   F8           MOV     R0,A
+   \   000001   EB           MOV     A,R3
+   \   000002   3400         ADDC    A,#0x0
+   \   000004   F9           MOV     R1,A
+   \   000005   E8           MOV     A,R0
+   \   000006   24..         ADD     A,#((ASCII + 8) & 0xff)
+   \   000008   F582         MOV     DPL,A
+   \   00000A   E9           MOV     A,R1
+   \   00000B   34..         ADDC    A,#(((ASCII + 8) >> 8) & 0xff)
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   34..         ADDC    A,#((ASCII >> 8) & 0xff)
+   \   000002                REQUIRE ??Subroutine33_0
+   \   000002                ; // Fall through to label ??Subroutine33_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine33_0:
+   \   000000   12....       LCALL   ?Subroutine22 & 0xFFFF
+   \                     ??CrossCallReturnLabel_77:
+   \   000003   9408         SUBB    A,#0x8
+   \   000005   12....       LCALL   ??Subroutine31_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_91:
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   7A00         MOV     R2,#0x0
+   \   000002   7918         MOV     R1,#0x18
+   \   000004                REQUIRE ??Subroutine34_0
+   \   000004                ; // Fall through to label ??Subroutine34_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine34_0:
+   \   000000   12....       LCALL   ??Setadderss?relay
+   \   000003   7E08         MOV     R6,#0x8
+   \   000005   7F00         MOV     R7,#0x0
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   7A00         MOV     R2,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004                REQUIRE ??Subroutine35_0
+   \   000004                ; // Fall through to label ??Subroutine35_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine35_0:
+   \   000000   12....       LCALL   ??Setadderss?relay
+   \   000003   7E00         MOV     R6,#0x0
+   \   000005   7F00         MOV     R7,#0x0
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   7A00         MOV     R2,#0x0
+   \   000002   7902         MOV     R1,#0x2
+   \   000004                REQUIRE ??Subroutine36_0
+   \   000004                ; // Fall through to label ??Subroutine36_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine36_0:
+   \   000000   12....       LCALL   ??Setpage?relay
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003                ; Setup parameters for call to function Putchar1
+   \   000003   EE           MOV     A,R6
+   \   000004   F8           MOV     R0,A
+   \   000005   EF           MOV     A,R7
+   \   000006   F9           MOV     R1,A
+   \   000007   7A08         MOV     R2,#0x8
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SPISendData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SPISendData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SPIOUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SPIOUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SendDataMI16?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SendDataMI16
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SendDataMD16?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SendDataMD16
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_lni?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_lni
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Setpage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Setpage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Setadderss?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Setadderss
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Putchar0?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Putchar0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Putchar1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Putchar1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_clrscr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_clrscr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??show_left_up?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    show_left_up
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??show_right_up?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    show_right_up
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??show_left_down?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    show_left_down
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??show_right_down?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    show_right_down
+    605          
+
+   Maximum stack usage in bytes:
+
+     Function             ISTACK PSTACK XSTACK
+     --------             ------ ------ ------
+     LCD_SPIOUT               0      0      9
+     LCD_SPISendData          0      0      9
+     LCD_clrscr               0      0      9
+       -> Setpage             0      0     18
+       -> Setadderss          0      0     18
+       -> Putchar0            0      0     18
+       -> Putchar1            0      0     18
+     LCD_lni                  2      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+       -> SendDataMI16        4      0      0
+     Putchar0                 0      0     21
+       -> SendDataMD16        0      0     18
+     Putchar1                 0      0     27
+       -> SendDataMD16        0      0     18
+     SendDataMD16             0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPIOUT          0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPIOUT          0      0     18
+     SendDataMI16             0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPIOUT          0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPISendData     0      0     18
+       -> LCD_SPIOUT          0      0     18
+     Setadderss               0      0     27
+       -> SendDataMI16        0      0     18
+       -> SendDataMI16        0      0     18
+     Setpage                  0      0     27
+       -> SendDataMI16        0      0     18
+       -> SendDataMI16        0      0     18
+     show_left_down           0      0     12
+       -> Setadderss          0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+     show_left_up             0      0     12
+       -> Setadderss          0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar0            0      0     24
+     show_right_down          0      0     18
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+       -> Setadderss          0      0     36
+       -> Setpage             0      0     36
+       -> Putchar1            0      0     36
+     show_right_up            0      0     12
+       -> Setadderss          0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+       -> Setpage             0      0     24
+       -> Putchar1            0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     _A_P1                      1
+     ASCII                    288
+     wuxifan                  128
+     taikeji                  128
+     bmp01                    128
+     LCD_SPISendData           23
+     LCD_SPIOUT                 9
+     SendDataMI16              13
+     ?Subroutine11              8
+     ?Subroutine0               3
+     ??Subroutine28_0           5
+     ?Subroutine25             12
+     SendDataMD16              13
+     LCD_lni                  137
+     Setpage                   21
+     ?Subroutine2               8
+     Setadderss                23
+     Putchar0                   9
+     ?Subroutine3               5
+     Putchar1                  11
+     LCD_clrscr                45
+     show_left_up             224
+     ?Subroutine4               2
+     ??Subroutine29_0           2
+     ??Subroutine30_0          12
+     ?Subroutine19             11
+     ?Subroutine1               5
+     ?Subroutine8               7
+     ?Subroutine26              2
+     ??Subroutine31_0           1
+     ??Subroutine32_0           8
+     ?Subroutine7               9
+     ?Subroutine6               9
+     ?Subroutine23             12
+     ?Subroutine27             11
+     ?Subroutine5               9
+     ?Subroutine24             16
+     show_right_up            240
+     ?Subroutine17              7
+     ?Subroutine16              9
+     ?Subroutine15              9
+     ?Subroutine22             12
+     ?Subroutine13              9
+     show_left_down           226
+     ?Subroutine18             11
+     show_right_down          278
+     ?Subroutine21             12
+     ?Subroutine20             14
+     ?Subroutine14              2
+     ??Subroutine33_0           9
+     ?Subroutine12              4
+     ??Subroutine34_0           8
+     ?Subroutine10              4
+     ??Subroutine35_0           8
+     ?Subroutine9               4
+     ??Subroutine36_0          12
+     ??LCD_SPISendData?relay    6
+     ??LCD_SPIOUT?relay         6
+     ??SendDataMI16?relay       6
+     ??SendDataMD16?relay       6
+     ??LCD_lni?relay            6
+     ??Setpage?relay            6
+     ??Setadderss?relay         6
+     ??Putchar0?relay           6
+     ??Putchar1?relay           6
+     ??LCD_clrscr?relay         6
+     ??show_left_up?relay       6
+     ??show_right_up?relay      6
+     ??show_left_down?relay     6
+     ??show_right_down?relay    6
+
+ 
+ 1 563 bytes in segment BANKED_CODE
+    84 bytes in segment BANK_RELAYS
+   672 bytes in segment CODE_C
+     1 byte  in segment SFR_AN
+ 
+ 2 319 bytes of CODE memory
+     0 bytes of DATA memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none

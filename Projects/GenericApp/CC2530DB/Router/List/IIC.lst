@@ -1,0 +1,964 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:44:37 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\Source #
+#                          \IIC.c                                             #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wRoute #
+#                          r.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pr #
+#                          ojects\GenericApp\Source\IIC.c" -D ZTOOL_P1 -D     #
+#                          MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D           #
+#                          xNV_RESTORE -D SERIAL_SUPPORTED=DEBUG -D           #
+#                          SENSOR_TYPE=0X31 -D CHANLIST_C_R_E=25 -D           #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D                      #
+#                          ZigBee_C_R_E_Engineering -D ZigBee_C_R_E_IEEE -D   #
+#                          xSENSOR_TYPE_R_E=0X01 -lC                          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\List\" -lA "C:\Users\win7\Desktop\ZStac #
+#                          k传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pro #
+#                          jects\GenericApp\CC2530DB\Router\List\"            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\Obj\" -e --require_prototypes --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\List\IIC.lst                             #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\Obj\IIC.r51                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Projects\GenericApp\Source\IIC.c
+      1          /************************************************************
+      2          * 宏定义			
+      3          
+      4          ************************************************************/
+      5          #include "IIC.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      6          /************************************************************
+      7          
+      8          * 变量初始化												
+      9          ************************************************************/
+     10          void mDelay(unsigned j);
+     11          void Start(void);
+     12          void Stop(void);
+     13          void Ack(void);
+     14          void NoAck(void);
+     15          void Send(unsigned char Data);
+     16          unsigned char Read(void);
+     17          /************************************************************
+     18          * 函数功能:延时k ms函数										
+     19          * 入口参数:k(1-128)											
+     20          * 出口参数:无	
+     21          * 作    者:												
+     22          **********************************************************/
+     23          //延时程序
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void mDelay(unsigned j)
+   \                     mDelay:
+     25          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   8008         SJMP    ??mDelay_0
+     26          	unsigned int i;
+     27          	for(;j>0;j--)
+     28          	{	for(i=0;i<500;i++)
+   \                     ??mDelay_1:
+   \   000002   EA           MOV     A,R2
+   \   000003   24FF         ADD     A,#-0x1
+   \   000005   1A           DEC     R2
+   \   000006   EB           MOV     A,R3
+   \   000007   34FF         ADDC    A,#-0x1
+   \   000009   FB           MOV     R3,A
+   \                     ??mDelay_0:
+   \   00000A   EA           MOV     A,R2
+   \   00000B   7001         JNZ     ??mDelay_2
+   \   00000D   EB           MOV     A,R3
+   \                     ??mDelay_2:
+   \   00000E   70F2         JNZ     ??mDelay_1
+     29          		{;}
+     30              }
+     31          }
+   \   000010   02....       LJMP    ?BRET
+     32          //发送起始条件
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void Start(void)
+   \                     Start:
+     34          {IIC_DATAOUT;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   12....       LCALL   ?Subroutine6 & 0xFFFF
+     35          	SDA=1;
+     36          	SCL=1;
+   \                     ??CrossCallReturnLabel_4:
+   \   000003   D293         SETB    0x90.3
+     37          	NOPS;
+   \   000005   00           NOP
+   \   000006   00           NOP
+   \   000007   00           NOP
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   00           NOP
+     38          	SDA=0;
+   \   00000B   C294         CLR     0x90.4
+     39          	NOPS;
+   \   00000D   80..         SJMP    ??Subroutine11_0
+   \   00000F                REQUIRE _A_P1
+   \   00000F                REQUIRE P1DIR
+     40          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine11_0:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   00           NOP
+   \   000003   00           NOP
+   \   000004   00           NOP
+   \   000005   00           NOP
+   \   000006   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   43FE18       ORL     0xfe,#0x18
+   \   000003   E5FE         MOV     A,0xfe
+   \   000005   D294         SETB    0x90.4
+   \   000007   22           RET
+     41          //发送停止条件
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     42          void Stop(void)
+   \                     Stop:
+     43          {IIC_DATAOUT;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   12....       LCALL   ?Subroutine8 & 0xFFFF
+     44          	SDA=0;
+   \                     ??CrossCallReturnLabel_9:
+   \   000003   C294         CLR     0x90.4
+     45          	SCL=1;
+   \   000005   D293         SETB    0x90.3
+     46          	NOPS;
+   \   000007                REQUIRE ?Subroutine1
+   \   000007                REQUIRE _A_P1
+   \   000007                REQUIRE P1DIR
+   \   000007                ; // Fall through to label ?Subroutine1
+     47          	SDA=1;
+     48          	NOPS;	
+     49          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   00           NOP
+   \   000003   00           NOP
+   \   000004   00           NOP
+   \   000005   00           NOP
+   \   000006   D294         SETB    0x90.4
+   \   000008                REQUIRE ??Subroutine11_0
+   \   000008                ; // Fall through to label ??Subroutine11_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   43FE18       ORL     0xfe,#0x18
+   \   000003   E5FE         MOV     A,0xfe
+   \   000005   22           RET
+     50          //应答位
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          void Ack(void)
+   \                     Ack:
+     52          {IIC_DATAOUT;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   12....       LCALL   ?Subroutine8 & 0xFFFF
+     53          	SDA=0;
+   \                     ??CrossCallReturnLabel_10:
+   \   000003   C294         CLR     0x90.4
+     54          	NOPS;
+   \   000005                REQUIRE ?Subroutine0
+   \   000005                REQUIRE _A_P1
+   \   000005                REQUIRE P1DIR
+   \   000005                ; // Fall through to label ?Subroutine0
+     55          	SCL=1;
+     56          	NOPS;
+     57          	SCL=0;
+     58          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   00           NOP
+   \   000003   00           NOP
+   \   000004   00           NOP
+   \   000005   00           NOP
+   \   000006   D293         SETB    0x90.3
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+   \   00000C   00           NOP
+   \   00000D   00           NOP
+   \   00000E   C293         CLR     0x90.3
+   \   000010   02....       LJMP    ?BRET
+     59          //非应答
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     60          void NoAck(void)
+   \                     NoAck:
+     61          {IIC_DATAOUT;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   12....       LCALL   ?Subroutine6 & 0xFFFF
+     62          	SDA=1;
+     63          	NOPS;
+   \                     ??CrossCallReturnLabel_5:
+   \   000003   80..         SJMP    ?Subroutine0
+   \   000005                REQUIRE _A_P1
+   \   000005                REQUIRE P1DIR
+     64          	SCL=1;
+     65          	NOPS;
+     66          	SCL=0;	
+     67          }
+     68          //发送数据子程序，Data为要发送的数据a
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     69          void Send(unsigned char Data)
+   \                     Send:
+     70          {	 unsigned char BitCounter=8;//位数控制
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     71          	 unsigned char temp;//中间变量控制
+     72                  IIC_DATAOUT;
+   \   000000   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000003   7A08         MOV     R2,#0x8
+     73          	do{ 
+     74          	 temp=Data;
+     75          	 SCL=0;
+   \                     ??Send_0:
+   \   000005   C293         CLR     0x90.3
+     76          	 NOPS;
+   \   000007   00           NOP
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+   \   00000C   00           NOP
+     77          	 if((temp&0x0080)==0x0080)//如果最高位是1
+   \   00000D   E9           MOV     A,R1
+   \   00000E   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000010   5004         JNC     ??Send_1
+     78          	    SDA=1;
+   \   000012   D294         SETB    0x90.4
+   \   000014   8002         SJMP    ??Send_2
+     79          	 else
+     80          		SDA=0;
+   \                     ??Send_1:
+   \   000016   C294         CLR     0x90.4
+     81          	 SCL=1;
+   \                     ??Send_2:
+   \   000018   D293         SETB    0x90.3
+     82          	 temp=Data<<1;//左移
+     83          	 Data=temp;
+   \   00001A   C3           CLR     C
+   \   00001B   33           RLC     A
+   \   00001C   F9           MOV     R1,A
+     84          	 BitCounter--;
+     85          	 }while(BitCounter);
+   \   00001D   1A           DEC     R2
+   \   00001E   EA           MOV     A,R2
+   \   00001F   70E4         JNZ     ??Send_0
+     86          	 SCL=0;
+   \   000021   C293         CLR     0x90.3
+     87                   NOPS;
+   \   000023   80..         SJMP    ?Subroutine1
+   \   000025                REQUIRE _A_P1
+   \   000025                REQUIRE P1DIR
+     88                   SDA=1;
+     89                    NOPS;
+     90          }
+     91          //读一个字节的数据，并返回该字节的值
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     92          unsigned char Read(void)
+   \                     `Read`:
+     93          {   unsigned char temp=0;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   7900         MOV     R1,#0x0
+     94              unsigned char temp1=0;
+     95              unsigned BitCounter=8;
+   \   000002   7A08         MOV     R2,#0x8
+   \   000004   7B00         MOV     R3,#0x0
+     96             IIC_DATAOUT;
+   \   000006   12....       LCALL   ?Subroutine6 & 0xFFFF
+     97          	SDA=1;
+     98                  IIC_DATAIN ;
+   \                     ??CrossCallReturnLabel_6:
+   \   000009   53F4EF       ANL     0xf4,#0xef
+   \   00000C   53FEEF       ANL     0xfe,#0xef
+     99          	do{	SCL=0;
+   \                     ??Read_0:
+   \   00000F   C293         CLR     0x90.3
+    100          		NOPS;
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+   \   000016   00           NOP
+    101          		SCL=1;
+   \   000017   D293         SETB    0x90.3
+    102          		NOPS;
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+    103          		if(SDA)
+   \   00001F   A294         MOV     C,0x90.4
+   \   000021   E9           MOV     A,R1
+   \   000022   5004         JNC     ??Read_1
+    104          		temp=temp|0x01;
+   \   000024   D2E0         SETB    0xE0 /* A   */.0
+   \   000026   8002         SJMP    ??Read_2
+    105          		else
+    106          		temp=temp&0xfe;
+   \                     ??Read_1:
+   \   000028   C2E0         CLR     0xE0 /* A   */.0
+   \                     ??Read_2:
+   \   00002A   F9           MOV     R1,A
+    107          		if(BitCounter-1)
+   \   00002B   74FF         MOV     A,#-0x1
+   \   00002D   2A           ADD     A,R2
+   \   00002E   FC           MOV     R4,A
+   \   00002F   74FF         MOV     A,#-0x1
+   \   000031   3B           ADDC    A,R3
+   \   000032   FD           MOV     R5,A
+   \   000033   EC           MOV     A,R4
+   \   000034   7001         JNZ     ??Read_3
+   \   000036   ED           MOV     A,R5
+   \                     ??Read_3:
+   \   000037   6004         JZ      ??Read_4
+    108          		{	temp1=temp<<1;
+    109          			temp=temp1;
+   \   000039   E9           MOV     A,R1
+   \   00003A   C3           CLR     C
+   \   00003B   33           RLC     A
+   \   00003C   F9           MOV     R1,A
+    110          		}
+    111          		BitCounter--;
+    112          	  }while(BitCounter);
+   \                     ??Read_4:
+   \   00003D   EA           MOV     A,R2
+   \   00003E   24FF         ADD     A,#-0x1
+   \   000040   1A           DEC     R2
+   \   000041   EB           MOV     A,R3
+   \   000042   34FF         ADDC    A,#-0x1
+   \   000044   FB           MOV     R3,A
+   \   000045   EA           MOV     A,R2
+   \   000046   7001         JNZ     ??Read_5
+   \   000048   EB           MOV     A,R3
+   \                     ??Read_5:
+   \   000049   70C4         JNZ     ??Read_0
+    113                   IIC_DATAOUT;
+   \   00004B   12....       LCALL   ?Subroutine8 & 0xFFFF
+    114          	return(temp);	
+   \                     ??CrossCallReturnLabel_12:
+   \   00004E   02....       LJMP    ?BRET
+   \   000051                REQUIRE _A_P1
+   \   000051                REQUIRE P1SEL
+   \   000051                REQUIRE P1DIR
+    115          }
+    116          //***************************************************
+    117          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    118          void Single_Write_(unsigned char REG_Address,unsigned char REG_data)
+   \                     Single_Write_:
+    119          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+    120              Start();                  //起始信号
+   \   000009                ; Setup parameters for call to function Start
+   \   000009   12....       LCALL   ?Subroutine5 & 0xFFFF
+    121          #if(SENSOR_TYPE =='F')
+    122              Send(AddWr);  //发送设备地址+写信号
+    123              Ack();
+    124          #endif
+    125              Send(REG_Address);    //内部寄存器地址，请参考中文pdf 
+    126              Ack();
+    127             Send(REG_data);       //内部寄存器数据，请参考中文pdf
+   \                     ??CrossCallReturnLabel_2:
+   \   00000C                ; Setup parameters for call to function Send
+   \   00000C   EE           MOV     A,R6
+   \   00000D   12....       LCALL   ?Subroutine7 & 0xFFFF
+    128             Ack();
+    129             Stop();                   //发送停止信号
+    130             NOPS;
+   \                     ??CrossCallReturnLabel_7:
+   \   000010   00           NOP
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+    131          }
+   \   000016                REQUIRE ?Subroutine2
+   \   000016                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ??Start?relay
+   \   000003                ; Setup parameters for call to function Send
+   \   000003                ; Setup parameters for call to function Send
+   \   000003   EF           MOV     A,R7
+   \   000004   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000003                ; Setup parameters for call to function Stop
+   \   000003                ; Setup parameters for call to function Stop
+   \   000003   12....       LCALL   ??Stop?relay
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   F9           MOV     R1,A
+   \   000001                REQUIRE ??Subroutine12_0
+   \   000001                ; // Fall through to label ??Subroutine12_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine12_0:
+   \   000000   12....       LCALL   ??Send?relay
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003                ; Setup parameters for call to function Ack
+   \   000003   12....       LCALL   ??Ack?relay
+   \   000006   22           RET
+    132          
+    133          //********单字节读取内部寄存器*************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    134          unsigned char Single_Read_(unsigned char REG_Address)
+   \                     Single_Read_:
+    135          {  unsigned char REG_data;
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    136              Start();                          //起始信号
+   \   000007                ; Setup parameters for call to function Start
+   \   000007   12....       LCALL   ?Subroutine5 & 0xFFFF
+    137          #if(SENSOR_TYPE =='F')
+    138              Send(AddWr);          //发送设备地址+写信号
+    139              Ack();
+    140          #endif
+    141              Send(REG_Address);                   //发送存储单元地址，从0开始	
+    142              Ack();
+    143          #if(SENSOR_TYPE =='F')
+    144             Start();                          //起始信号
+    145             Send(AddRd);         //发送设备地址+读信号
+    146             Ack();
+    147          #endif
+    148              REG_data=Read();              //读出寄存器数据
+   \                     ??CrossCallReturnLabel_3:
+   \   00000A                ; Setup parameters for call to function Read
+   \   00000A   12....       LCALL   ??Read?relay
+   \   00000D   E9           MOV     A,R1
+   \   00000E   FE           MOV     R6,A
+    149              SCL=0;
+   \   00000F   C293         CLR     0x90.3
+    150          	 NoAck();  
+   \   000011                ; Setup parameters for call to function NoAck
+   \   000011   12....       LCALL   ??NoAck?relay
+    151          	Stop();                           //停止信号
+   \   000014                ; Setup parameters for call to function Stop
+   \   000014   12....       LCALL   ??Stop?relay
+    152                   NOPS;
+   \   000017   00           NOP
+   \   000018   00           NOP
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+    153                     NOPS;
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+   \   00001F   00           NOP
+   \   000020   00           NOP
+   \   000021   00           NOP
+   \   000022   00           NOP
+    154              return REG_data; 
+   \   000023   EE           MOV     A,R6
+   \   000024   F9           MOV     R1,A
+   \   000025   80..         SJMP    ?Subroutine2
+   \   000027                REQUIRE _A_P1
+    155          }
+    156          
+    157          //向IIC中写数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    158          void WrToROM(unsigned char Data[],unsigned char Address,unsigned char Num)
+   \                     WrToROM:
+    159          {   unsigned char i;
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 3,R1
+   \   00000B   8C..         MOV     ?V0 + 4,R4
+    160              unsigned char *Pdata;
+    161              Pdata=Data;
+    162          	for(i=0;i<Num;i++)
+   \   00000D   75..00       MOV     ?V0 + 2,#0x0
+   \   000010   8013         SJMP    ??WrToROM_0
+    163          	{	Start();
+   \                     ??WrToROM_1:
+   \   000012                ; Setup parameters for call to function Start
+   \   000012   12....       LCALL   ?Subroutine4 & 0xFFFF
+    164          		Send(AddWr);
+    165          		Ack();
+    166          		Send(Address+i);
+    167          		Ack();
+    168          		Send(*(Pdata+i));
+   \                     ??CrossCallReturnLabel_0:
+   \   000015                ; Setup parameters for call to function Send
+   \   000015   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   12....       LCALL   ?Subroutine7 & 0xFFFF
+    169          		Ack();
+    170          		Stop();
+    171          		mDelay(20);
+   \                     ??CrossCallReturnLabel_8:
+   \   00001C                ; Setup parameters for call to function mDelay
+   \   00001C   7A14         MOV     R2,#0x14
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   12....       LCALL   ??mDelay?relay
+    172          	}
+   \   000023   05..         INC     ?V0 + 2
+   \                     ??WrToROM_0:
+   \   000025   E5..         MOV     A,?V0 + 2
+   \   000027   C3           CLR     C
+   \   000028   95..         SUBB    A,?V0 + 4
+   \   00002A   40E6         JC      ??WrToROM_1
+    173          }
+   \   00002C                REQUIRE ?Subroutine3
+   \   00002C                ; // Fall through to label ?Subroutine3
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7F05         MOV     R7,#0x5
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   85....       MOV     ?V0 + 0,?V0 + 2
+   \   000003   EE           MOV     A,R6
+   \   000004   25..         ADD     A,?V0 + 0
+   \   000006   F582         MOV     DPL,A
+   \   000008   EF           MOV     A,R7
+   \   000009   3400         ADDC    A,#0x0
+   \   00000B   F583         MOV     DPH,A
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL   ??Start?relay
+   \   000003                ; Setup parameters for call to function Send
+   \   000003                ; Setup parameters for call to function Send
+   \   000003   79A0         MOV     R1,#-0x60
+   \   000005   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   000008                ; Setup parameters for call to function Send
+   \   000008                ; Setup parameters for call to function Send
+   \   000008   E5..         MOV     A,?V0 + 2
+   \   00000A   25..         ADD     A,?V0 + 3
+   \   00000C   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   00000F   22           RET
+    174          //	读数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    175          void RdFromROM(unsigned char Data[],unsigned char Address,unsigned char Num)
+   \                     RdFromROM:
+    176          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 3,R1
+   \   00000B   8C..         MOV     ?V0 + 4,R4
+    177          	unsigned char i;
+    178          	unsigned char *Pdata;
+    179          	Pdata=Data;
+    180          	for(i=0;i<Num;i++)
+   \   00000D   75..00       MOV     ?V0 + 2,#0x0
+   \   000010   801D         SJMP    ??RdFromROM_0
+    181          	{
+    182          		Start();
+   \                     ??RdFromROM_1:
+   \   000012                ; Setup parameters for call to function Start
+   \   000012   12....       LCALL   ?Subroutine4 & 0xFFFF
+    183          		Send(AddWr);
+    184          		Ack();
+    185          		Send(Address+i);
+    186          		Ack();
+    187          		Start();
+   \                     ??CrossCallReturnLabel_1:
+   \   000015                ; Setup parameters for call to function Start
+   \   000015   12....       LCALL   ??Start?relay
+    188          		Send(AddRd);
+   \   000018                ; Setup parameters for call to function Send
+   \   000018   79A1         MOV     R1,#-0x5f
+   \   00001A   12....       LCALL   ??Subroutine12_0 & 0xFFFF
+    189          		Ack();
+    190          		*(Pdata+i)=Read();
+   \                     ??CrossCallReturnLabel_18:
+   \   00001D                ; Setup parameters for call to function Read
+   \   00001D   12....       LCALL   ??Read?relay
+   \   000020   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000023   E9           MOV     A,R1
+   \   000024   F0           MOVX    @DPTR,A
+    191          		SCL=0;
+   \   000025   C293         CLR     0x90.3
+    192                  NoAck();
+   \   000027                ; Setup parameters for call to function NoAck
+   \   000027   12....       LCALL   ??NoAck?relay
+    193          		Stop();
+   \   00002A                ; Setup parameters for call to function Stop
+   \   00002A   12....       LCALL   ??Stop?relay
+    194          	}
+   \   00002D   05..         INC     ?V0 + 2
+   \                     ??RdFromROM_0:
+   \   00002F   E5..         MOV     A,?V0 + 2
+   \   000031   C3           CLR     C
+   \   000032   95..         SUBB    A,?V0 + 4
+   \   000034   40DC         JC      ??RdFromROM_1
+    195          }
+   \   000036   80..         SJMP    ?Subroutine3
+   \   000038                REQUIRE _A_P1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??mDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    mDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??NoAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    NoAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Send?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Send
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    `Read`
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Single_Write_?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Single_Write_
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Single_Read_?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Single_Read_
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WrToROM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WrToROM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RdFromROM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RdFromROM
+
+   Maximum stack usage in bytes:
+
+     Function      ISTACK PSTACK XSTACK
+     --------      ------ ------ ------
+     Ack               0      0     13
+     NoAck             0      0     13
+     RdFromROM         1      0     13
+       -> Start        0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Start        0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Read         0      0     26
+       -> NoAck        0      0     26
+       -> Stop         0      0     26
+     Read              0      0     13
+     Send              0      0     13
+     Single_Read_      0      0      9
+       -> Start        0      0     18
+       -> Send         0      0     18
+       -> Ack          0      0     18
+       -> Read         0      0     18
+       -> NoAck        0      0     18
+       -> Stop         0      0     18
+     Single_Write_     0      0      9
+       -> Start        0      0     18
+       -> Send         0      0     18
+       -> Ack          0      0     18
+       -> Send         0      0     18
+       -> Ack          0      0     18
+       -> Stop         0      0     18
+     Start             0      0     13
+     Stop              0      0     13
+     WrToROM           0      0     13
+       -> Start        0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Send         0      0     26
+       -> Ack          0      0     26
+       -> Stop         0      0     26
+       -> mDelay       0      0     26
+     mDelay            0      0     13
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P1                    1
+     P1SEL                    1
+     P1DIR                    1
+     mDelay                  19
+     Start                   15
+     ??Subroutine11_0         9
+     ?Subroutine6             8
+     Stop                     7
+     ?Subroutine1             8
+     ?Subroutine8             6
+     Ack                      5
+     ?Subroutine0            19
+     NoAck                    5
+     Send                    37
+     Read                    81
+     Single_Write_           22
+     ?Subroutine2             5
+     ?Subroutine5             8
+     ?Subroutine7             7
+     ?Subroutine10            1
+     ??Subroutine12_0         7
+     Single_Read_            39
+     WrToROM                 44
+     ?Subroutine3             5
+     ?Subroutine9            14
+     ?Subroutine4            16
+     RdFromROM               56
+     ??mDelay?relay           6
+     ??Start?relay            6
+     ??Stop?relay             6
+     ??Ack?relay              6
+     ??NoAck?relay            6
+     ??Send?relay             6
+     ??Read?relay             6
+     ??Single_Write_?relay    6
+     ??Single_Read_?relay     6
+     ??WrToROM?relay          6
+     ??RdFromROM?relay        6
+
+ 
+ 443 bytes in segment BANKED_CODE
+  66 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+ 
+ 509 bytes of CODE memory
+   0 bytes of DATA memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none
