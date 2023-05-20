@@ -1,0 +1,2664 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:41:52 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Components\mt\MT_UART.c    #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wCoord #
+#                          .cfg" (-DCPU32MHZ -DROOT=__near_func               #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Co #
+#                          mponents\mt\MT_UART.c" -D ZTOOL_P1 -D MT_TASK -D   #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D HAL_PA_LNA -D        #
+#                          SERIAL_SUPPORTED=DEBUG -D SENSOR_TYPE_Coord -D     #
+#                          CHANLIST_C_R_E=25 -D ZDAPP_CONFIG_PAN_ID=0x0004    #
+#                          -D FT_PAN_ID_C_R_C -D ZigBee_C_R_E_Engineering -D  #
+#                          ZDO_COORDINATOR=0 -D xNV_RESTORE -lC               #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Coordinator\List\" -lA                         #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Coordinator\List\" --diag_suppress             #
+#                          Pe001,Pa010 -o "C:\Users\win7\Desktop\ZStack传感器 #
+#                          透明传输源程序V2.45-13(带回码2018-5-20)\Projects\G #
+#                          enericApp\CC2530DB\Coordinator\Obj\" -e            #
+#                          --require_prototypes --debug --core=plain          #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Coordinator\List\MT_UART.lst                    #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Coordinator\Obj\MT_UART.r51                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Components\mt\MT_UART.c
+      1          /***************************************************************************************************
+      2            Filename:       MT_UART.c
+      3            Revised:        $Date: 2009-03-12 16:25:22 -0700 (Thu, 12 Mar 2009) $
+      4            Revision:       $Revision: 19404 $
+      5          
+      6            Description:  This module handles anything dealing with the serial port.
+      7          
+      8            Copyright 2007 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License").  You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product.  Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          
+     38          ***************************************************************************************************/
+     39          
+     40          /***************************************************************************************************
+     41           * INCLUDES
+     42           ***************************************************************************************************/
+     43          #include "ZComDef.h"
+     44          #include "OSAL.h"
+     45          #include "hal_uart.h"
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+     46          #include "MT.h"
+     47          #include "MT_UART.h"
+     48          #include "OSAL_Memory.h"
+     49          #include "GenericApp.h"
+     50          #include "ZDApp.h"
+     51          #include "OSAL_Nv.h"
+     52          #include "delay.h"
+     53          #include "nwk_globals.h"
+     54          /***************************************************************************************************
+     55           * MACROS
+     56           ***************************************************************************************************/
+     57          
+     58          /***************************************************************************************************
+     59           * CONSTANTS
+     60           ***************************************************************************************************/
+     61          /* State values for ZTool protocal */
+     62          #define SOP_STATE      0x00
+     63          #define CMD_STATE1     0x01
+     64          #define CMD_STATE2     0x02
+     65          #define LEN_STATE      0x03
+     66          #define DATA_STATE     0x04
+     67          #define FCS_STATE      0x05
+     68          
+     69          /***************************************************************************************************
+     70           *                                         GLOBAL VARIABLES
+     71           ***************************************************************************************************/
+     72          /* Used to indentify the application ID for osal task */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     73          byte App_TaskID;
+   \                     App_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     74          
+     75          /* ZTool protocal parameters */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     76          uint8 state;
+   \                     state:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     77          uint8 state0;
+   \                     state0:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     78          uint8  CMD_Token[2];
+   \                     CMD_Token:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     79          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     80          uint8  chnn[0X40];
+   \                     chnn:
+   \   000000                DS 64
+   \   000040                REQUIRE __INIT_XDATA_Z
+     81          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          uint8  LEN_Token;
+   \                     LEN_Token:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     83          uint8  FSC_Token;
+   \                     FSC_Token:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     84          mtOSALSerialData_t  *pMsg;
+   \                     pMsg:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     85          uint8  tempDataLen;
+   \                     tempDataLen:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     86          #if defined (ZAPP_P1) || defined (ZAPP_P2)
+     87          uint16  MT_UartMaxZAppBufLen;
+     88          bool    MT_UartZAppRxStatus;
+     89          #endif
+     90          /***************************************************************************************************
+     91           *                                          LOCAL FUNCTIONS
+     92           ***************************************************************************************************/
+     93          
+     94          /***************************************************************************************************
+     95           * @fn      MT_UartInit
+     96           *
+     97           * @brief   Initialize MT with UART support
+     98           *
+     99           * @param   None
+    100           *
+    101           * @return  None
+    102          ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    103          void MT_UartInit ()
+   \                     MT_UartInit:
+    104          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    105            halUARTCfg_t uartConfig;
+    106            /* Initialize APP ID */
+    107            App_TaskID = 0;
+   \   000009   E4           CLR     A
+   \   00000A   90....       MOV     DPTR,#App_TaskID
+   \   00000D   F0           MOVX    @DPTR,A
+    108            /* UART Configuration */
+    109            uartConfig.configured           = TRUE;
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   85..82       MOV     DPL,?XSP + 0
+   \   000013   85..83       MOV     DPH,?XSP + 1
+   \   000016   F0           MOVX    @DPTR,A
+    110            uartConfig.baudRate             = MT_UART_DEFAULT_BAUDRATE;
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   7402         MOV     A,#0x2
+   \   00001C   F0           MOVX    @DPTR,A
+    111            uartConfig.flowControl          = MT_UART_DEFAULT_OVERFLOW;
+   \   00001D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000020   E4           CLR     A
+   \   000021   F0           MOVX    @DPTR,A
+    112            uartConfig.flowControlThreshold = MT_UART_DEFAULT_THRESHOLD;
+   \   000022   7403         MOV     A,#0x3
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   7440         MOV     A,#0x40
+   \   000029   F0           MOVX    @DPTR,A
+   \   00002A   A3           INC     DPTR
+   \   00002B   E4           CLR     A
+   \   00002C   F0           MOVX    @DPTR,A
+    113            uartConfig.rx.maxBufSize        = MT_UART_DEFAULT_MAX_RX_BUFF;
+   \   00002D   740A         MOV     A,#0xa
+   \   00002F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000032   7480         MOV     A,#-0x80
+   \   000034   F0           MOVX    @DPTR,A
+   \   000035   A3           INC     DPTR
+   \   000036   E4           CLR     A
+   \   000037   F0           MOVX    @DPTR,A
+    114            uartConfig.tx.maxBufSize        = MT_UART_DEFAULT_MAX_TX_BUFF;
+   \   000038   7412         MOV     A,#0x12
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   7480         MOV     A,#-0x80
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   A3           INC     DPTR
+   \   000041   E4           CLR     A
+   \   000042   F0           MOVX    @DPTR,A
+    115            uartConfig.idleTimeout          = MT_UART_DEFAULT_IDLE_TIMEOUT;
+   \   000043   7405         MOV     A,#0x5
+   \   000045   12....       LCALL   ?XSTACK_DISP0_8
+   \   000048   7406         MOV     A,#0x6
+   \   00004A   F0           MOVX    @DPTR,A
+    116            uartConfig.intEnable            = TRUE;
+   \   00004B   7416         MOV     A,#0x16
+   \   00004D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000050   7401         MOV     A,#0x1
+   \   000052   F0           MOVX    @DPTR,A
+    117          #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+    118            uartConfig.callBackFunc         = MT_UartProcessZToolData;
+   \   000053   741B         MOV     A,#0x1b
+   \   000055   12....       LCALL   ?XSTACK_DISP0_8
+   \   000058   74..         MOV     A,#(??MT_UartProcessZToolData?relay & 0xff)
+   \   00005A   F0           MOVX    @DPTR,A
+   \   00005B   A3           INC     DPTR
+   \   00005C   74..         MOV     A,#((??MT_UartProcessZToolData?relay >> 8) & 0xff)
+   \   00005E   F0           MOVX    @DPTR,A
+    119          #elif defined (ZAPP_P1) || defined (ZAPP_P2)
+    120            uartConfig.callBackFunc         = MT_UartProcessZAppData;
+    121          #else
+    122            uartConfig.callBackFunc         = NULL;
+    123          #endif
+    124          
+    125            /* Start UART */ 
+    126          #if defined (MT_UART_DEFAULT_PORT)
+    127            HalUARTOpen (MT_UART_DEFAULT_PORT, &uartConfig);
+   \   00005F                ; Setup parameters for call to function HalUARTOpen
+   \   00005F   85..82       MOV     DPL,?XSP + 0
+   \   000062   85..83       MOV     DPH,?XSP + 1
+   \   000065   AA82         MOV     R2,DPL
+   \   000067   AB83         MOV     R3,DPH
+   \   000069   7900         MOV     R1,#0x0
+   \   00006B   12....       LCALL   ??HalUARTOpen?relay
+    128          #else
+    129            /* Silence IAR compiler warning */  
+    130            (void)uartConfig; 
+    131          #endif 
+    132            /* Initialize for ZApp */
+    133          #if defined (ZAPP_P1) || defined (ZAPP_P2)
+    134            /* Default max bytes that ZAPP can take */
+    135            MT_UartMaxZAppBufLen  = 1;
+    136            MT_UartZAppRxStatus   = MT_UART_ZAPP_RX_READY;
+    137          #endif
+    138          }
+   \   00006E   741D         MOV     A,#0x1d
+   \   000070   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000073                REQUIRE ?Subroutine0
+   \   000073                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    139          //串口1的初始化
+    140          #if(SENSOR_TYPE ==0X31)
+    141          void MT_Uart1Init(void)
+    142          { 
+    143            halUARTCfg_t uartConfig;
+    144            
+    145            uartConfig.configured           = TRUE;              // 2x30 don't care - see uart driver.
+    146            uartConfig.baudRate             = MT_UART1_DEFAULT_BAUDRATE;
+    147            uartConfig.flowControl          = FALSE;
+    148            uartConfig.flowControlThreshold = 32; // 2x30 don't care - see uart driver.
+    149            uartConfig.rx.maxBufSize        = 32;  // 2x30 don't care - see uart driver.
+    150            uartConfig.tx.maxBufSize        = 32;  // 2x30 don't care - see uart driver.
+    151            uartConfig.idleTimeout             = 6;   // 2x30 don't care - see uart driver.
+    152            uartConfig.intEnable                = TRUE;              // 2x30 don't care - see uart driver.
+    153            uartConfig.callBackFunc          = MT_UartProcessZToolData;  //指定串口回调函数
+    154            HalUARTOpen (HAL_UART_PORT_1, &uartConfig);
+    155          }
+    156          #endif
+    157          /***************************************************************************************************
+    158           * @fn      MT_SerialRegisterTaskID
+    159           *
+    160           * @brief   This function registers the taskID of the application so it knows
+    161           *          where to send the messages whent they come in.
+    162           *
+    163           * @param   void
+    164           *
+    165           * @return  void
+    166           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    167          void MT_UartRegisterTaskID( byte taskID )
+   \                     MT_UartRegisterTaskID:
+    168          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    169            App_TaskID = taskID;
+   \   000004   E9           MOV     A,R1
+   \   000005   90....       MOV     DPTR,#App_TaskID
+   \   000008   F0           MOVX    @DPTR,A
+    170          }
+   \   000009   80..         SJMP    ?Subroutine0
+    171          
+    172          /***************************************************************************************************
+    173           * @fn      SPIMgr_CalcFCS
+    174           *
+    175           * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+    176           *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+    177           *
+    178           * @param   byte *msg_ptr - message pointer
+    179           * @param   byte len - length (in bytes) of message
+    180           *
+    181           * @return  result byte
+    182           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    183          byte MT_UartCalcFCS( uint8 *msg_ptr, uint8 len )
+   \                     MT_UartCalcFCS:
+    184          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FD           MOV     R5,A
+    185            byte x;
+    186            byte xorResult;
+    187          
+    188            xorResult = 0;
+   \   000007   7900         MOV     R1,#0x0
+    189          
+    190            for ( x = 0; x < len; x++, msg_ptr++ )
+   \   000009   7C00         MOV     R4,#0x0
+   \   00000B   800E         SJMP    ??MT_UartCalcFCS_0
+    191              xorResult = xorResult ^ *msg_ptr;
+   \                     ??MT_UartCalcFCS_1:
+   \   00000D   8A82         MOV     DPL,R2
+   \   00000F   8B83         MOV     DPH,R3
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   C9           XCH     A,R1
+   \   000013   69           XRL     A,R1
+   \   000014   F9           MOV     R1,A
+   \   000015   0C           INC     R4
+   \   000016   A3           INC     DPTR
+   \   000017   AA82         MOV     R2,DPL
+   \   000019   AB83         MOV     R3,DPH
+   \                     ??MT_UartCalcFCS_0:
+   \   00001B   EC           MOV     A,R4
+   \   00001C   C3           CLR     C
+   \   00001D   9D           SUBB    A,R5
+   \   00001E   40ED         JC      ??MT_UartCalcFCS_1
+    192          
+    193            return ( xorResult );
+   \   000020   7F01         MOV     R7,#0x1
+   \   000022   02....       LJMP    ?BANKED_LEAVE_XDATA
+    194          }
+    195          
+    196          
+    197          /***************************************************************************************************
+    198           * @fn      MT_UartProcessZToolData
+    199           *
+    200           * @brief   | SOP | Data Length  |   CMD   |   Data   |  FCS  |
+    201           *          |  1  |     1        |    2    |  0-Len   |   1   |
+    202           *
+    203           *          Parses the data and determine either is SPI or just simply serial data
+    204           *          then send the data to correct place (MT or APP)
+    205           *
+    206           * @param   port     - UART port
+    207           *          event    - Event that causes the callback
+    208           *
+    209           *
+    210           * @return  None
+    211           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    212          void MT_UartProcessZToolData ( uint8 port, uint8 event )
+   \                     MT_UartProcessZToolData:
+    213          {  
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    214            uint8  ch;
+    215            uint8  bytesInRxBuffer;
+    216            (void)event;  // Intentionally unreferenced parameter
+   \   00000C   8011         SJMP    ??MT_UartProcessZToolData_0
+    217            while (Hal_UART_RxBufLen(port))
+    218            {
+    219             HalUARTRead (port, &ch, 1);
+    220          #if defined( SENSOR_TYPE_Coord )
+    221             
+    222          #if(ZDO_COORDINATOR==2)  //ZIGBEE  AT命令模式 透传模式
+    223             if(FT_AT==0) // 命令模式
+    224             {
+    225             switch (state) 
+    226             { case 0X00:if (ch == 'F')state = 0X01;/*
+    227                                                    else{
+    228                                                   bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    229                                                   if(bytesInRxBuffer<100)
+    230                                                   { Send_datalend=bytesInRxBuffer;
+    231                                                   HalUARTRead (port, Send_data, bytesInRxBuffer);
+    232                                                   HalUARTWrite(HAL_UART_PORT_0, Send_data,10);
+    233                                                   GenericApp_SendFT();
+    234                                                   }
+    235                                            }*/
+    236                                            break;
+    237                case 0X01:if (ch == 'T'){state = 0X02;tempDataLen=0;}else state = 0X00; break;
+    238                case 0X02:if (ch =='\r')state = 0X03;else{chnn[tempDataLen++]=ch;}break;
+    239                case 0X03:if (ch =='\n')
+    240                           {HalUARTCLER (port,bytesInRxBuffer);
+    241                             if(tempDataLen==0){HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);}
+    242                           else{
+    243                                if((osal_memcmp(&chnn[0], "+RST", 4))&&(tempDataLen==4)){HalUARTWrite(HAL_UART_PORT_0, "\r\nREADY\r\n",9);
+    244                                                                    WDCTL = 0x00;WDCTL |= 0x09;  //0B  1.9MS  09  0.25秒
+    245                                                                    }
+    246                                if((osal_memcmp(&chnn[0], "+CSCAL?", 7))&&(tempDataLen==7)){uint16 nv_data;uint8 cscal[2];osal_nv_read(ZCD_NV_APP_CHANLIST,0,sizeof(nv_data),&nv_data);
+    247                                                                        FSC_Token=(nv_data&0x00ff);
+    248                                                                        cscal[0]=((FSC_Token/10)+'0'); //十进制
+    249                                                                        cscal[1]=((FSC_Token%10)+'0');//十进制
+    250                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\n+CSCAL:\"",10);
+    251                                                                        HalUARTWrite(HAL_UART_PORT_0, cscal,2);
+    252                                                                        HalUARTWrite(HAL_UART_PORT_0, "\"\r\n",3);
+    253                                                                        }
+    254                                if((osal_memcmp(&chnn[0], "+CSCAL=\"", 8))&&(tempDataLen==11)){uint16 nwk_data;
+    255                                                                         nwk_data=0xaa00+(((chnn[8]-'0')*10)+(chnn[9]-'0'));//十进制
+    256                                                                       // nwk_data=0xaa00;nwk_data+=chnn[8]; 
+    257                                                                        if((nwk_data>0XAA0A)&&(nwk_data<0XAA1B)){
+    258                                                                        osal_nv_item_init( ZCD_NV_APP_CHANLIST,sizeof(nwk_data), &nwk_data ); 
+    259                                                                        osal_nv_write( ZCD_NV_APP_CHANLIST, 0, sizeof(nwk_data), &nwk_data );}
+    260                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);}
+    261                                if((osal_memcmp(&chnn[0], "+CSPID?", 7))&&(tempDataLen==7)){uint16 nv_data;uint8 cscal[4];osal_nv_read(ZCD_NV_APP_PANID_H,0,sizeof(nv_data),&nv_data); 
+    262                                                                        FSC_Token=((nv_data>>12)&0X0F);if(FSC_Token>9)cscal[0]=FSC_Token+0X37;else cscal[0]=FSC_Token+0X30;
+    263                                                                        FSC_Token=((nv_data>> 8)&0X0F);if(FSC_Token>9)cscal[1]=FSC_Token+0X37;else cscal[1]=FSC_Token+0X30;
+    264                                                                        FSC_Token=((nv_data>> 4)&0X0F);if(FSC_Token>9)cscal[2]=FSC_Token+0X37;else cscal[2]=FSC_Token+0X30;
+    265                                                                        FSC_Token=((nv_data>> 0)&0X0F);if(FSC_Token>9)cscal[3]=FSC_Token+0X37;else cscal[3]=FSC_Token+0X30;
+    266                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\n+CSPID:",9);//十六进制  无双引号 大写
+    267                                                                        HalUARTWrite(HAL_UART_PORT_0, cscal,4);
+    268                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\n",2);}
+    269                                if((osal_memcmp(&chnn[0], "+CSPID=", 7))&&(tempDataLen==11)){uint16 nwk_data;//十六进制  无双引号 大写
+    270                                                                          if(chnn[7]>'9')nwk_data=(chnn[7]-0X37)<<12;else nwk_data=(chnn[7]-0x30)<<12;//十六进制
+    271                                                                          if(chnn[8]>'9')nwk_data+=(chnn[8]-0X37)<<8;else nwk_data+=(chnn[8]-0x30)<<8;//十六进制
+    272                                                                          if(chnn[9]>'9')nwk_data+=(chnn[9]-0X37)<<4;else nwk_data+=(chnn[9]-0x30)<<4;//十六进制
+    273                                                                          if(chnn[10]>'9')nwk_data+=(chnn[10]-0X37);else nwk_data+=(chnn[10]-0x30);//十六进制
+    274                                                                          
+    275                                                                       // nwk_data=0xaa00;nwk_data+=chnn[8]; 
+    276                                                                          if((nwk_data!=0)&&(nwk_data!=0XFFFF))
+    277                                                                          {
+    278                                                                          osal_nv_item_init( ZCD_NV_APP_PANID_H,sizeof(nwk_data), &nwk_data ); 
+    279                                                                          osal_nv_write( ZCD_NV_APP_PANID_H, 0, sizeof(nwk_data), &nwk_data );
+    280                                                                          osal_nv_item_init( ZCD_NV_APP_PANID_L,sizeof(nwk_data), &nwk_data ); 
+    281                                                                          osal_nv_write( ZCD_NV_APP_PANID_L, 0, sizeof(nwk_data), &nwk_data );
+    282                                                                          HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);
+    283                                                                          }
+    284                                                                          }
+    285                                if((osal_memcmp(&chnn[0], "+CSMODE?",8))&&(tempDataLen==8)){uint16 nwk_data;osal_nv_read(ZCD_NV_APP_C_R_C,0,sizeof(nwk_data),&nwk_data);
+    286                                                                      if((nwk_data&0XF000)==0X5000) HalUARTWrite(HAL_UART_PORT_0, "\r\n+CSMODE:0\r\n",13); //路由器模式 
+    287                                                                      else HalUARTWrite(HAL_UART_PORT_0, "\r\n+CSMODE:1\r\n",13); //协调器模式
+    288                                                                      }
+    289                                if((osal_memcmp(&chnn[0], "+CSMODE=0",9))&&(tempDataLen==9)){uint16 nwk_data;nwk_data=0X5000; //路由器模式 
+    290                                                                          osal_nv_item_init( ZCD_NV_APP_C_R_C,sizeof(nwk_data), &nwk_data ); 
+    291                                                                          osal_nv_write( ZCD_NV_APP_C_R_C, 0, sizeof(nwk_data), &nwk_data );
+    292                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);}
+    293                                 if((osal_memcmp(&chnn[0], "+CSMODE=1",9))&&(tempDataLen==9)){uint16 nwk_data;nwk_data=0X0000;//协调器模式
+    294                                                                          osal_nv_item_init( ZCD_NV_APP_C_R_C,sizeof(nwk_data), &nwk_data ); 
+    295                                                                          osal_nv_write( ZCD_NV_APP_C_R_C, 0, sizeof(nwk_data), &nwk_data );
+    296                                                                        HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);}
+    297                                if(osal_memcmp(&chnn[0], "+CZSEND", 7)){FT_AT=1;HalUARTWrite(HAL_UART_PORT_0, "\r\n>\r\n",5);}
+    298                                if(osal_memcmp(&chnn[0], "+CZQSEND",8)){FT_AT=0;HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);}
+    299                               }
+    300                           }state = 0X00;break;
+    301                default: break;
+    302              }  
+    303             }
+    304             else  //透传模式
+    305             {
+    306                                                   bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    307                                                   if(bytesInRxBuffer<128)
+    308                                                   { Send_datalend=bytesInRxBuffer+1;//加以取出的一字节长度
+    309                                                   Send_data[0]=ch;//存放已取出的数据
+    310                                                   HalUARTRead (port, &Send_data[1], bytesInRxBuffer);
+    311                                                  // HalUARTWrite(HAL_UART_PORT_0, Send_data,bytesInRxBuffer);
+    312                                                  if(osal_memcmp(&Send_data[0], "FT+CZQSEND\r\n",12))
+    313                                                      {FT_AT=0;HalUARTWrite(HAL_UART_PORT_0, "\r\nOK\r\n",6);
+    314                                                      }
+    315                                                    else GenericApp_SendFT();
+    316                                                   }
+    317          
+    318             }
+    319          #else
+    320          switch (state) 
+    321              { case 0X00: if (ch == 0XFD)state = 0X01;if (ch == 0XCC)state = 0X04; break;
+    322                case 0X01: LEN_Token = ch+0X04;tempDataLen = 0; if (LEN_Token){Send_data[1] = ch;state = 0X02;}else{state = 0X00;return;}break;
+   \                     ??MT_UartProcessZToolData_1:
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   90....       MOV     DPTR,#(Send_data + 1)
+   \   000018   F0           MOVX    @DPTR,A
+   \   000019   7402         MOV     A,#0x2
+   \                     ??MT_UartProcessZToolData_2:
+   \   00001B   90....       MOV     DPTR,#state
+   \                     ??MT_UartProcessZToolData_3:
+   \   00001E   F0           MOVX    @DPTR,A
+   \                     ??MT_UartProcessZToolData_0:
+   \   00001F                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   00001F   EE           MOV     A,R6
+   \   000020   F9           MOV     R1,A
+   \   000021   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   000024   EA           MOV     A,R2
+   \   000025   7001         JNZ     ??MT_UartProcessZToolData_4
+   \   000027   EB           MOV     A,R3
+   \                     ??MT_UartProcessZToolData_4:
+   \   000028   7003         JNZ     $+5
+   \   00002A   02....       LJMP    ??MT_UartProcessZToolData_5 & 0xFFFF
+   \   00002D                ; Setup parameters for call to function HalUARTRead
+   \   00002D   7C01         MOV     R4,#0x1
+   \   00002F   7D00         MOV     R5,#0x0
+   \   000031   85..82       MOV     DPL,?XSP + 0
+   \   000034   85..83       MOV     DPH,?XSP + 1
+   \   000037   AA82         MOV     R2,DPL
+   \   000039   AB83         MOV     R3,DPH
+   \   00003B   EE           MOV     A,R6
+   \   00003C   F9           MOV     R1,A
+   \   00003D   12....       LCALL   ??HalUARTRead?relay
+   \   000040   90....       MOV     DPTR,#tempDataLen
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   F8           MOV     R0,A
+   \   000045   90....       MOV     DPTR,#state
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   12....       LCALL   ?UC_SWITCH_SPARSE
+   \                     `?<Jumptable for MT_UartProcessZToolData>_0`:
+   \   00004C   00           DB        0
+   \   00004D   0B           DB        11
+   \   00004E   00           DB        0
+   \   00004F   ....         DW        ??MT_UartProcessZToolData_6
+   \   000051   01           DB        1
+   \   000052   ....         DW        ??MT_UartProcessZToolData_7
+   \   000054   02           DB        2
+   \   000055   ....         DW        ??MT_UartProcessZToolData_8
+   \   000057   04           DB        4
+   \   000058   ....         DW        ??MT_UartProcessZToolData_9
+   \   00005A   10           DB        16
+   \   00005B   ....         DW        ??MT_UartProcessZToolData_10
+   \   00005D   11           DB        17
+   \   00005E   ....         DW        ??MT_UartProcessZToolData_11
+   \   000060   20           DB        32
+   \   000061   ....         DW        ??MT_UartProcessZToolData_12
+   \   000063   21           DB        33
+   \   000064   ....         DW        ??MT_UartProcessZToolData_13
+   \   000066   30           DB        48
+   \   000067   ....         DW        ??MT_UartProcessZToolData_14
+   \   000069   31           DB        49
+   \   00006A   ....         DW        ??MT_UartProcessZToolData_15
+   \   00006C   41           DB        65
+   \   00006D   ....         DW        ??MT_UartProcessZToolData_16
+   \   00006F   ....         DW        ??MT_UartProcessZToolData_0
+   \                     ??MT_UartProcessZToolData_6:
+   \   000071   85..82       MOV     DPL,?XSP + 0
+   \   000074   85..83       MOV     DPH,?XSP + 1
+   \   000077   E0           MOVX    A,@DPTR
+   \   000078   64FD         XRL     A,#0xfd
+   \   00007A   7004         JNZ     ??MT_UartProcessZToolData_17
+   \   00007C   7401         MOV     A,#0x1
+   \   00007E   809B         SJMP    ??MT_UartProcessZToolData_2
+   \                     ??MT_UartProcessZToolData_17:
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   64CC         XRL     A,#0xcc
+   \   000083   709A         JNZ     ??MT_UartProcessZToolData_0
+   \   000085   7404         MOV     A,#0x4
+   \   000087   8092         SJMP    ??MT_UartProcessZToolData_2
+   \                     ??MT_UartProcessZToolData_7:
+   \   000089   85..82       MOV     DPL,?XSP + 0
+   \   00008C   85..83       MOV     DPH,?XSP + 1
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   2404         ADD     A,#0x4
+   \   000092   90....       MOV     DPTR,#LEN_Token
+   \   000095   F0           MOVX    @DPTR,A
+   \   000096   E4           CLR     A
+   \   000097   90....       MOV     DPTR,#tempDataLen
+   \   00009A   F0           MOVX    @DPTR,A
+   \   00009B   90....       MOV     DPTR,#LEN_Token
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   6003         JZ      $+5
+   \   0000A1   02....       LJMP    ??MT_UartProcessZToolData_1 & 0xFFFF
+   \   0000A4   E4           CLR     A
+   \   0000A5   90....       MOV     DPTR,#state
+   \   0000A8   F0           MOVX    @DPTR,A
+   \   0000A9   02....       LJMP    ??MT_UartProcessZToolData_18 & 0xFFFF
+    323                case 0X02:Send_data[2 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   \                     ??MT_UartProcessZToolData_8:
+   \   0000AC   85..82       MOV     DPL,?XSP + 0
+   \   0000AF   85..83       MOV     DPH,?XSP + 1
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   C0E0         PUSH    A
+   \   0000B5   E8           MOV     A,R0
+   \   0000B6   24..         ADD     A,#((Send_data + 2) & 0xff)
+   \   0000B8   F582         MOV     DPL,A
+   \   0000BA   E4           CLR     A
+   \   0000BB   34..         ADDC    A,#(((Send_data + 2) >> 8) & 0xff)
+   \   0000BD   F583         MOV     DPH,A
+   \   0000BF   D0E0         POP     A
+   \   0000C1   12....       LCALL   ?Subroutine2 & 0xFFFF
+    324                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   \                     ??CrossCallReturnLabel_2:
+   \   0000C4   24..         ADD     A,#((Send_data + 2) & 0xff)
+   \   0000C6   FA           MOV     R2,A
+   \   0000C7   E4           CLR     A
+   \   0000C8   34..         ADDC    A,#(((Send_data + 2) >> 8) & 0xff)
+   \   0000CA   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   0000CD   4005         JC      ??MT_UartProcessZToolData_19
+    325                  { HalUARTRead (port, &Send_data[2 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   \   0000CF                ; Setup parameters for call to function HalUARTRead
+   \   0000CF   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   0000D2   8003         SJMP    ??CrossCallReturnLabel_13
+    326                  else
+    327                  {HalUARTRead (port, &Send_data[2 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   \                     ??MT_UartProcessZToolData_19:
+   \   0000D4                ; Setup parameters for call to function HalUARTRead
+   \   0000D4   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   0000D7   12....       LCALL   ?Subroutine3 & 0xFFFF
+    328                  if (tempDataLen== LEN_Token){ state = 0X00;Send_data[0] =0XFD;Send_datalend=Send_data[1];
+   \                     ??CrossCallReturnLabel_4:
+   \   0000DA   6003         JZ      $+5
+   \   0000DC   02....       LJMP    ??MT_UartProcessZToolData_0 & 0xFFFF
+   \   0000DF   E4           CLR     A
+   \   0000E0   90....       MOV     DPTR,#state
+   \   0000E3   F0           MOVX    @DPTR,A
+   \   0000E4   74FD         MOV     A,#-0x3
+   \   0000E6   90....       MOV     DPTR,#Send_data
+   \   0000E9   F0           MOVX    @DPTR,A
+   \   0000EA   90....       MOV     DPTR,#(Send_data + 1)
+   \   0000ED   E0           MOVX    A,@DPTR
+   \   0000EE   90....       MOV     DPTR,#Send_datalend
+   \   0000F1   F0           MOVX    @DPTR,A
+    329                  if(AF_RF==0)
+   \   0000F2   90....       MOV     DPTR,#AF_RF
+   \   0000F5   E0           MOVX    A,@DPTR
+   \   0000F6   6003         JZ      $+5
+   \   0000F8   02....       LJMP    ??MT_UartProcessZToolData_0 & 0xFFFF
+    330                  {
+    331                   GenericApp_SendTheMessage();
+   \   0000FB                ; Setup parameters for call to function GenericApp_SendTheMessage
+   \   0000FB   12....       LCALL   ??GenericApp_SendTheMessage?relay
+    332                   if( AF_OK==0) 
+   \   0000FE   90....       MOV     DPTR,#AF_OK
+   \   000101   E0           MOVX    A,@DPTR
+   \   000102   6003         JZ      $+5
+   \   000104   02....       LJMP    ??MT_UartProcessZToolData_0 & 0xFFFF
+    333                   {
+    334                  AF_RF=1;//发送失败标志
+   \   000107   7401         MOV     A,#0x1
+   \   000109   90....       MOV     DPTR,#AF_RF
+   \   00010C   02....       LJMP    ??MT_UartProcessZToolData_3 & 0xFFFF
+    335                   }
+    336                  }
+    337                  }break;  
+    338                case 0X04: if(ch == 0XEE)state = 0X10;else if(ch == 0XBB)state = 0X20;else if(ch == 0XAA)state = 0X30;else state = 0X00; break;
+   \                     ??MT_UartProcessZToolData_9:
+   \   00010F   85..82       MOV     DPL,?XSP + 0
+   \   000112   85..83       MOV     DPH,?XSP + 1
+   \   000115   E0           MOVX    A,@DPTR
+   \   000116   64EE         XRL     A,#0xee
+   \   000118   7005         JNZ     ??MT_UartProcessZToolData_20
+   \   00011A   7410         MOV     A,#0x10
+   \   00011C   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+   \                     ??MT_UartProcessZToolData_20:
+   \   00011F   E0           MOVX    A,@DPTR
+   \   000120   64BB         XRL     A,#0xbb
+   \   000122   7005         JNZ     ??MT_UartProcessZToolData_21
+   \   000124   7420         MOV     A,#0x20
+   \   000126   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+   \                     ??MT_UartProcessZToolData_21:
+   \   000129   E0           MOVX    A,@DPTR
+   \   00012A   64AA         XRL     A,#0xaa
+   \   00012C   6003         JZ      $+5
+   \   00012E   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+   \   000131   7430         MOV     A,#0x30
+   \   000133   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+    339                case 0X10: if(ch == 0XEE)state = 0X11; else state = 0X00;break;
+   \                     ??MT_UartProcessZToolData_10:
+   \   000136   85..82       MOV     DPL,?XSP + 0
+   \   000139   85..83       MOV     DPH,?XSP + 1
+   \   00013C   E0           MOVX    A,@DPTR
+   \   00013D   64EE         XRL     A,#0xee
+   \   00013F   6003         JZ      $+5
+   \   000141   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+   \   000144   7411         MOV     A,#0x11
+   \   000146   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+    340                case 0X20: if(ch == 0XBB)state = 0X21; else state = 0X00;break;
+   \                     ??MT_UartProcessZToolData_12:
+   \   000149   85..82       MOV     DPL,?XSP + 0
+   \   00014C   85..83       MOV     DPH,?XSP + 1
+   \   00014F   E0           MOVX    A,@DPTR
+   \   000150   64BB         XRL     A,#0xbb
+   \   000152   6003         JZ      $+5
+   \   000154   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+   \   000157   7421         MOV     A,#0x21
+   \   000159   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+    341                case 0X30: if(ch == 0XAA)state = 0X31;else if(ch == 0XBB){state = 0X41;LEN_Token=0X04;tempDataLen = 0;}else state = 0X00;break;  
+   \                     ??MT_UartProcessZToolData_14:
+   \   00015C   85..82       MOV     DPL,?XSP + 0
+   \   00015F   85..83       MOV     DPH,?XSP + 1
+   \   000162   E0           MOVX    A,@DPTR
+   \   000163   64AA         XRL     A,#0xaa
+   \   000165   7005         JNZ     ??MT_UartProcessZToolData_23
+   \   000167   7431         MOV     A,#0x31
+   \   000169   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+   \                     ??MT_UartProcessZToolData_23:
+   \   00016C   E0           MOVX    A,@DPTR
+   \   00016D   64BB         XRL     A,#0xbb
+   \   00016F   7070         JNZ     ??MT_UartProcessZToolData_22
+   \   000171   7441         MOV     A,#0x41
+   \   000173   90....       MOV     DPTR,#state
+   \   000176   F0           MOVX    @DPTR,A
+   \   000177   7404         MOV     A,#0x4
+   \   000179   90....       MOV     DPTR,#LEN_Token
+   \   00017C   F0           MOVX    @DPTR,A
+   \   00017D   E4           CLR     A
+   \   00017E   90....       MOV     DPTR,#tempDataLen
+   \   000181   02....       LJMP    ??MT_UartProcessZToolData_3 & 0xFFFF
+    342                case 0X11: if(ch == 0XDD){ chnn[0]=0XCC,chnn[1]=0XEE,chnn[2]=0XEE,chnn[3]=0XDD,HalUARTWrite(HAL_UART_PORT_0, chnn,4);uint16 nv_data=0X0000;
+   \                     ??MT_UartProcessZToolData_11:
+   \   000184   85..82       MOV     DPL,?XSP + 0
+   \   000187   85..83       MOV     DPH,?XSP + 1
+   \   00018A   E0           MOVX    A,@DPTR
+   \   00018B   64DD         XRL     A,#0xdd
+   \   00018D   7052         JNZ     ??MT_UartProcessZToolData_22
+   \   00018F   74CC         MOV     A,#-0x34
+   \   000191   90....       MOV     DPTR,#chnn
+   \   000194   F0           MOVX    @DPTR,A
+   \   000195   74EE         MOV     A,#-0x12
+   \   000197   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00019A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00019D   E4           CLR     A
+   \   00019E   F0           MOVX    @DPTR,A
+   \   00019F   A3           INC     DPTR
+   \   0001A0   F0           MOVX    @DPTR,A
+    343                      osal_nv_item_init( ZCD_NV_APP_R_E_KEY_P07,sizeof(nv_data), &nv_data );
+   \   0001A1                ; Setup parameters for call to function osal_nv_item_init
+   \   0001A1   7401         MOV     A,#0x1
+   \   0001A3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001A6   8582..       MOV     ?V0 + 0,DPL
+   \   0001A9   8583..       MOV     ?V0 + 1,DPH
+   \   0001AC   78..         MOV     R0,#?V0 + 0
+   \   0001AE   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001B1   7C02         MOV     R4,#0x2
+   \   0001B3   7D00         MOV     R5,#0x0
+   \   0001B5   7A0B         MOV     R2,#0xb
+   \   0001B7   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   0001BA   12....       LCALL   ?DEALLOC_XSTACK8
+    344                      osal_nv_write( ZCD_NV_APP_R_E_KEY_P07, 0,sizeof(nv_data),&nv_data);WDCTL = 0x00;WDCTL |= 0x09;} state = 0X00;break;//发送主机短地址
+   \   0001BD                ; Setup parameters for call to function osal_nv_write
+   \   0001BD   78..         MOV     R0,#?V0 + 0
+   \   0001BF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001C2   75..02       MOV     ?V0 + 0,#0x2
+   \   0001C5   75..00       MOV     ?V0 + 1,#0x0
+   \   0001C8   78..         MOV     R0,#?V0 + 0
+   \   0001CA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0001CD   7C00         MOV     R4,#0x0
+   \   0001CF   7D00         MOV     R5,#0x0
+   \   0001D1   7A0B         MOV     R2,#0xb
+   \                     ??MT_UartProcessZToolData_24:
+   \   0001D3   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   0001D6   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??MT_UartProcessZToolData_25:
+   \   0001D9   75C900       MOV     0xc9,#0x0
+   \   0001DC   43C909       ORL     0xc9,#0x9
+   \   0001DF   E5C9         MOV     A,0xc9
+   \                     ??MT_UartProcessZToolData_22:
+   \   0001E1   E4           CLR     A
+   \   0001E2   02....       LJMP    ??MT_UartProcessZToolData_2 & 0xFFFF
+    345                case 0X21: if(ch == 0XDD) {uint16 nv_data;osal_nv_read(ZCD_NV_APP_CHANLIST,0,sizeof(nv_data),&nv_data);
+   \                     ??MT_UartProcessZToolData_13:
+   \   0001E5   85..82       MOV     DPL,?XSP + 0
+   \   0001E8   85..83       MOV     DPH,?XSP + 1
+   \   0001EB   E0           MOVX    A,@DPTR
+   \   0001EC   64DD         XRL     A,#0xdd
+   \   0001EE   70F1         JNZ     ??MT_UartProcessZToolData_22
+   \   0001F0                ; Setup parameters for call to function osal_nv_read
+   \   0001F0   7401         MOV     A,#0x1
+   \   0001F2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0001F5   8582..       MOV     ?V0 + 0,DPL
+   \   0001F8   8583..       MOV     ?V0 + 1,DPH
+   \   0001FB   78..         MOV     R0,#?V0 + 0
+   \   0001FD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000200   75..02       MOV     ?V0 + 0,#0x2
+   \   000203   75..00       MOV     ?V0 + 1,#0x0
+   \   000206   78..         MOV     R0,#?V0 + 0
+   \   000208   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00020B   7C00         MOV     R4,#0x0
+   \   00020D   7D00         MOV     R5,#0x0
+   \   00020F   7A0F         MOV     R2,#0xf
+   \   000211   7B04         MOV     R3,#0x4
+   \   000213   12....       LCALL   ??osal_nv_read?relay
+   \   000216   7404         MOV     A,#0x4
+   \   000218   12....       LCALL   ?DEALLOC_XSTACK8
+    346                      chnn[0]=0XCC,chnn[1]=(nv_data&0x00ff),chnn[2]=0XBB,osal_nv_read(ZCD_NV_APP_PANID_H,0,sizeof(nv_data),&nv_data);   
+   \   00021B   74CC         MOV     A,#-0x34
+   \   00021D   90....       MOV     DPTR,#chnn
+   \   000220   F0           MOVX    @DPTR,A
+   \   000221   7401         MOV     A,#0x1
+   \   000223   12....       LCALL   ?XSTACK_DISP0_8
+   \   000226   E0           MOVX    A,@DPTR
+   \   000227   90....       MOV     DPTR,#(chnn + 1)
+   \   00022A   F0           MOVX    @DPTR,A
+   \   00022B   74BB         MOV     A,#-0x45
+   \   00022D   90....       MOV     DPTR,#(chnn + 2)
+   \   000230   F0           MOVX    @DPTR,A
+   \   000231                ; Setup parameters for call to function osal_nv_read
+   \   000231   7401         MOV     A,#0x1
+   \   000233   12....       LCALL   ?XSTACK_DISP0_8
+   \   000236   8582..       MOV     ?V0 + 0,DPL
+   \   000239   8583..       MOV     ?V0 + 1,DPH
+   \   00023C   78..         MOV     R0,#?V0 + 0
+   \   00023E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000241   75..02       MOV     ?V0 + 0,#0x2
+   \   000244   75..00       MOV     ?V0 + 1,#0x0
+   \   000247   78..         MOV     R0,#?V0 + 0
+   \   000249   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00024C   7C00         MOV     R4,#0x0
+   \   00024E   7D00         MOV     R5,#0x0
+   \   000250   7A01         MOV     R2,#0x1
+   \   000252   7B04         MOV     R3,#0x4
+   \   000254   12....       LCALL   ??osal_nv_read?relay
+   \   000257   7404         MOV     A,#0x4
+   \   000259   12....       LCALL   ?DEALLOC_XSTACK8
+    347                      chnn[3]=(nv_data>>8),chnn[4]=nv_data,chnn[5]=0XDD;
+   \   00025C   7401         MOV     A,#0x1
+   \   00025E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000261   A3           INC     DPTR
+   \   000262   E0           MOVX    A,@DPTR
+   \   000263   90....       MOV     DPTR,#(chnn + 3)
+   \   000266   F0           MOVX    @DPTR,A
+   \   000267   7401         MOV     A,#0x1
+   \   000269   12....       LCALL   ?XSTACK_DISP0_8
+   \   00026C   E0           MOVX    A,@DPTR
+   \   00026D   90....       MOV     DPTR,#(chnn + 4)
+   \   000270   F0           MOVX    @DPTR,A
+   \   000271   74DD         MOV     A,#-0x23
+   \   000273   90....       MOV     DPTR,#(chnn + 5)
+   \   000276   F0           MOVX    @DPTR,A
+    348                      if (PAN_ID_Success!=2) chnn[3]=chnn[4]=0; nv_data=ZDAPP_CONFIG_PAN_ID;
+   \   000277   90....       MOV     DPTR,#PAN_ID_Success
+   \   00027A   E0           MOVX    A,@DPTR
+   \   00027B   6402         XRL     A,#0x2
+   \   00027D   6009         JZ      ??MT_UartProcessZToolData_26
+   \   00027F   E4           CLR     A
+   \   000280   90....       MOV     DPTR,#(chnn + 4)
+   \   000283   F0           MOVX    @DPTR,A
+   \   000284   90....       MOV     DPTR,#(chnn + 3)
+   \   000287   F0           MOVX    @DPTR,A
+   \                     ??MT_UartProcessZToolData_26:
+   \   000288   7401         MOV     A,#0x1
+   \   00028A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00028D   7404         MOV     A,#0x4
+   \   00028F   F0           MOVX    @DPTR,A
+   \   000290   A3           INC     DPTR
+   \   000291   E4           CLR     A
+   \   000292   F0           MOVX    @DPTR,A
+    349                      if(nv_data!=0XFFFF){chnn[3]=nv_data>>8;chnn[4]=nv_data;} HalUARTWrite(HAL_UART_PORT_0, chnn,6);}state = 0X00;break;//发送信道 PAN_ID
+   \   000293   90....       MOV     DPTR,#(chnn + 3)
+   \   000296   F0           MOVX    @DPTR,A
+   \   000297   7404         MOV     A,#0x4
+   \   000299   90....       MOV     DPTR,#(chnn + 4)
+   \   00029C   F0           MOVX    @DPTR,A
+   \   00029D                ; Setup parameters for call to function HalUARTWrite
+   \   00029D   7C06         MOV     R4,#0x6
+   \   00029F   7D00         MOV     R5,#0x0
+   \   0002A1   7A..         MOV     R2,#(chnn & 0xff)
+   \   0002A3   7B..         MOV     R3,#((chnn >> 8) & 0xff)
+   \   0002A5   7900         MOV     R1,#0x0
+   \   0002A7   12....       LCALL   ??HalUARTWrite?relay
+   \   0002AA   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+    350                case 0X31: if(ch == 0XDD){ chnn[0]=0XCC,chnn[1]=0XAA,chnn[2]=0XAA,chnn[3]=0XDD,HalUARTWrite(HAL_UART_PORT_0, chnn,4);uint16 nwk_data=0X0000;
+   \                     ??MT_UartProcessZToolData_15:
+   \   0002AD   85..82       MOV     DPL,?XSP + 0
+   \   0002B0   85..83       MOV     DPH,?XSP + 1
+   \   0002B3   E0           MOVX    A,@DPTR
+   \   0002B4   64DD         XRL     A,#0xdd
+   \   0002B6   6003         JZ      $+5
+   \   0002B8   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+   \   0002BB   74CC         MOV     A,#-0x34
+   \   0002BD   90....       MOV     DPTR,#chnn
+   \   0002C0   F0           MOVX    @DPTR,A
+   \   0002C1   74AA         MOV     A,#-0x56
+   \   0002C3   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0002C6   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002C9   E4           CLR     A
+   \   0002CA   F0           MOVX    @DPTR,A
+   \   0002CB   A3           INC     DPTR
+   \   0002CC   F0           MOVX    @DPTR,A
+    351                      osal_nv_item_init( ZCD_NV_APP_C_R,sizeof(nwk_data), &nwk_data ); 
+   \   0002CD                ; Setup parameters for call to function osal_nv_item_init
+   \   0002CD   7401         MOV     A,#0x1
+   \   0002CF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0002D2   8582..       MOV     ?V0 + 0,DPL
+   \   0002D5   8583..       MOV     ?V0 + 1,DPH
+   \   0002D8   78..         MOV     R0,#?V0 + 0
+   \   0002DA   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0002DD   7C02         MOV     R4,#0x2
+   \   0002DF   7D00         MOV     R5,#0x0
+   \   0002E1   7A09         MOV     R2,#0x9
+   \   0002E3   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   0002E6   12....       LCALL   ?DEALLOC_XSTACK8
+    352                      osal_nv_write( ZCD_NV_APP_C_R, 0, sizeof(nwk_data), &nwk_data );WDCTL = 0x00;WDCTL |= 0x09;}state = 0X00;break;//重启 协调器C启动 
+   \   0002E9                ; Setup parameters for call to function osal_nv_write
+   \   0002E9   78..         MOV     R0,#?V0 + 0
+   \   0002EB   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0002EE   75..02       MOV     ?V0 + 0,#0x2
+   \   0002F1   75..00       MOV     ?V0 + 1,#0x0
+   \   0002F4   78..         MOV     R0,#?V0 + 0
+   \   0002F6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0002F9   7C00         MOV     R4,#0x0
+   \   0002FB   7D00         MOV     R5,#0x0
+   \   0002FD   7A09         MOV     R2,#0x9
+   \   0002FF   02....       LJMP    ??MT_UartProcessZToolData_24 & 0xFFFF
+    353                case 0X41: chnn[3 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   \                     ??MT_UartProcessZToolData_16:
+   \   000302   85..82       MOV     DPL,?XSP + 0
+   \   000305   85..83       MOV     DPH,?XSP + 1
+   \   000308   E0           MOVX    A,@DPTR
+   \   000309   C0E0         PUSH    A
+   \   00030B   E8           MOV     A,R0
+   \   00030C   24..         ADD     A,#((chnn + 3) & 0xff)
+   \   00030E   F582         MOV     DPL,A
+   \   000310   E4           CLR     A
+   \   000311   34..         ADDC    A,#(((chnn + 3) >> 8) & 0xff)
+   \   000313   F583         MOV     DPH,A
+   \   000315   D0E0         POP     A
+   \   000317   12....       LCALL   ?Subroutine2 & 0xFFFF
+    354                         if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   \                     ??CrossCallReturnLabel_3:
+   \   00031A   24..         ADD     A,#((chnn + 3) & 0xff)
+   \   00031C   FA           MOV     R2,A
+   \   00031D   E4           CLR     A
+   \   00031E   34..         ADDC    A,#(((chnn + 3) >> 8) & 0xff)
+   \   000320   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000323   4005         JC      ??MT_UartProcessZToolData_27
+    355                          { HalUARTRead (port, &chnn[3 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   \   000325                ; Setup parameters for call to function HalUARTRead
+   \   000325   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000328   8003         SJMP    ??CrossCallReturnLabel_14
+    356                          else
+    357                          {HalUARTRead (port, &chnn[3 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   \                     ??MT_UartProcessZToolData_27:
+   \   00032A                ; Setup parameters for call to function HalUARTRead
+   \   00032A   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   00032D   12....       LCALL   ?Subroutine3 & 0xFFFF
+    358                          if (tempDataLen== LEN_Token){if(chnn[6] == 0XDD){uint16 nwk_data; nwk_data=0xaa00;nwk_data+=chnn[3]; 
+   \                     ??CrossCallReturnLabel_5:
+   \   000330   6003         JZ      $+5
+   \   000332   02....       LJMP    ??MT_UartProcessZToolData_0 & 0xFFFF
+   \   000335   90....       MOV     DPTR,#(chnn + 6)
+   \   000338   E0           MOVX    A,@DPTR
+   \   000339   64DD         XRL     A,#0xdd
+   \   00033B   6003         JZ      $+5
+   \   00033D   02....       LJMP    ??MT_UartProcessZToolData_22 & 0xFFFF
+   \   000340   90....       MOV     DPTR,#(chnn + 3)
+   \   000343   E0           MOVX    A,@DPTR
+   \   000344   F8           MOV     R0,A
+   \   000345   7401         MOV     A,#0x1
+   \   000347   12....       LCALL   ?XSTACK_DISP0_8
+   \   00034A   E8           MOV     A,R0
+   \   00034B   F0           MOVX    @DPTR,A
+   \   00034C   A3           INC     DPTR
+   \   00034D   74AA         MOV     A,#-0x56
+   \   00034F   F0           MOVX    @DPTR,A
+    359                          if((nwk_data>0XAA0A)&&(nwk_data<0XAA1B)){
+   \   000350   7401         MOV     A,#0x1
+   \   000352   12....       LCALL   ?XSTACK_DISP0_8
+   \   000355   E0           MOVX    A,@DPTR
+   \   000356   24F5         ADD     A,#-0xb
+   \   000358   F8           MOV     R0,A
+   \   000359   74AA         MOV     A,#-0x56
+   \   00035B   3455         ADDC    A,#0x55
+   \   00035D   F9           MOV     R1,A
+   \   00035E   C3           CLR     C
+   \   00035F   E8           MOV     A,R0
+   \   000360   9410         SUBB    A,#0x10
+   \   000362   E9           MOV     A,R1
+   \   000363   9400         SUBB    A,#0x0
+   \   000365   5033         JNC     ??MT_UartProcessZToolData_28
+    360                          osal_nv_item_init( ZCD_NV_APP_CHANLIST,sizeof(nwk_data), &nwk_data ); 
+   \   000367                ; Setup parameters for call to function osal_nv_item_init
+   \   000367   8582..       MOV     ?V0 + 0,DPL
+   \   00036A   8583..       MOV     ?V0 + 1,DPH
+   \   00036D   78..         MOV     R0,#?V0 + 0
+   \   00036F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000372   7C02         MOV     R4,#0x2
+   \   000374   7D00         MOV     R5,#0x0
+   \   000376   7A0F         MOV     R2,#0xf
+   \   000378   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00037B   12....       LCALL   ?DEALLOC_XSTACK8
+    361                           osal_nv_write( ZCD_NV_APP_CHANLIST, 0, sizeof(nwk_data), &nwk_data );}
+   \   00037E                ; Setup parameters for call to function osal_nv_write
+   \   00037E   78..         MOV     R0,#?V0 + 0
+   \   000380   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000383   75..02       MOV     ?V0 + 0,#0x2
+   \   000386   75..00       MOV     ?V0 + 1,#0x0
+   \   000389   78..         MOV     R0,#?V0 + 0
+   \   00038B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00038E   7C00         MOV     R4,#0x0
+   \   000390   7D00         MOV     R5,#0x0
+   \   000392   7A0F         MOV     R2,#0xf
+   \   000394   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000397   12....       LCALL   ?DEALLOC_XSTACK8
+    362                          if(chnn[4]||chnn[5]){nwk_data=(uint16)chnn[4]<<8;nwk_data+=chnn[5];
+   \                     ??MT_UartProcessZToolData_28:
+   \   00039A   90....       MOV     DPTR,#(chnn + 4)
+   \   00039D   E0           MOVX    A,@DPTR
+   \   00039E   FA           MOV     R2,A
+   \   00039F   7009         JNZ     ??MT_UartProcessZToolData_29
+   \   0003A1   90....       MOV     DPTR,#(chnn + 5)
+   \   0003A4   E0           MOVX    A,@DPTR
+   \   0003A5   7003         JNZ     $+5
+   \   0003A7   02....       LJMP    ??MT_UartProcessZToolData_30 & 0xFFFF
+   \                     ??MT_UartProcessZToolData_29:
+   \   0003AA   EA           MOV     A,R2
+   \   0003AB   F9           MOV     R1,A
+   \   0003AC   90....       MOV     DPTR,#(chnn + 5)
+   \   0003AF   E0           MOVX    A,@DPTR
+   \   0003B0   F8           MOV     R0,A
+   \   0003B1   7401         MOV     A,#0x1
+   \   0003B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003B6   E8           MOV     A,R0
+   \   0003B7   F0           MOVX    @DPTR,A
+   \   0003B8   A3           INC     DPTR
+   \   0003B9   E9           MOV     A,R1
+   \   0003BA   F0           MOVX    @DPTR,A
+    363                             osal_nv_item_init( ZCD_NV_APP_PANID_H,sizeof(nwk_data), &nwk_data ); 
+   \   0003BB                ; Setup parameters for call to function osal_nv_item_init
+   \   0003BB   7401         MOV     A,#0x1
+   \   0003BD   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003C0   8582..       MOV     ?V0 + 0,DPL
+   \   0003C3   8583..       MOV     ?V0 + 1,DPH
+   \   0003C6   78..         MOV     R0,#?V0 + 0
+   \   0003C8   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0003CB   7C02         MOV     R4,#0x2
+   \   0003CD   7D00         MOV     R5,#0x0
+   \   0003CF   7A01         MOV     R2,#0x1
+   \   0003D1   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   0003D4   12....       LCALL   ?DEALLOC_XSTACK8
+    364                      osal_nv_write( ZCD_NV_APP_PANID_H, 0, sizeof(nwk_data), &nwk_data );
+   \   0003D7                ; Setup parameters for call to function osal_nv_write
+   \   0003D7   78..         MOV     R0,#?V0 + 0
+   \   0003D9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0003DC   75..02       MOV     ?V0 + 0,#0x2
+   \   0003DF   75..00       MOV     ?V0 + 1,#0x0
+   \   0003E2   78..         MOV     R0,#?V0 + 0
+   \   0003E4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0003E7   7C00         MOV     R4,#0x0
+   \   0003E9   7D00         MOV     R5,#0x0
+   \   0003EB   7A01         MOV     R2,#0x1
+   \   0003ED   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   0003F0   12....       LCALL   ?DEALLOC_XSTACK8
+    365                           osal_nv_item_init( ZCD_NV_APP_PANID_L,sizeof(nwk_data), &nwk_data ); 
+   \   0003F3                ; Setup parameters for call to function osal_nv_item_init
+   \   0003F3   7401         MOV     A,#0x1
+   \   0003F5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0003F8   8582..       MOV     ?V0 + 0,DPL
+   \   0003FB   8583..       MOV     ?V0 + 1,DPH
+   \   0003FE   78..         MOV     R0,#?V0 + 0
+   \   000400   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000403   7C02         MOV     R4,#0x2
+   \   000405   7D00         MOV     R5,#0x0
+   \   000407   7A03         MOV     R2,#0x3
+   \   000409   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00040C   12....       LCALL   ?DEALLOC_XSTACK8
+    366                      osal_nv_write( ZCD_NV_APP_PANID_L, 0, sizeof(nwk_data), &nwk_data );
+   \   00040F                ; Setup parameters for call to function osal_nv_write
+   \   00040F   78..         MOV     R0,#?V0 + 0
+   \   000411   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000414   75..02       MOV     ?V0 + 0,#0x2
+   \   000417   75..00       MOV     ?V0 + 1,#0x0
+   \   00041A   78..         MOV     R0,#?V0 + 0
+   \   00041C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00041F   7C00         MOV     R4,#0x0
+   \   000421   7D00         MOV     R5,#0x0
+   \   000423   7A03         MOV     R2,#0x3
+   \   000425   12....       LCALL   ?Subroutine7 & 0xFFFF
+    367                          } chnn[0]=0XCC;chnn[1]=0XAA;chnn[2]=0XBB;chnn[3]=0XDD;
+   \                     ??CrossCallReturnLabel_18:
+   \   000428   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??MT_UartProcessZToolData_30:
+   \   00042B   74CC         MOV     A,#-0x34
+   \   00042D   90....       MOV     DPTR,#chnn
+   \   000430   F0           MOVX    @DPTR,A
+   \   000431   74AA         MOV     A,#-0x56
+   \   000433   90....       MOV     DPTR,#(chnn + 1)
+   \   000436   F0           MOVX    @DPTR,A
+   \   000437   74BB         MOV     A,#-0x45
+   \   000439   12....       LCALL   ?Subroutine9 & 0xFFFF
+    368                           HalUARTWrite(HAL_UART_PORT_0, chnn,4); WDCTL = 0x00;WDCTL |= 0x09;  //0B  1.9MS  09  0.25秒
+   \                     ??CrossCallReturnLabel_21:
+   \   00043C   02....       LJMP    ??MT_UartProcessZToolData_25 & 0xFFFF
+    369                            } state = 0X00;}break;  
+    370               default: break;}  
+    371          #endif 
+    372          
+    373          #else
+    374          #if((SENSOR_TYPE =='P')||(SENSOR_TYPE ==0X02))
+    375          #else
+    376          
+    377          
+    378          #if defined (NB_IOT_S10)
+    379          
+    380          if(NBliucheng<7)
+    381          {
+    382           switch (state) 
+    383               {
+    384                case 0X00:if (ch =='O')state = 0X01; break;
+    385                case 0X01:if (ch =='K')state = 0X02;else{state = 0X00;return;}break;
+    386                case 0X02:if (ch =='\r')state = 0X03;else{state = 0X00;return;}break;
+    387                case 0X03:if (ch =='\n'){HalUARTCLER (port,bytesInRxBuffer);if(NBliucheng<7)NBliucheng++;}state = 0X00;break;
+    388                default: break;
+    389               }
+    390           } 
+    391          if(NBliucheng==7)//读取IMEI号
+    392          {
+    393           switch (state) 
+    394               {
+    395                case 0X00:if (ch =='+')state = 0X01; break;
+    396                case 0X01:if (ch =='C')state = 0X02;else{state = 0X00;return;}break;
+    397                case 0X02:if (ch =='G')state = 0X03;else{state = 0X00;return;}break;
+    398                case 0X03:if (ch =='S')state = 0X04;else{state = 0X00;return;}break;
+    399                case 0X04:if (ch =='N')state = 0X05;else{state = 0X00;return;}break;
+    400                case 0X05:if (ch ==':'){tempDataLen = 0; state = 0X06;}else{state = 0X00;return;}break;
+    401                case 0X06:if (ch =='\r')state = 0X09;else{NB_IMEI[tempDataLen++]=ch;}break;
+    402                case 0X09:if (ch =='\n'){NB_IMEI[15]='\"';HalUARTCLER (port,bytesInRxBuffer);NBliucheng=15;}state = 0X00;break;
+    403                default: break;
+    404               }
+    405           } 
+    406          if(NBliucheng==15)//入网成功判断
+    407          {
+    408           switch (state) 
+    409               {
+    410                case 0X00:if (ch =='+')state = 0X01; break;
+    411                case 0X01:if (ch =='C')state = 0X02;else{state = 0X00;return;}break;
+    412                case 0X02:if (ch =='G')state = 0X03;else{state = 0X00;return;}break;
+    413                case 0X03:if (ch =='A')state = 0X04;else{state = 0X00;return;}break;
+    414                case 0X04:if (ch =='T')state = 0X05;else{state = 0X00;return;}break;
+    415                case 0X05:if (ch =='T')state = 0X06;else{state = 0X00;return;}break;
+    416                case 0X06:if (ch ==':')state = 0X07;else{state = 0X00;return;}break;
+    417                case 0X07:if (ch =='1')state = 0X08;else{state = 0X00;return;}break;
+    418                case 0X08:if (ch =='\r')state = 0X09;else{state = 0X00;return;}break;
+    419                case 0X09:if (ch =='\n'){HalUARTCLER (port,bytesInRxBuffer);NBliucheng=16;}state = 0X00;break;
+    420                default: break;
+    421               }
+    422           } 
+    423          
+    424          if(NBliucheng==16) //创建Socket号
+    425          {
+    426           switch (state) 
+    427               {
+    428                case 0X00:if ((ch >='0')&&(ch <('0'+10)))state = 0X01;
+    429                case 0X01:if (ch =='\r')state = 0X02;else{state = 0X00;return;}break;
+    430                case 0X02:if (ch =='\n')state = 0X03;else{state = 0X00;return;}break;
+    431                case 0X03:if (ch =='\r')state = 0X04;else{state = 0X00;return;}break;
+    432                case 0X04:if (ch =='\n')state = 0X05;else{state = 0X00;return;}break;
+    433                case 0X05:if (ch =='O')state = 0X06;else{state = 0X00;return;}break;
+    434                case 0X06:if (ch =='K')state = 0X07;else{state = 0X00;return;}break;
+    435                case 0X07:if (ch =='\r')state = 0X08;else{state = 0X00;return;}break;
+    436                case 0X08:if (ch =='\n'){P0_4=1;/*入网创建Socket成功*/HalUARTCLER (port,bytesInRxBuffer);NBliucheng=100;}state = 0X00;break;
+    437                default: break;
+    438               }
+    439           } 
+    440          if((NBliucheng>22)&&(NBliucheng!=30)&&(NBliucheng!=40)) //有请求数据
+    441          {
+    442           switch (state) 
+    443               {
+    444                case 0X00:if (ch =='+')state = 0X01; break;
+    445                case 0X01:if (ch =='N')state = 0X02;else{state = 0X00;return;}break;
+    446                case 0X02:if (ch =='S')state = 0X03;else{state = 0X00;return;}break;
+    447                case 0X03:if (ch =='O')state = 0X04;else{state = 0X00;return;}break;
+    448                case 0X04:if (ch =='N')state = 0X05;else{state = 0X00;return;}break;
+    449                case 0X05:if (ch =='M')state = 0X06;else{state = 0X00;return;}break;
+    450                case 0X06:if (ch =='I')state = 0X07;else{state = 0X00;return;}break;
+    451                case 0X07:if (ch ==':')state = 0X08;else{state = 0X00;return;}break;
+    452                case 0X08:if ((ch >='0')&&(ch <('0'+10)))state = 0X09;else{state = 0X00;return;}break;
+    453                case 0X09:if (ch ==',')state = 0X0A;else{state = 0X00;return;}break;
+    454                case 0X0A:if (ch ==ch){NB_S=(ch-0X30);state = 0X0B;}else{state = 0X00;return;}break;
+    455                case 0X0B:if (ch =='\r')state = 0X0e;else {NB_S=(NB_S*10)+(ch-0X30);state = 0X0C;}break;
+    456                case 0X0C:if (ch =='\r')state = 0X0e;else {NB_S=(NB_S*10)+(ch-0X30);state = 0X0D;}break;
+    457                case 0X0D:if (ch =='\r')state = 0X0e;else{state = 0X00;return;}break;
+    458                case 0X0e:if (ch =='\n'){ 
+    459                  HalUARTCLER (port,bytesInRxBuffer);if(NB_S>20){ NBliucheng=30;}else {NBliucheng=40;}}state = 0X00;break;
+    460                default: break;
+    461               }
+    462           }
+    463          if(NBliucheng==30) //读取请求数据 //命令判断  LED 
+    464          {
+    465            switch (state) 
+    466               {
+    467                case 0X00:if (ch =='1')state = 0X01;break;
+    468                case 0X01:if (ch =='3')state = 0X02;else{state = 0X00;return;}break;
+    469                case 0X02:if (ch =='9')state = 0X03;else{state = 0X00;return;}break;
+    470                case 0X03:if (ch =='.')state = 0X04;else{state = 0X00;return;}break;
+    471                case 0X04:if (ch =='1')state = 0X05;else{state = 0X00;return;}break;
+    472                case 0X05:if (ch =='9')state = 0X06;else{state = 0X00;return;}break;
+    473                case 0X06:if (ch =='6')state = 0X07;else{state = 0X00;return;}break;
+    474                case 0X07:if (ch =='.')state = 0X08;else{state = 0X00;return;}break;
+    475                case 0X08:if (ch =='2')state = 0X09;else{state = 0X00;return;}break;
+    476                case 0X09:if (ch =='1')state = 0X0a;else{state = 0X00;return;}break;
+    477                case 0X0a:if (ch =='8')state = 0X0b;else{state = 0X00;return;}break;
+    478                case 0X0b:if (ch =='.')state = 0X0c;else{state = 0X00;return;}break;
+    479                case 0X0c:if (ch =='1')state = 0X0d;else{state = 0X00;return;}break;
+    480                case 0X0d:if (ch =='5')state = 0X0e;else{state = 0X00;return;}break;
+    481                case 0X0e:if (ch =='6')state = 0X0f;else{state = 0X00;return;}break;
+    482                case 0X0f:if (ch ==','){state = 0X10;}else{state = 0X00;return;}break;
+    483                case 0X10:if (ch ==ch)state = 0X11;else{state = 0X00;return;}break;
+    484                case 0X11:if (ch ==ch)state = 0X12;else{state = 0X00;return;}break;
+    485                case 0X12:if (ch ==ch)state = 0X13;else{state = 0X00;return;}break;
+    486                case 0X13:if (ch ==ch)state = 0X14;else{state = 0X00;return;}break;
+    487                case 0X14:if (ch ==',')state = 0X15;else{state = 0X00;return;}break;
+    488                case 0X15:if (ch ==ch){NB_S=ch-0x30;state = 0X16;}else{state = 0X00;return;}break;
+    489                case 0X16:if (ch ==','){tempDataLen = 0;state = 0X19;if(NB_S<20){HalUARTCLER (port,bytesInRxBuffer);state = 0X0;}}else {NB_S=(NB_S*10)+(ch-0x30);state = 0X17;}break;
+    490                case 0X17:if (ch ==','){tempDataLen = 0;state = 0X19;if(NB_S<20){HalUARTCLER (port,bytesInRxBuffer);state = 0X0;}}else {NB_S=(NB_S*10)+(ch-0x30);state = 0X18;}break;
+    491                case 0X18:if (ch ==','){tempDataLen = 0;state = 0X19;if(NB_S<20){HalUARTCLER (port,bytesInRxBuffer);state = 0X0;}}else{HalUARTCLER (port,bytesInRxBuffer);state = 0X0;}break;
+    492                case 0X19:if (ch ==','){state = 0X25;}else {if(ch>'9')FSC_Token=(ch-0x37);else FSC_Token=(ch-0x30);state = 0X20;}break;
+    493                case 0X20:if (ch ==','){state = 0X25; }else {chnn[tempDataLen++]=FSC_Token*16+((ch>'9')?( ch-0x37):(ch-0x30));state = 0X19;}break;
+    494                case 0X25:   //   HalUARTWrite(HAL_UART_PORT_0, chnn,NB_S);//"{"Nb-down":{"LED":"00"}}"
+    495                           if(osal_memcmp(&chnn[2], "Nb-down", 7))
+    496                            {
+    497                              if(osal_memcmp(&chnn[13], "LED", 3))
+    498                               {if(osal_memcmp(&chnn[19], "00", 2))P0_4=0;
+    499                                if(osal_memcmp(&chnn[19], "01", 2))P0_4=1;
+    500                                if(osal_memcmp(&chnn[19], "03", 2))P0_4=1;
+    501                               }
+    502                            }
+    503                              HalUARTCLER (port,bytesInRxBuffer);NBliucheng=40;state = 0X00; break;
+    504               default: break;
+    505               }
+    506           }
+    507          if(NBliucheng==40) //
+    508          {
+    509            switch (state) 
+    510               {
+    511                case 0X00:if (ch =='O')state = 0X01; break;
+    512                case 0X01:if (ch =='K')state = 0X02;else{state = 0X00;return;}break;
+    513                case 0X02:if (ch =='\r')state = 0X03;else{state = 0X00;return;}break;
+    514                case 0X03:if (ch =='\n'){ 
+    515                HalUARTCLER (port,bytesInRxBuffer);NBliucheng=100;}state = 0X00;break;
+    516                default: break;
+    517               }
+    518           } 
+    519          #endif      
+    520          #if(SENSOR_TYPE ==0X25) 
+    521          switch (state) 
+    522              { case 0X00: if (ch == 0XF7)state = 0X01;if (ch == 0XF0)state = 0X05; break;
+    523                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[9] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+    524                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    525                     if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    526                     { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    527                     else
+    528                     {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    529                     if (tempDataLen== LEN_Token){ state = 0X00;Send_data[8] =0XF7;
+    530                     Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();}break;   
+    531          
+    532               case 0X05:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[9] = LEN_Token;state = 0X06;}else{state = 0X00;return;}break;
+    533               case 0X06:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    534                     if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    535                     { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    536                     else
+    537                     {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    538                     if (tempDataLen== LEN_Token){ state = 0X00;Send_data[8] =0XF1;
+    539                     
+    540                     if(Send_data[10]==0XBB){uint16 nv_data;osal_nv_read(ZCD_NV_APP_CHANLIST,0,sizeof(nv_data),&nv_data);
+    541                      Send_data[9] =0X05;Send_data[10]=(nv_data&0x00ff),Send_data[11]=0XBB,osal_nv_read(ZCD_NV_APP_PANID_H,0,sizeof(nv_data),&nv_data);
+    542                      Send_data[12]=(nv_data>>8),Send_data[13]=nv_data,Send_data[14]=0XFE;
+    543                      if (PAN_ID_Success!=2) Send_data[12]=Send_data[13]=0;HalUARTWrite(HAL_UART_PORT_0,&Send_data[8],7);}
+    544                      
+    545                     if(Send_data[10]==0XEE){Send_data[9] =0X02;Send_data[11]=0XFE; HalUARTWrite(HAL_UART_PORT_0,&Send_data[8],4);
+    546                     uint16 nv_data=0X0000;osal_nv_item_init( ZCD_NV_APP_R_E_KEY_P07,sizeof(nv_data), &nv_data );
+    547                      osal_nv_write( ZCD_NV_APP_R_E_KEY_P07, 0,sizeof(nv_data),&nv_data);WDCTL = 0x00;WDCTL |= 0x09;} 
+    548                       
+    549                     }break;   
+    550                 default: break;
+    551               } 
+    552          #endif    
+    553          #if(SENSOR_TYPE ==0X7C) //F7  03  A1  51 00 
+    554          switch (state) 
+    555              { case 0X00: if (ch == 0XF7)state = 0X01;break;
+    556                case 0X01:if(LEN_Token)LEN_Token = ch; Send_data[10]=ch; tempDataLen = 0; if (LEN_Token<10){state = 0X02;}else{state = 0X00;return;}break;
+    557                case 0X02:Send_data[11 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    558                     if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    559                     { HalUARTRead (port, &Send_data[11 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    560                     else
+    561                     {HalUARTRead (port, &Send_data[11 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    562                     if (tempDataLen== LEN_Token){ state = 0X00; Send_data[9]=0XF7; 
+    563                     Send_datalend=5+ Send_data[10]; GenericApp_SendTheMessage();}break; 
+    564                 default: break;
+    565               } 
+    566          #endif 
+    567          #if(SENSOR_TYPE ==0X7B) //F7  03  00  50 67 
+    568          switch (state) 
+    569              { case 0X00: if (ch == 0XF7)state = 0X01;break;
+    570                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){state = 0X02;}else{state = 0X00;return;}break;
+    571                case 0X02:Send_data[9 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    572                     if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    573                     { HalUARTRead (port, &Send_data[9 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    574                     else
+    575                     {HalUARTRead (port, &Send_data[9 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    576                     if (tempDataLen== LEN_Token){ state = 0X00; if(Send_data[7]<10) Send_data[7]++;else Send_data[7]=0;
+    577                     Send_datalend=6; if(Send_data[7]>9) GenericApp_SendTheMessage();}break; 
+    578                 default: break;
+    579               } 
+    580          #endif      
+    581          #if(SENSOR_TYPE ==0X71) 
+    582          switch (state) 
+    583          {     case 0X00: if((ch == 0XF1)||(ch == 0XF7)){state = 0X01;Send_data[8] =ch;} break;
+    584                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[9] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+    585                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    586                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    587                  { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    588                  else
+    589                  {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    590                  if (tempDataLen== LEN_Token){ state = 0X00;
+    591                 Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();}break;   
+    592                 default: break;} 
+    593          #endif      
+    594          
+    595          #if(SENSOR_TYPE ==0X73) 
+    596          switch (state) 
+    597          { case 0X00: if((ch == 0X05)||(ch == 0X03)){LEN_Token = ch;tempDataLen = 0; state = 0X01;} break;
+    598            case 0X01:if((ch == 0XA8)||(ch == 0XAC)){Send_data[8 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    599                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    600                  { HalUARTRead (port, &Send_data[8 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    601                  else
+    602                  {HalUARTRead (port, &Send_data[8 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    603                  if (tempDataLen== LEN_Token){ state = 0X00;Send_data[7] =0X00;//Send_data[8] =0XA8;
+    604                  Send_datalend=LEN_Token+4;GenericApp_applicationbuf=3;GenericApp_SendTheMessage();}}else state = 0X00; break;   
+    605                 default: break;} 
+    606          #endif 
+    607          #if(SENSOR_TYPE ==0X78)
+    608          switch (state) 
+    609              { case 0X00: if (ch == 0X5A)state = 0X01; break;
+    610              case 0X01: if (ch == 0X5A)state = 0X02;else {state = 0X00;HalUARTCLER (port,bytesInRxBuffer);} break;
+    611                case 0X02: if (1){data_RPY=ch;state = 0X03;} else {state = 0X00;HalUARTCLER (port,bytesInRxBuffer);} break;
+    612                case 0X03: if ((ch == 0X06)||(ch == 0X08)){LEN_Token = ch+1;tempDataLen = 0;state = 0X04;}else{state = 0X00;HalUARTCLER (port,bytesInRxBuffer);return;}break;
+    613                case 0X04: data_buf[0 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    614                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    615                  { HalUARTRead (port, &data_buf[0 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    616                  else
+    617                  {HalUARTRead (port, &data_buf[0 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    618                  if (tempDataLen== LEN_Token){  state = 0X00;Send_data[7] =0XAA;
+    619                 Send_datalend=34;//HalUARTCLER (port,bytesInRxBuffer);
+    620                switch(data_RPY)//判断输出数据类型
+    621          		{
+    622          			case 0x15:{//加数度数据输出
+    623                                   data_RPY=(data_buf[0]>Send_data[8])? (data_buf[0]-Send_data[8]):(Send_data[8]-data_buf[0]);
+    624          		if((data_RPY>0X0A)&&(data_RPY<0XE0)) { GenericApp_applicationbuf=60001;}
+    625                         // else
+    626                           for(char n=0;n<6;n++)
+    627                            { Send_data[8+n]= data_buf[0+n];}
+    628          				        // Acc[0]=(data_buf[0]<<8)|data_buf[1];
+    629          					//Acc[1]=(data_buf[2]<<8)|data_buf[3];
+    630          					//Acc[2]=(data_buf[4]<<8)|data_buf[5];
+    631          			}
+    632          			break;
+    633          			case 0x25:{//陀螺仪数据输出
+    634          				  for(char n=0;n<6;n++)
+    635                                    {Send_data[14+n]= data_buf[0+n];}
+    636                                                // Gyr[0]=(data_buf[0]<<8)|data_buf[1];
+    637          					//Gyr[1]=(data_buf[2]<<8)|data_buf[3];
+    638          					//Gyr[2]=(data_buf[4]<<8)|data_buf[5];
+    639          					//send_out(Gyr,3,0x25);
+    640          			}
+    641          				break;
+    642          			case 0x35:{//磁场数据输出
+    643                                               for(char n=0;n<6;n++)
+    644                                       {Send_data[20+n]= data_buf[0+n];}
+    645          				        //Mag[0]=(data_buf[0]<<8)|data_buf[1];
+    646          					//Mag[1]=(data_buf[2]<<8)|data_buf[3];
+    647          					//Mag[2]=(data_buf[4]<<8)|data_buf[5];
+    648          					//send_out(Mag,3,0x35);
+    649          			}
+    650          				break;
+    651          			case 0x45:{//欧拉角数据输出
+    652                                     for(char n=0;n<6;n++)
+    653                                       {Send_data[26+n]= data_buf[0+n];}
+    654          				          //ROLL=(data_buf[0]<<8)|data_buf[1];
+    655          					//PITCH=(data_buf[2]<<8)|data_buf[3];
+    656          					//YAW=(data_buf[4]<<8)|data_buf[5];
+    657          					//rpy[0]=ROLL;
+    658          				 // rpy[1]=PITCH;
+    659          				//  rpy[2]=YAW;
+    660          					//send_out(rpy,3,0x45);
+    661          			}
+    662          				break;
+    663          			case 0x65:{//四元数数据输出
+    664                                     for(char n=0;n<8;n++)
+    665                                       {Send_data[32+n]= data_buf[0+n];}
+    666          				//  Q[0]=(data_buf[0]<<8)|data_buf[1];
+    667          					//Q[1]=(data_buf[2]<<8)|data_buf[3];
+    668          					//Q[2]=(data_buf[4]<<8)|data_buf[5];
+    669          					//Q[3]=(data_buf[6]<<8)|data_buf[7];
+    670          					//send_out(Q,4,0x65);
+    671          			}//GenericApp_SendTheMessage();
+    672          				break;
+    673          			default:break;
+    674          
+    675          		}
+    676                  }break;   
+    677                 default: break;} 
+    678          
+    679          
+    680          #endif   
+    681          #if(SENSOR_TYPE ==0X85) //>>>>>>>>>>>>>>>>>>>>>>
+    682              switch (state) 
+    683              { case 0X00: if (ch == 0XA5)state = 0X01; else HalUARTCLER (port,bytesInRxBuffer);break;
+    684                case 0X01:if (ch == 0X15)state = 0X02; else state = 0X00; break;
+    685                case 0X02:if (ch == 0XBA) GenericApp_applicationbuf=6001;state = 0X00;HalUARTCLER (port,bytesInRxBuffer); break;
+    686                default: break;} 
+    687          
+    688          #endif
+    689          
+    690          
+    691          
+    692          #if(SENSOR_TYPE ==0X72) 
+    693          #if defined( SDS011 )
+    694           switch (state) 
+    695              { case 0X00: if (ch == 0XAA)state = 0X01; break;
+    696              case 0X01:if (ch == 0XC0){LEN_Token = 0X08;tempDataLen = 0; state = 0X02;}else{state = 0X00;return;}break;
+    697              case 0X02:Send_data[9 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    698                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    699                  { HalUARTRead (port, &Send_data[9 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    700                  else
+    701                  {HalUARTRead (port, &Send_data[9 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    702                  if (tempDataLen== LEN_Token){ state = 0X00;Send_data[7] =0XA0;Send_data[8] =0X55;
+    703                 Send_datalend=LEN_Token;
+    704                if(GenericApp_ON_OFF>10){ GenericApp_ON_OFF=0; GenericApp_SendTheMessage();}
+    705                 GenericApp_ON_OFF++;       
+    706                  }break;   
+    707              default: break;}    
+    708          #else
+    709            chnn[GenericApp_uart_data]=ch;
+    710            if(GenericApp_uart_data<=0X18)GenericApp_uart_data++;
+    711          if((chnn[GenericApp_uart_data-7]==0xAA)&&(chnn[GenericApp_uart_data-1]==0xFF))
+    712             {  
+    713            if(GenericApp_ON_OFF>10)
+    714           {  
+    715             GenericApp_ON_OFF=0;
+    716           unsigned int pm25,abc;
+    717           pm25=chnn[1]*256+chnn[2];
+    718           abc=((pm25*5000)/1024);//  电压扩大1000倍  
+    719            Send_data[8]=abc/10;
+    720           pm25=(abc*79);//修改 79数值调节
+    721           if(pm25<1000)pm25=3300;
+    722          Send_data[9]=pm25/100;
+    723          Send_data[10]=pm25%100;
+    724          
+    725           }
+    726             GenericApp_ON_OFF++;
+    727            GenericApp_uart_data=0;
+    728            for(char y=0;y<7;y++)
+    729                chnn[y]=0X00;
+    730            }
+    731          #endif 
+    732          #endif   
+    733          #if(SENSOR_TYPE ==0X86) 
+    734          switch (state) 
+    735          {     case 0X00: if(ch){state = 0X01;LEN_Token = ch;} break;
+    736                case 0X01:if(ch == 0XF7){tempDataLen = 0; Send_data[8] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+    737                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    738                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    739                  { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    740                  else
+    741                  {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    742                  if (tempDataLen== (LEN_Token-1)){ state = 0X00;Send_data[9] =0XF7;
+    743                 Send_datalend=LEN_Token+3;GenericApp_SendTheMessage();}break;   
+    744                 default: break;} 
+    745          #endif 
+    746          #if(SENSOR_TYPE ==0X87) 
+    747                bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    748                if(bytesInRxBuffer<128)
+    749                { Send_datalend=bytesInRxBuffer+1;//加以取出的一字节长度
+    750                  Send_data[10]=ch;//存放已取出的数据
+    751                   if(Send_data[10]=='{')
+    752                  {HalUARTRead (port, &Send_data[11], bytesInRxBuffer);
+    753                  if(Send_data[10+Send_datalend-1]=='}')
+    754                  {Send_data[9]=Send_datalend;
+    755                  Send_datalend+=5;
+    756                    GenericApp_SendTheMessage();
+    757                   }
+    758                  }
+    759                   else //清空数据
+    760                   {HalUARTCLER (port,bytesInRxBuffer);
+    761                   }
+    762                  
+    763               }
+    764                else
+    765                  {HalUARTCLER (port,bytesInRxBuffer);
+    766                   }
+    767          #endif 
+    768          #if(SENSOR_TYPE ==0X26) 
+    769          switch (state) 
+    770              { case 0X00: if (ch == 0XF7)state = 0X01; break;
+    771                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[9] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+    772                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    773                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    774                  { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    775                  else
+    776                  {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    777                  if (tempDataLen== LEN_Token){ state = 0X00;Send_data[8] =0XF7;
+    778                 Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();}break;   
+    779                 default: break;} 
+    780          #endif      
+    781          #if(SENSOR_TYPE ==0X27) 
+    782          Send_data[7]=ch; if((ch==0x41)||(ch==0x45)) GenericApp_SendTheMessage(); 
+    783          #endif   
+    784          #if(SENSOR_TYPE =='O')
+    785              switch (state) 
+    786              { case 0X00: if (ch == 0XCE)state = 0X01; break;
+    787                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[10] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+    788                case 0X02:Send_data[11 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    789                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    790                  { HalUARTRead (port, &Send_data[11 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    791                  else
+    792                  {HalUARTRead (port, &Send_data[11 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    793                  if (tempDataLen== LEN_Token){ state = 0X00;Send_data[9] =0XCE;
+    794                 Send_datalend=LEN_Token+6;GenericApp_SendTheMessage();}break;   
+    795                 default: break;} 
+    796          #endif
+    797          #if(SENSOR_TYPE =='T')
+    798             Send_data[GenericApp_applicationdata+7]=ch;
+    799                  if(ch==0x0d)
+    800                  { Send_datalend=3+GenericApp_applicationdata;
+    801                 // HalUARTWrite(HAL_UART_PORT_0, Send_data,14);
+    802                  GenericApp_SendTheMessage();
+    803                  GenericApp_applicationdata=0;
+    804                  }
+    805                   else GenericApp_applicationdata+=1;
+    806          #endif
+    807          #if(SENSOR_TYPE ==0X20)
+    808                 
+    809                  if(ch>=0xA0)
+    810                  GenericApp_appIO=1; 
+    811                  if(GenericApp_appIO)
+    812                  { HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );
+    813                  Send_data[GenericApp_applicationdata+7]=ch;
+    814                 if(GenericApp_applicationdata>=6)  
+    815                  { 
+    816                  Send_datalend=0x05; 
+    817                  // HalUARTWrite(HAL_UART_PORT_0, Send_data,14);
+    818                   GenericApp_appIO=0;
+    819                   GenericApp_applicationdata=0;
+    820                   GenericApp_ON_OFF++;
+    821                  }
+    822                  else GenericApp_applicationdata+=1;
+    823                  }
+    824                 if(GenericApp_ON_OFF>10)
+    825                 { GenericApp_SendTheMessage();
+    826                    GenericApp_ON_OFF=0;
+    827                 }
+    828          #endif
+    829          #if(SENSOR_TYPE ==0X31)
+    830             if(port == HAL_UART_PORT_1) //低频模块独到6位卡号自动通过串口发送
+    831             {
+    832          #if defined(RFID_NFC)
+    833               if(PAN_ID_Success==2)//组网成功
+    834             {
+    835                switch (state) 
+    836                {case 0X00: if (ch == 0X55)state = 0X01; break;
+    837                case 0X01: if (ch == 0XAA){state = 0X02;Uart_Rev_Buff_2[0]=ch;tempDataLen = 0; }else state = 0X00;break;
+    838                case 0X02:Uart_Rev_Buff_2[1 + tempDataLen++] = ch; 
+    839                        if(tempDataLen== 0X05)
+    840                       { state = 0X00;Send_data[7]=0X02;
+    841                  uint8 Car_Stop_Buff[3]={0xAA,0x2B,0xBB};
+    842                  if(!osal_memcmp( Uart_Rev_Buff_1, Uart_Rev_Buff_2,6))
+    843                  { if(!car_stata) 
+    844                    {
+    845                     if(holzer==1) //==1时 第一次检测到定位 读卡时不停止
+    846                     {holzer=2;}
+    847                     else 
+    848                     {HalUARTWrite(HAL_UART_PORT_0,Car_Stop_Buff,3);
+    849                     holzer=0;}
+    850                    }
+    851                    osal_memcpy( Uart_Rev_Buff_1, Uart_Rev_Buff_2,6);
+    852          
+    853                   GenericApp_applicationbuf=2;
+    854                   GenericApp_SendTheMessage();
+    855                     if( AF_OK==0) 
+    856                      {AF_RF=1;
+    857                      }
+    858                  }
+    859                       }break;
+    860                default: break;
+    861             } 
+    862             }
+    863               else
+    864              { HalUARTCLER (port,bytesInRxBuffer); }  //清空缓存
+    865          #endif                                                 
+    866          #if defined(RFID125K)
+    867             
+    868             if(PAN_ID_Success==2)//组网成功
+    869             {
+    870                 Uart_Rev_Buff_2[car_sum]=ch;
+    871                 if(car_sum>=5)   
+    872                  {Send_data[7]=0X02;
+    873                  uint8 Car_Stop_Buff[3]={0xAA,0x2B,0xBB};
+    874                  if(!osal_memcmp( Uart_Rev_Buff_1, Uart_Rev_Buff_2,6))
+    875                  { if(!car_stata) 
+    876                    HalUARTWrite(HAL_UART_PORT_0,Car_Stop_Buff,3);
+    877                    osal_memcpy( Uart_Rev_Buff_1, Uart_Rev_Buff_2,6);
+    878                   GenericApp_applicationbuf=2;
+    879                   GenericApp_SendTheMessage();
+    880                     if( AF_OK==0) 
+    881                      {AF_RF=1;
+    882                      }
+    883                  
+    884                  }
+    885                   car_sum=0;
+    886                  }
+    887                  else car_sum+=1;
+    888             }else
+    889              { HalUARTCLER (port,bytesInRxBuffer); }  //清空缓存
+    890          #endif  
+    891          }
+    892             else if(port == HAL_UART_PORT_0)
+    893             {
+    894                
+    895                switch (state0) 
+    896                {case 0X00: if (ch == 0XCC)state0 = 0X01; break;
+    897                case 0X01: state0 = 0X02;Send_data[11]=ch;break;
+    898                case 0X02:Send_data[12] = ch;state0 = 0X00; 
+    899                  GenericApp_applicationbuf=4;
+    900                  Send_datalend=0x08; 
+    901                 Send_data[7]=0X01;Send_data[8]=0XAA;Send_data[9]=0XBB;Send_data[10]=0XCC;Send_data[13]=0XDD;
+    902                  GenericApp_SendTheMessage();
+    903                break;
+    904                default: break;
+    905                }
+    906             }
+    907          #endif
+    908          
+    909          #if(SENSOR_TYPE ==0XA3)
+    910                
+    911                  chnn[GenericApp_applicationdata]=ch;
+    912                  if(GenericApp_applicationdata<=6)GenericApp_applicationdata++;
+    913                  else GenericApp_applicationdata=0;
+    914               if((chnn[GenericApp_applicationdata-1]==0xDD)&&(chnn[GenericApp_applicationdata-6]==0xCC))
+    915               { 
+    916                Send_data[7]=chnn[1];Send_data[8]=chnn[2];Send_data[9]=chnn[3];Send_data[10]=chnn[4];
+    917          
+    918                 GenericApp_applicationdata=0;
+    919                 GenericApp_applicationbuf=3;
+    920                 GenericApp_SendTheMessage();
+    921                    if( AF_OK==0) 
+    922                      {AF_RF=1;
+    923                      }
+    924               }
+    925          #endif
+    926          #if(SENSOR_TYPE =='G')
+    927               Send_data[GenericApp_applicationdata+7]=ch;
+    928                 if(GenericApp_applicationdata>=5)  
+    929                  { 
+    930                 Send_datalend=0x08; 
+    931                  // HalUARTWrite(HAL_UART_PORT_0, Send_data,14);
+    932                   GenericApp_SendTheMessage();
+    933                   GenericApp_applicationdata=0;
+    934                  }
+    935                  else GenericApp_applicationdata+=1;
+    936          #endif
+    937          #if(SENSOR_TYPE ==0X79)
+    938               Send_data[GenericApp_applicationdata+9]=ch;
+    939                 if(GenericApp_applicationdata>=5)  
+    940                  { 
+    941                      Send_data[7]=0X07;
+    942                      Send_data[8]=0XD3;
+    943                      Send_datalend=0x09;
+    944                  // HalUARTWrite(HAL_UART_PORT_0, Send_data,14);
+    945                   GenericApp_SendTheMessage();
+    946                   GenericApp_applicationdata=0;
+    947                  }
+    948                  else GenericApp_applicationdata+=1;
+    949          #endif
+    950          #if(SENSOR_TYPE ==0X07)
+    951          #if defined(UHF)
+    952          if(AB==0X0A)
+    953          {
+    954          switch (state) 
+    955               {case 0X00: if (ch == 0XE5)state = 0X01; else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);}break;
+    956                case 0X01: if (ch == 0X00)state = 0X02;else state = 0X00; break;
+    957                case 0X02: tempDataLen=0;LEN_Token=ch-4;state = 0X03;break;
+    958                case 0X03: state = 0X04;break;
+    959                case 0X04: state = 0X05;break;
+    960                case 0X05: state = 0X06;break;
+    961                case 0X06: state = 0X07;break;
+    962               case 0X07:if(ch==0xE2){Send_data[8 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    963                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    964                  { HalUARTRead (port, &Send_data[8 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    965                  else
+    966                 {HalUARTRead (port, &Send_data[8 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    967                  if (tempDataLen== LEN_Token){state = 0X00;
+    968                  Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();}}else state = 0X00; break;   
+    969                 default: break;} 
+    970            
+    971          /* chnn[GenericApp_applicationdata]=ch;
+    972                  if(GenericApp_applicationdata<=0X1F)GenericApp_applicationdata++;
+    973               if((chnn[GenericApp_applicationdata-13]==0xE5)&&(chnn[GenericApp_applicationdata-11]==0x0B))
+    974               {
+    975                 for(char y=0;y<0X0A;y++)
+    976                 Send_data[y+7]=chnn[y+4];
+    977                GenericApp_applicationdata=0;
+    978                Send_datalend=0X0B;
+    979                GenericApp_SendTheMessage();
+    980                for(char y=0;y<12;y++)
+    981                chnn[y]=0X00;
+    982               }
+    983                 */
+    984          }
+    985          else
+    986          {
+    987          switch (state) 
+    988          {     case 0X00: if ((ch == 0XE5)||(ch == 0XE9)){state = 0X01;Send_data[9]=ch;}else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);}break;
+    989                case 0X01: if (ch == 0X00)state = 0X02;else state = 0X00; break;
+    990                case 0X02: tempDataLen=0;LEN_Token=ch;Send_data[11]=ch; state = 0X03;break;
+    991                case 0X03:Send_data[12 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+    992                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+    993                  { HalUARTRead (port, &Send_data[12 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+    994                  else
+    995                 {HalUARTRead (port, &Send_data[12 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+    996                  if (tempDataLen== LEN_Token){state = 0X00;Send_data[10]=0; Send_data[8]=Send_data[11]+0X03; 
+    997                 Send_datalend=LEN_Token+6;GenericApp_SendTheMessage();} break;   
+    998                 default: break;} 
+    999          }
+   1000          #endif
+   1001          #if defined(RLM100)
+   1002               switch (state) 
+   1003               {case 0X00: if (ch == 0XAA)state = 0X01;else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);} break;
+   1004                case 0X01: if (ch > 0X10)state = 0X02;else state = 0X00; break;
+   1005                case 0X02: if (ch == 0X20)state = 0X03;else state = 0X00; break;
+   1006                case 0X03: if (ch == 0X00){tempDataLen=0;LEN_Token=8;state = 0X04;}else state = 0X00; break;
+   1007                case 0X04:Send_data[8 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1008                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1009                  { HalUARTRead (port, &Send_data[8 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1010                  else
+   1011                 {HalUARTRead (port, &Send_data[8 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1012                  if (tempDataLen== LEN_Token){state = 0X00;
+   1013                 Send_datalend=LEN_Token+2;GenericApp_SendTheMessage();} break;   
+   1014                 default: break;} 
+   1015          #endif
+   1016          #endif  
+   1017          #if(SENSOR_TYPE ==0X0E)
+   1018              // 02 03 04 05 00 00 00 65 41 25 01 00 00 02 DC
+   1019          #if defined(STM2_4G) 
+   1020               switch (state) 
+   1021               { case 0X00: if (ch == 0X02)state = 0X01; else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);}break;
+   1022                case 0X01: if (ch == 0X03)state = 0X02;else state = 0X00; break;
+   1023                case 0X02: if (ch == 0X04)state = 0X03;else state = 0X00; break;
+   1024                case 0X03: if (ch == 0X05)state = 0X04;else state = 0X00; break;
+   1025                case 0X04: if (ch == 0X00){tempDataLen=0;LEN_Token=10;state = 0X05;}else state = 0X00; break;
+   1026                case 0X05:Send_data[13 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1027                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1028                  { HalUARTRead (port, &Send_data[13 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1029                  else
+   1030                 {HalUARTRead (port, &Send_data[13 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1031                  if (tempDataLen== LEN_Token){state = 0X00;Send_data[7]=0X01;Send_data[8] =0X02;Send_data[9] =0X03;Send_data[10] =0X04;Send_data[11] =0X05;Send_data[12] =0X00;
+   1032                 Send_datalend=LEN_Token+7;GenericApp_SendTheMessage();} break;   
+   1033                 default: break;} 
+   1034          #endif
+   1035          //55 06 12 13 0F FF 0C BB
+   1036          #if defined(NRF2_4G) 
+   1037               switch (state) 
+   1038               { case 0X00: if (ch == 0X55)state = 0X01; else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);}break;
+   1039                case 0X01: if (ch == 0X06){tempDataLen=0;LEN_Token=6;state = 0X02;}else state = 0X00; break;
+   1040                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1041                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1042                  { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1043                  else
+   1044                 {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1045                  if (tempDataLen== LEN_Token){state = 0X00;Send_data[7]=0X02;Send_data[8] =0X55;Send_data[9] =0X06;
+   1046                 Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();} break;   
+   1047                 default: break;} 
+   1048          #endif
+   1049          #endif
+   1050          #if(SENSOR_TYPE ==0X08)
+   1051               if(ch=='[')GenericApp_applicationdata=0;
+   1052                 chnn[GenericApp_applicationdata]=ch;
+   1053                 if(GenericApp_applicationdata<=0X1F)GenericApp_applicationdata++;
+   1054               if(ch==']')
+   1055               {if(GenericApp_applicationdata>0X0A)
+   1056               {if(GenericApp_applicationdata<=0X0C)
+   1057                {   for(char y=2;y<0X0A;y+=2)
+   1058                  Send_data[y+6]=chnn[0X09-y];
+   1059                  for(char y=1;y<0X0A;y+=2)
+   1060                   Send_data[y+8]=chnn[0X09-y];
+   1061                GenericApp_applicationdata=0;
+   1062               Send_datalend=0X0B;
+   1063                GenericApp_SendTheMessage();
+   1064                for(char y=0;y<0X10;y++)
+   1065                chnn[y]=0X00;
+   1066               }
+   1067                 else
+   1068                 {
+   1069                if(GenericApp_applicationdata>0x0D)
+   1070                {
+   1071                 for(char y=2;y<0X12;y+=2)
+   1072                  Send_data[y+6]=chnn[0X11-y];
+   1073                  for(char y=1;y<0X12;y+=2)
+   1074                   Send_data[y+8]=chnn[0X11-y];
+   1075                GenericApp_applicationdata=0;
+   1076                Send_datalend=0X13;
+   1077                GenericApp_SendTheMessage();
+   1078                for(char y=0;y<0X10;y++)
+   1079                chnn[y]=0X00;
+   1080                }
+   1081                 }
+   1082               }
+   1083                GenericApp_applicationdata=0;
+   1084               }
+   1085          #endif
+   1086          #if(SENSOR_TYPE ==0X0D)
+   1087          #if defined(TGRD15693) 
+   1088               if(ch==':')GenericApp_applicationdata=0;
+   1089                 chnn[GenericApp_applicationdata]=ch;
+   1090                 if(GenericApp_applicationdata<=0X25)GenericApp_applicationdata++;
+   1091                  if((chnn[GenericApp_applicationdata-1]==0X0A)&&(chnn[GenericApp_applicationdata-2]==0X0D))
+   1092               {if(GenericApp_applicationdata>0X15)
+   1093                {
+   1094                 for(char y=2;y<0X12;y+=2)
+   1095                  Send_data[y+6]=chnn[(GenericApp_applicationdata-4)-y];
+   1096                  for(char y=1;y<0X12;y+=2)
+   1097                   Send_data[y+8]=chnn[(GenericApp_applicationdata-4)-y];
+   1098                GenericApp_applicationdata=0;
+   1099                Send_datalend=0X13;
+   1100                GenericApp_SendTheMessage();
+   1101                for(char y=0;y<0X1F;y++)
+   1102                chnn[y]=0X00;
+   1103                }
+   1104                GenericApp_applicationdata=0;
+   1105               }
+   1106          #endif
+   1107          #if defined(PN532) 
+   1108                switch (state) 
+   1109               { case 0X00:  if (ch == 0X00)state = 0X01; break;//else {bytesInRxBuffer = Hal_UART_RxBufLen(port);HalUARTCLER (port,bytesInRxBuffer);}
+   1110                case 0X01:  if (ch == 0XFF)state = 0X02;else if(ch != 0X00)state = 0X00; break;
+   1111                case 0X02: if (ch >= 0X0C){tempDataLen=0;LEN_Token=ch+3;state = 0X03;}else state = 0X00; break;
+   1112                case 0X03: Send_data[8 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1113                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1114                  { HalUARTRead (port, &Send_data[8 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1115                  else
+   1116                 {HalUARTRead (port, &Send_data[8 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1117                 
+   1118                  if (tempDataLen== LEN_Token)
+   1119                  {state = 0X00; for(char i=0;i<4;i++)Send_data[8+i]=Send_data[17+i];
+   1120                 Send_datalend=6;GenericApp_SendTheMessage();} break;   
+   1121                 default: break;} 
+   1122                 
+   1123          #endif  
+   1124          #endif
+   1125          #if(SENSOR_TYPE ==0X0A)
+   1126                 chnn[GenericApp_applicationdata]=ch;
+   1127                if(GenericApp_applicationdata<=0X1F)GenericApp_applicationdata++;
+   1128                else GenericApp_applicationdata=0;
+   1129                if((chnn[GenericApp_applicationdata-1]==0X0A)&&(chnn[GenericApp_applicationdata-2]==0X0D))
+   1130               {if(GenericApp_applicationdata>0X10)
+   1131               { 
+   1132                for(char y=0;y<0X14;y++)
+   1133                 Send_data[y+8]=chnn[y];
+   1134              Send_datalend=0X14;
+   1135                GenericApp_SendTheMessage();
+   1136                for(char y=0;y<0X10;y++)
+   1137                chnn[y]=0X00;
+   1138               }
+   1139                GenericApp_applicationdata=0;
+   1140               }
+   1141          #endif
+   1142          #if((SENSOR_TYPE ==0X5A)||(SENSOR_TYPE ==0X5B))
+   1143               if(GenericApp_uart_data<=0X09)GenericApp_uart_data++;
+   1144                else GenericApp_uart_data=0;
+   1145               chnn[GenericApp_uart_data]=ch;
+   1146              if((GenericApp_uart_data==0x07)&&(chnn[GenericApp_uart_data-5]==0x03))
+   1147               {
+   1148               Send_data[8]=chnn[4];
+   1149              // Send_data[9]=chnn[5];
+   1150               if((((chnn[5]>Send_data[9])? chnn[5]-Send_data[9]:Send_data[9]-chnn[5])>0X0A)||((Send_data[9]!=0)&&(chnn[5]==0))) 
+   1151            {Send_data[9]=chnn[5];
+   1152                GenericApp_SendTheMessage();
+   1153              }
+   1154                for(char y=0;y<0X11;y++)
+   1155                chnn[y]=0X00;
+   1156                GenericApp_uart_data=0;
+   1157               }
+   1158          #endif
+   1159          #if(SENSOR_TYPE ==0X70) 
+   1160          switch (state) 
+   1161              { case 0X00: if (ch == 0XF1){state = 0X01;Send_data[8] =ch;} break;
+   1162                case 0X01:LEN_Token = ch;tempDataLen = 0; if (LEN_Token){Send_data[9] = LEN_Token;state = 0X02;}else{state = 0X00;return;}break;
+   1163                case 0X02:Send_data[10 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1164                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1165                  { HalUARTRead (port, &Send_data[10 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1166                  else
+   1167                  {HalUARTRead (port, &Send_data[10 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1168                  if (tempDataLen== LEN_Token){ state = 0X00;
+   1169                 Send_datalend=LEN_Token+4;GenericApp_SendTheMessage();}break;   
+   1170                default: break;} 
+   1171          #endif      
+   1172          #if(SENSOR_TYPE ==0X0B)
+   1173                 if(GenericApp_applicationdata<=0X1F)GenericApp_applicationdata++;
+   1174                else GenericApp_applicationdata=0;
+   1175               chnn[GenericApp_applicationdata]=ch;
+   1176               if((chnn[GenericApp_applicationdata-16]=='S')&&(chnn[GenericApp_applicationdata-15]=='N')&&(chnn[GenericApp_applicationdata-14]==':'))
+   1177               {
+   1178                for(char y=0;y<0X14;y++)
+   1179                 Send_data[y+8]=chnn[GenericApp_applicationdata-(16-y)];
+   1180              Send_datalend=0X14;
+   1181                GenericApp_SendTheMessage();
+   1182                for(char y=0;y<0X10;y++)
+   1183                chnn[y]=0X00;
+   1184                GenericApp_applicationdata=0;
+   1185               }
+   1186          #endif
+   1187          #if(SENSOR_TYPE ==0X13) 
+   1188          #if defined(HUABANG) 
+   1189               switch (state) 
+   1190              { case 0X00:if(ch==0X03){state = 0X02;}else{state = 0X01;Send_data[7] =ch;} break;
+   1191                case 0X01:if(ch==0X03){state = 0X02;}else{Send_data[7] =ch;state = 0X00;return;}break;
+   1192                case 0X02:if(ch==0X04){LEN_Token = 6;tempDataLen = 0;state = 0X03;}else{state = 0X00;return;}break;
+   1193                case 0X03:Send_data[8 + tempDataLen++] = ch; bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1194                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1195                  { HalUARTRead (port, &Send_data[8 + tempDataLen], bytesInRxBuffer);tempDataLen += bytesInRxBuffer; }
+   1196                  else
+   1197                  {HalUARTRead (port, &Send_data[8 + tempDataLen], LEN_Token - tempDataLen);tempDataLen += (LEN_Token - tempDataLen);}
+   1198                  if (tempDataLen== LEN_Token){ state = 0X00;
+   1199                  //Send_data[7]=0XAA;Send_data[14]=0XBB;
+   1200                   // Send_data[15]=0;
+   1201                   // Send_data[8]=Send_data[9]=Send_data[10]=Send_data[11]=Send_data[12]=0;
+   1202                    Send_datalend=0X0E;GenericApp_SendTheMessage();}break;   
+   1203                default: break;} 
+   1204          #endif
+   1205          #if defined(ammeter) 
+   1206           
+   1207               if(GenericApp_uart_data<=0X1F)GenericApp_uart_data++;
+   1208                else GenericApp_uart_data=0;
+   1209               chnn[GenericApp_uart_data]=ch;
+   1210              if((chnn[GenericApp_uart_data]==0x16)&&(chnn[GenericApp_uart_data-10]==0x68)&&(chnn[GenericApp_uart_data-17]==0x68))
+   1211               {Send_data[7]=0XAA;
+   1212                for(char y=0;y<0X06;y++)
+   1213                 Send_data[y+8]=chnn[GenericApp_uart_data-(11+y)];
+   1214                Send_data[14]=0XBB;
+   1215                 for(char y=0;y<0X04;y++)
+   1216                 Send_data[y+15]=(chnn[GenericApp_uart_data-(2+y)]-0X33);
+   1217              Send_datalend=0X0E;
+   1218                GenericApp_SendTheMessage();
+   1219                for(char y=0;y<0X11;y++)
+   1220                chnn[y]=0X00;
+   1221                GenericApp_uart_data=0;
+   1222               }
+   1223          #endif
+   1224          #endif
+   1225          #if(SENSOR_TYPE ==0X14)
+   1226          #if defined(PH_A)
+   1227               if(GenericApp_uart_data<=0X1F)GenericApp_uart_data++;
+   1228                else GenericApp_uart_data=0;
+   1229               chnn[GenericApp_uart_data]=ch;
+   1230              if((chnn[GenericApp_uart_data-16]==0x01)&&(chnn[GenericApp_uart_data-15]==0x03)&&(chnn[GenericApp_uart_data-14]==0x0C))
+   1231               {Send_data[7]=0XCC;
+   1232                for(char y=0;y<0X04;y++)
+   1233                Send_data[y+8]=chnn[GenericApp_uart_data-(13-y)];
+   1234                uint16 len;
+   1235                len=(Send_data[8]*256+Send_data[9]);
+   1236                Send_data[8]=len/1000;
+   1237                Send_data[9]=(len%1000)/10;
+   1238                len=(Send_data[10]*256+Send_data[11]);
+   1239                Send_data[10]=len/100;
+   1240                Send_data[11]=len%100;
+   1241                 Send_data[12]=(Send_data[6]+Send_data[7]+Send_data[8]+Send_data[9]+Send_data[10]+Send_data[11])%256;
+   1242                Send_datalend=0X07;
+   1243                GenericApp_SendTheMessage();
+   1244                for(char y=0;y<0X11;y++)
+   1245                chnn[y]=0X00;
+   1246                GenericApp_uart_data=0;
+   1247               }
+   1248          #endif
+   1249          #if defined(PH_ORP)
+   1250            if(GenericApp_uart_data<=0X09)GenericApp_uart_data++;
+   1251                else GenericApp_uart_data=0;
+   1252               chnn[GenericApp_uart_data]=ch;
+   1253          if((chnn[GenericApp_uart_data-7]==0x00)&&(chnn[GenericApp_uart_data-6]==0x03)&&(chnn[GenericApp_uart_data-5]==0x04))
+   1254               {Send_data[7]=0XCC;
+   1255                for(char y=0;y<0X04;y++)
+   1256                Send_data[y+8]=chnn[GenericApp_uart_data-(5-y)];
+   1257                 Send_data[12]=(Send_data[6]+Send_data[7]+Send_data[8]+Send_data[9]+Send_data[10]+Send_data[11])%256;
+   1258                Send_datalend=0X07;
+   1259                GenericApp_SendTheMessage();
+   1260                for(char y=0;y<0X11;y++)
+   1261                chnn[y]=0X00;
+   1262                GenericApp_uart_data=0;
+   1263               }
+   1264          #endif
+   1265          #endif
+   1266          #if(SENSOR_TYPE ==0X23)
+   1267                 if(GenericApp_applicationdata<=0X1F)GenericApp_applicationdata++;
+   1268                else GenericApp_applicationdata=0;
+   1269               chnn[GenericApp_applicationdata]=ch;
+   1270               if((chnn[GenericApp_applicationdata-11]==0XEF)&&(chnn[GenericApp_applicationdata-10]==0X01)&&(chnn[GenericApp_applicationdata-5]==0X07))
+   1271               {if((chnn[GenericApp_applicationdata-2]==0X00))
+   1272                  {
+   1273                    switch(SFG_R30XA[0])
+   1274                    {
+   1275                   case 0x01: SFG_R30XA[0]=0x02;break;
+   1276                   case 0x02: SFG_R30XA[0]=0x03;break;
+   1277                   case 0x03: SFG_R30XA[0]=0x04;break;
+   1278                   case 0x04: SFG_R30XA[0]=0x05;break;
+   1279                   case 0x05: SFG_R30XA[0]=0x06;break;
+   1280                   case 0x06: SFG_R30XA[0]=0xBB;break;
+   1281                   case 0xA1: SFG_R30XA[0]=0xA2;break;
+   1282                   case 0xA2: SFG_R30XA[0]=0xA3;break;//注意接收时多4位，
+   1283                   case 0xA3: SFG_R30XA[0]=0xCC;break;
+   1284                   case 0x21: SFG_R30XA[0]=0xDD;break;
+   1285                    default :break;
+   1286                    } 
+   1287                    Send_data[8]=chnn[GenericApp_applicationdata-1];
+   1288                    Send_data[9]=chnn[GenericApp_applicationdata-0];
+   1289                  }
+   1290               else{ switch(SFG_R30XA[0])
+   1291                    {
+   1292                   case 0x01: SFG_R30XA[0]=0x01;break;
+   1293                   case 0x02: SFG_R30XA[0]=0x01;break;
+   1294                   case 0x03: SFG_R30XA[0]=0x01;break;
+   1295                   case 0x04: SFG_R30XA[0]=0x01;break;
+   1296                   case 0x05: SFG_R30XA[0]=0x01;break;
+   1297                   case 0x06: SFG_R30XA[0]=0x01;break;
+   1298                   case 0xA1: SFG_R30XA[0]=0xA1;break;
+   1299                   case 0xA2: SFG_R30XA[0]=0xA1;break;//注意接收时多4位，
+   1300                   case 0xA3: SFG_R30XA[0]=0xA1;break;
+   1301                   case 0x21: SFG_R30XA[0]=0x21;break;
+   1302                    default :break;
+   1303                    } 
+   1304                    }
+   1305                    
+   1306                 SFG_R30X=1;
+   1307               //  else
+   1308             //   SFG_R30X=3;
+   1309                for(char y=0;y<0X10;y++)
+   1310                chnn[y]=0X00;
+   1311                GenericApp_applicationdata=0;
+   1312                
+   1313               }
+   1314          #endif
+   1315          #endif
+   1316          #endif
+   1317            /*  switch (state) 
+   1318              { 
+   1319                case SOP_STATE: 
+   1320                  if (ch == MT_UART_SOF)
+   1321                  state = LEN_STATE; 
+   1322                  break;
+   1323           
+   1324                case LEN_STATE:
+   1325                  LEN_Token = ch;
+   1326          
+   1327                  tempDataLen = 0;
+   1328          
+   1329                  // Allocate memory for the data //
+   1330                  pMsg = (mtOSALSerialData_t *)osal_msg_allocate( sizeof ( mtOSALSerialData_t ) +
+   1331                                                                  MT_RPC_FRAME_HDR_SZ + LEN_Token );
+   1332          
+   1333                  if (pMsg)
+   1334                  {
+   1335                    // Fill up what we can //
+   1336                    pMsg->hdr.event = CMD_SERIAL_MSG;
+   1337                    pMsg->msg = (uint8*)(pMsg+1);
+   1338                    pMsg->msg[MT_RPC_POS_LEN] = LEN_Token;
+   1339                    state = CMD_STATE1;
+   1340                  }
+   1341                  else
+   1342                  {
+   1343                    state = SOP_STATE;
+   1344                    return;
+   1345                  }
+   1346                  break;
+   1347          
+   1348                case CMD_STATE1:
+   1349                  pMsg->msg[MT_RPC_POS_CMD0] = ch;
+   1350                  state = CMD_STATE2;
+   1351                  break;
+   1352          
+   1353                case CMD_STATE2:
+   1354                  pMsg->msg[MT_RPC_POS_CMD1] = ch;
+   1355                  // If there is no data, skip to FCS state //
+   1356                  if (LEN_Token)
+   1357                  {
+   1358                    state = DATA_STATE;
+   1359                  }
+   1360                  else
+   1361                  {
+   1362                    state = FCS_STATE;
+   1363                  } 
+   1364                  break;
+   1365          
+   1366                case DATA_STATE:
+   1367          
+   1368                  // Fill in the buffer the first byte of the data //
+   1369                  pMsg->msg[MT_RPC_FRAME_HDR_SZ + tempDataLen++] = ch;
+   1370          
+   1371                  // Check number of bytes left in the Rx buffer //
+   1372                  bytesInRxBuffer = Hal_UART_RxBufLen(port);
+   1373          
+   1374                  // If the remain of the data is there, read them all, otherwise, just read enough //
+   1375                  if (bytesInRxBuffer <= LEN_Token - tempDataLen)
+   1376                  {
+   1377                    HalUARTRead (port, &pMsg->msg[MT_RPC_FRAME_HDR_SZ + tempDataLen], bytesInRxBuffer);
+   1378                    tempDataLen += bytesInRxBuffer;
+   1379                  }
+   1380                  else
+   1381                  {
+   1382                    HalUARTRead (port, &pMsg->msg[MT_RPC_FRAME_HDR_SZ + tempDataLen], LEN_Token - tempDataLen);
+   1383                    tempDataLen += (LEN_Token - tempDataLen);
+   1384                  }
+   1385          
+   1386                  // If number of bytes read is equal to data length, time to move on to FCS //
+   1387                  if ( tempDataLen == LEN_Token )
+   1388                      state = FCS_STATE;
+   1389          
+   1390                  break;
+   1391          
+   1392                case FCS_STATE:
+   1393          
+   1394                  FSC_Token = ch;
+   1395          
+   1396                 // Make sure it's correct //
+   1397                  if ((MT_UartCalcFCS ((uint8*)&pMsg->msg[0], MT_RPC_FRAME_HDR_SZ + LEN_Token) == FSC_Token))
+   1398                  {
+   1399                    osal_msg_send( App_TaskID, (byte *)pMsg );
+   1400                  }
+   1401                  else
+   1402                  {
+   1403                   // deallocate the msg //
+   1404                    osal_msg_deallocate ( (uint8 *)pMsg );
+   1405                  }
+   1406          
+   1407                  // Reset the state, send or discard the buffers at this point //
+   1408                  state = SOP_STATE;
+   1409          
+   1410                  break;
+   1411          
+   1412                default:
+   1413                 break;
+   1414              }*/
+   1415            }HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );
+   \                     ??MT_UartProcessZToolData_5:
+   \   00043F                ; Setup parameters for call to function HalLedSet
+   \   00043F   7A00         MOV     R2,#0x0
+   \   000441   7901         MOV     R1,#0x1
+   \   000443   12....       LCALL   ??HalLedSet?relay
+   1416          }
+   \                     ??MT_UartProcessZToolData_18:
+   \   000446   7403         MOV     A,#0x3
+   \   000448   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00044B   7F02         MOV     R7,#0x2
+   \   00044D   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000450                REQUIRE WDCTL
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   AC..         MOV     R4,?V0 + 0
+   \   000002   7D00         MOV     R5,#0x0
+   \   000004   EE           MOV     A,R6
+   \   000005   F9           MOV     R1,A
+   \   000006   12....       LCALL   ??HalUARTRead?relay
+   \   000009   90....       MOV     DPTR,#tempDataLen
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   2F           ADD     A,R7
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   7B04         MOV     R3,#0x4
+   \   000002   12....       LCALL   ??osal_nv_write?relay
+   \   000005   7404         MOV     A,#0x4
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   EE           MOV     A,R6
+   \   000001   F9           MOV     R1,A
+   \   000002   12....       LCALL   ??HalUARTRead?relay
+   \   000005   90....       MOV     DPTR,#LEN_Token
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   90....       MOV     DPTR,#tempDataLen
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7B04         MOV     R3,#0x4
+   \   000002   12....       LCALL   ??osal_nv_item_init?relay
+   \   000005   7402         MOV     A,#0x2
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   FB           MOV     R3,A
+   \   000001   90....       MOV     DPTR,#LEN_Token
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   C3           CLR     C
+   \   000006   98           SUBB    A,R0
+   \   000007   FC           MOV     R4,A
+   \   000008   E4           CLR     A
+   \   000009   9400         SUBB    A,#0x0
+   \   00000B   FD           MOV     R5,A
+   \   00000C   8F..         MOV     ?V0 + 0,R7
+   \   00000E   C3           CLR     C
+   \   00000F   EC           MOV     A,R4
+   \   000010   95..         SUBB    A,?V0 + 0
+   \   000012   ED           MOV     A,R5
+   \   000013   9400         SUBB    A,#0x0
+   \   000015   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000017   65D0         XRL     A,PSW
+   \   000019   33           RLC     A
+   \   00001A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   E0           MOVX    A,@DPTR
+   \   000002   FA           MOV     R2,A
+   \   000003   90....       MOV     DPTR,#LEN_Token
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   6A           XRL     A,R2
+   \   000008   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   90....       MOV     DPTR,#tempDataLen
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   04           INC     A
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000007                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000007   EE           MOV     A,R6
+   \   000008   F9           MOV     R1,A
+   \   000009   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FF           MOV     R7,A
+   \   00000E   90....       MOV     DPTR,#tempDataLen
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   F8           MOV     R0,A
+   \   000013   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV     DPTR,#(chnn + 1)
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_22:
+   \   000007   7401         MOV     A,#0x1
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   90....       MOV     DPTR,#(chnn + 2)
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   74DD         MOV     A,#-0x23
+   \   000006   90....       MOV     DPTR,#(chnn + 3)
+   \   000009   F0           MOVX    @DPTR,A
+   \   00000A                ; Setup parameters for call to function HalUARTWrite
+   \   00000A                ; Setup parameters for call to function HalUARTWrite
+   \   00000A                ; Setup parameters for call to function HalUARTWrite
+   \   00000A   7C04         MOV     R4,#0x4
+   \   00000C   7D00         MOV     R5,#0x0
+   \   00000E   7A..         MOV     R2,#(chnn & 0xff)
+   \   000010   7B..         MOV     R3,#((chnn >> 8) & 0xff)
+   \   000012   7900         MOV     R1,#0x0
+   \   000014   12....       LCALL   ??HalUARTWrite?relay
+   \   000017   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_UartInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_UartInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_UartRegisterTaskID?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_UartRegisterTaskID
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_UartCalcFCS?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_UartCalcFCS
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_UartProcessZToolData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_UartProcessZToolData
+   1417          
+   1418          #if defined (ZAPP_P1) || defined (ZAPP_P2)
+   1419          /***************************************************************************************************
+   1420           * @fn      MT_UartProcessZAppData
+   1421           *
+   1422           * @brief   | SOP | CMD  |   Data Length   | FSC  |
+   1423           *          |  1  |  2   |       1         |  1   |
+   1424           *
+   1425           *          Parses the data and determine either is SPI or just simply serial data
+   1426           *          then send the data to correct place (MT or APP)
+   1427           *
+   1428           * @param   port    - UART port
+   1429           *          event   - Event that causes the callback
+   1430           *
+   1431           *
+   1432           * @return  None
+   1433           ***************************************************************************************************/
+   1434          void MT_UartProcessZAppData ( uint8 port, uint8 event )
+   1435          {
+   1436          
+   1437            osal_event_hdr_t  *msg_ptr;
+   1438            uint16 length = 0;
+   1439            uint16 rxBufLen  = Hal_UART_RxBufLen(MT_UART_DEFAULT_PORT);
+   1440          
+   1441            /*
+   1442               If maxZAppBufferLength is 0 or larger than current length
+   1443               the entire length of the current buffer is returned.
+   1444            */
+   1445            if ((MT_UartMaxZAppBufLen != 0) && (MT_UartMaxZAppBufLen <= rxBufLen))
+   1446            {
+   1447              length = MT_UartMaxZAppBufLen;
+   1448            }
+   1449            else
+   1450            {
+   1451              length = rxBufLen;
+   1452            }
+   1453          
+   1454            /* Verify events */
+   1455            if (event == HAL_UART_TX_FULL)
+   1456            {
+   1457              // Do something when TX if full
+   1458              return;
+   1459            }
+   1460          
+   1461            if (event & ( HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT))
+   1462            {
+   1463              if ( App_TaskID )
+   1464              {
+   1465                /*
+   1466                   If Application is ready to receive and there is something
+   1467                   in the Rx buffer then send it up
+   1468                */
+   1469                if ((MT_UartZAppRxStatus == MT_UART_ZAPP_RX_READY ) && (length != 0))
+   1470                {
+   1471                  /* Disable App flow control until it processes the current data */
+   1472                   MT_UartAppFlowControl (MT_UART_ZAPP_RX_NOT_READY);
+   1473          
+   1474                  /* 2 more bytes are added, 1 for CMD type, other for length */
+   1475                  msg_ptr = (osal_event_hdr_t *)osal_msg_allocate( length + sizeof(osal_event_hdr_t) );
+   1476                  if ( msg_ptr )
+   1477                  {
+   1478                    msg_ptr->event = SPI_INCOMING_ZAPP_DATA;
+   1479                    msg_ptr->status = length;
+   1480          
+   1481                    /* Read the data of Rx buffer */
+   1482                    HalUARTRead( MT_UART_DEFAULT_PORT, (uint8 *)(msg_ptr + 1), length );
+   1483          
+   1484                    /* Send the raw data to application...or where ever */
+   1485                    osal_msg_send( App_TaskID, (uint8 *)msg_ptr );
+   1486                  }
+   1487                }
+   1488              }
+   1489            }
+   1490          }
+   1491          
+   1492          /***************************************************************************************************
+   1493           * @fn      SPIMgr_ZAppBufferLengthRegister
+   1494           *
+   1495           * @brief
+   1496           *
+   1497           * @param   maxLen - Max Length that the application wants at a time
+   1498           *
+   1499           * @return  None
+   1500           *
+   1501           ***************************************************************************************************/
+   1502          void MT_UartZAppBufferLengthRegister ( uint16 maxLen )
+   1503          {
+   1504            /* If the maxLen is larger than the RX buff, something is not right */
+   1505            if (maxLen <= MT_UART_DEFAULT_MAX_RX_BUFF)
+   1506              MT_UartMaxZAppBufLen = maxLen;
+   1507            else
+   1508              MT_UartMaxZAppBufLen = 1; /* default is 1 byte */
+   1509          }
+   1510          
+   1511          /***************************************************************************************************
+   1512           * @fn      SPIMgr_AppFlowControl
+   1513           *
+   1514           * @brief
+   1515           *
+   1516           * @param   status - ready to send or not
+   1517           *
+   1518           * @return  None
+   1519           *
+   1520           ***************************************************************************************************/
+   1521          void MT_UartAppFlowControl ( bool status )
+   1522          {
+   1523          
+   1524            /* Make sure only update if needed */
+   1525            if (status != MT_UartZAppRxStatus )
+   1526            {
+   1527              MT_UartZAppRxStatus = status;
+   1528            }
+   1529          
+   1530            /* App is ready to read again, ProcessZAppData have to be triggered too */
+   1531            if (status == MT_UART_ZAPP_RX_READY)
+   1532            {
+   1533              MT_UartProcessZAppData (MT_UART_DEFAULT_PORT, HAL_UART_RX_TIMEOUT );
+   1534            }
+   1535          
+   1536          }
+   1537          
+   1538          #endif //ZAPP
+   1539          
+   1540          /***************************************************************************************************
+   1541          ***************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     MT_UartCalcFCS                     0      0      9
+     MT_UartInit                        3      0     29
+       -> HalUARTOpen                   4      0     58
+     MT_UartProcessZToolData            1      0     17
+       -> Hal_UART_RxBufLen             0      0     26
+       -> HalUARTRead                   0      0     26
+       -> Hal_UART_RxBufLen             0      0     26
+       -> HalUARTRead                   0      0     26
+       -> HalUARTRead                   0      0     26
+       -> GenericApp_SendTheMessage     0      0     26
+       -> HalUARTWrite                  0      0     26
+       -> osal_nv_item_init             0      0     30
+       -> osal_nv_write                 0      0     34
+       -> osal_nv_read                  0      0     34
+       -> osal_nv_read                  0      0     34
+       -> HalUARTWrite                  0      0     26
+       -> HalUARTWrite                  0      0     26
+       -> osal_nv_item_init             0      0     30
+       -> osal_nv_write                 0      0     34
+       -> Hal_UART_RxBufLen             0      0     26
+       -> HalUARTRead                   0      0     26
+       -> HalUARTRead                   0      0     26
+       -> osal_nv_item_init             0      0     30
+       -> osal_nv_write                 0      0     34
+       -> osal_nv_item_init             0      0     30
+       -> osal_nv_write                 0      0     34
+       -> osal_nv_item_init             0      0     30
+       -> osal_nv_write                 0      0     34
+       -> HalUARTWrite                  0      0     26
+       -> HalLedSet                     0      0     26
+     MT_UartRegisterTaskID              2      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     WDCTL                              1
+     App_TaskID                         1
+     state                              1
+     state0                             1
+     CMD_Token                          2
+     chnn                              64
+     LEN_Token                          1
+     FSC_Token                          1
+     pMsg                               2
+     tempDataLen                        1
+     MT_UartInit                      115
+     ?Subroutine0                       7
+     MT_UartRegisterTaskID             11
+     MT_UartCalcFCS                    37
+     MT_UartProcessZToolData         1104
+     ?Subroutine8                      15
+     ?Subroutine7                       8
+     ?Subroutine6                      13
+     ?Subroutine5                       8
+     ?Subroutine4                      27
+     ?Subroutine3                       9
+     ?Subroutine2                      20
+     ?Subroutine1                      10
+     ?Subroutine9                      24
+     ??MT_UartInit?relay                6
+     ??MT_UartRegisterTaskID?relay      6
+     ??MT_UartCalcFCS?relay             6
+     ??MT_UartProcessZToolData?relay    6
+
+ 
+ 1 408 bytes in segment BANKED_CODE
+    24 bytes in segment BANK_RELAYS
+     1 byte  in segment SFR_AN
+    74 bytes in segment XDATA_Z
+ 
+ 1 432 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 1 byte shared)
+    74 bytes of XDATA memory
+
+Errors: none
+Warnings: none
