@@ -1,0 +1,517 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:44:41 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Components\osal\common\OSA #
+#                          L_PwrMgr.c                                         #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wRoute #
+#                          r.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Co #
+#                          mponents\osal\common\OSAL_PwrMgr.c" -D ZTOOL_P1    #
+#                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D        #
+#                          xNV_RESTORE -D SERIAL_SUPPORTED=DEBUG -D           #
+#                          SENSOR_TYPE=0X31 -D CHANLIST_C_R_E=25 -D           #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D                      #
+#                          ZigBee_C_R_E_Engineering -D ZigBee_C_R_E_IEEE -D   #
+#                          xSENSOR_TYPE_R_E=0X01 -lC                          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\List\" -lA "C:\Users\win7\Desktop\ZStac #
+#                          k传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pro #
+#                          jects\GenericApp\CC2530DB\Router\List\"            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\Obj\" -e --require_prototypes --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\List\OSAL_PwrMgr.lst                     #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\Obj\OSAL_PwrMgr.r51                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Components\osal\common\OSAL_PwrMgr.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_pwrmgr.c
+      3            Revised:        $Date: 2008-10-07 14:47:15 -0700 (Tue, 07 Oct 2008) $
+      4            Revision:       $Revision: 18212 $
+      5          
+      6            Description:    This file contains the OSAL Power Management API.
+      7          
+      8          
+      9            Copyright 2004-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED 揂S IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "comdef.h"
+     45          #include "OnBoard.h"
+     46          #include "OSAL.h"
+     47          #include "OSAL_Tasks.h"
+     48          #include "OSAL_Timers.h"
+     49          #include "OSAL_PwrMgr.h"
+     50          #include "GenericApp.h"
+     51          #include "appr51.h"
+     52          
+     53          /*********************************************************************
+     54           * MACROS
+     55           */
+     56          
+     57          /*********************************************************************
+     58           * CONSTANTS
+     59           */
+     60          
+     61          /*********************************************************************
+     62           * TYPEDEFS
+     63           */
+     64          
+     65          /*********************************************************************
+     66           * GLOBAL VARIABLES
+     67           */
+     68          
+     69          /* This global variable stores the power management attributes.
+     70           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     71          pwrmgr_attribute_t pwrmgr_attribute;
+   \                     pwrmgr_attribute:
+   \   000000                DS 7
+   \   000007                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     72          unsigned int GenericAppRouterEB_nub=0;
+   \                     GenericAppRouterEB_nub:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL VARIABLES
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL FUNCTIONS
+     80           */
+     81          
+     82          /*********************************************************************
+     83           * LOCAL VARIABLES
+     84           */
+     85          
+     86          /*********************************************************************
+     87           * LOCAL FUNCTION PROTOTYPES
+     88           */
+     89          
+     90          /*********************************************************************
+     91           * FUNCTIONS
+     92           *********************************************************************/
+     93          
+     94          /*********************************************************************
+     95           * @fn      osal_pwrmgr_init
+     96           *
+     97           * @brief   Initialize the power management system.
+     98           *
+     99           * @param   none.
+    100           *
+    101           * @return  none.
+    102           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    103          void osal_pwrmgr_init( void )
+   \                     osal_pwrmgr_init:
+    104          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    105            pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.
+   \   000004   E4           CLR     A
+   \   000005   90....       MOV     DPTR,#(pwrmgr_attribute + 6)
+   \   000008   F0           MOVX    @DPTR,A
+    106            pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve
+   \   000009   90....       MOV     DPTR,#pwrmgr_attribute
+   \   00000C   F0           MOVX    @DPTR,A
+   \   00000D   A3           INC     DPTR
+   \   00000E                REQUIRE ?Subroutine0
+   \   00000E                ; // Fall through to label ?Subroutine0
+    107          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   D083         POP     DPH
+   \   000003   D082         POP     DPL
+   \   000005   02....       LJMP    ?BRET
+    108          
+    109          /*********************************************************************
+    110           * @fn      osal_pwrmgr_device
+    111           *
+    112           * @brief   Sets the device power characteristic.
+    113           *
+    114           * @param   pwrmgr_device - type of power devices. With PWRMGR_ALWAYS_ON
+    115           *          selection, there is no power savings and the device is most
+    116           *          likely on mains power. The PWRMGR_BATTERY selection allows the
+    117           *          HAL sleep manager to enter sleep.
+    118           *
+    119           * @return  none
+    120           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    121          void osal_pwrmgr_device( uint8 pwrmgr_device )
+   \                     osal_pwrmgr_device:
+    122          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    123            pwrmgr_attribute.pwrmgr_device = pwrmgr_device;
+   \   000004   E9           MOV     A,R1
+   \   000005   90....       MOV     DPTR,#(pwrmgr_attribute + 6)
+   \   000008   80..         SJMP    ?Subroutine0
+    124          }
+    125          
+    126          /*********************************************************************
+    127           * @fn      osal_pwrmgr_task_state
+    128           *
+    129           * @brief   This function is called by each task to state whether or
+    130           *          not this task wants to conserve power.
+    131           *
+    132           * @param   task_id - calling task ID.
+    133           *          state - whether the calling task wants to
+    134           *          conserve power or not.
+    135           *
+    136           * @return  SUCCESS if task complete
+    137           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    138          uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
+   \                     osal_pwrmgr_task_state:
+    139          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    140            if ( task_id >= tasksCnt )
+   \   000007   90....       MOV     DPTR,#tasksCnt
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   FB           MOV     R3,A
+   \   00000C   E9           MOV     A,R1
+   \   00000D   C3           CLR     C
+   \   00000E   9B           SUBB    A,R3
+   \   00000F   4004         JC      ??osal_pwrmgr_task_state_0
+    141              return ( INVALID_TASK );
+   \   000011   7903         MOV     R1,#0x3
+   \   000013   8030         SJMP    ??osal_pwrmgr_task_state_1
+    142          
+    143            if ( state == PWRMGR_CONSERVE )
+   \                     ??osal_pwrmgr_task_state_0:
+   \   000015   75..01       MOV     ?V0 + 0,#0x1
+   \   000018   75..00       MOV     ?V0 + 1,#0x0
+   \   00001B   EE           MOV     A,R6
+   \   00001C   78..         MOV     R0,#?V0 + 0
+   \   00001E   12....       LCALL   ?S_SHL
+   \   000021   AC..         MOV     R4,?V0 + 0
+   \   000023   AD..         MOV     R5,?V0 + 1
+   \   000025   EA           MOV     A,R2
+   \   000026   7011         JNZ     ??osal_pwrmgr_task_state_2
+    144            {
+    145              // Clear the task state flag
+    146              pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
+   \   000028   EC           MOV     A,R4
+   \   000029   F4           CPL     A
+   \   00002A   F8           MOV     R0,A
+   \   00002B   ED           MOV     A,R5
+   \   00002C   F4           CPL     A
+   \   00002D   F9           MOV     R1,A
+   \   00002E   90....       MOV     DPTR,#pwrmgr_attribute
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   58           ANL     A,R0
+   \   000033   F0           MOVX    @DPTR,A
+   \   000034   A3           INC     DPTR
+   \   000035   E0           MOVX    A,@DPTR
+   \   000036   59           ANL     A,R1
+   \   000037   8009         SJMP    ??osal_pwrmgr_task_state_3
+    147            }
+    148            else
+    149            {
+    150              // Set the task state flag
+    151              pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
+   \                     ??osal_pwrmgr_task_state_2:
+   \   000039   90....       MOV     DPTR,#pwrmgr_attribute
+   \   00003C   E0           MOVX    A,@DPTR
+   \   00003D   4C           ORL     A,R4
+   \   00003E   F0           MOVX    @DPTR,A
+   \   00003F   A3           INC     DPTR
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   4D           ORL     A,R5
+   \                     ??osal_pwrmgr_task_state_3:
+   \   000042   F0           MOVX    @DPTR,A
+    152            }
+    153          
+    154            return ( SUCCESS );
+   \   000043   7900         MOV     R1,#0x0
+   \                     ??osal_pwrmgr_task_state_1:
+   \   000045   7F02         MOV     R7,#0x2
+   \   000047   02....       LJMP    ?BANKED_LEAVE_XDATA
+    155          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??osal_pwrmgr_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_pwrmgr_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??osal_pwrmgr_device?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_pwrmgr_device
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??osal_pwrmgr_task_state?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    osal_pwrmgr_task_state
+    156          
+    157          #if defined( POWER_SAVING )
+    158          /*********************************************************************
+    159           * @fn      osal_pwrmgr_powerconserve
+    160           *
+    161           * @brief   This function is called from the main OSAL loop when there are
+    162           *          no events scheduled and shouldn't be called from anywhere else.
+    163           *
+    164           * @param   none.
+    165           *
+    166           * @return  none.
+    167           */
+    168          void osal_pwrmgr_powerconserve( void )
+    169          {
+    170            uint16        next;
+    171          
+    172            halIntState_t intState;
+    173           //HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );
+    174            // Should we even look into power conservation
+    175            if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
+    176            {
+    177              // Are all tasks in agreement to conserve
+    178              if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
+    179              {
+    180                // Hold off interrupts.
+    181                HAL_ENTER_CRITICAL_SECTION( intState );
+    182          
+    183                // Get next time-out
+    184                next = osal_next_timeout();  //1000是 1秒  
+    185                // Re-enable interrupts.
+    186                HAL_EXIT_CRITICAL_SECTION( intState );
+    187          #if((SENSOR_TYPE =='G')||(SENSOR_TYPE =='T')||(SENSOR_TYPE =='O')||(SENSOR_TYPE =='P')||(SENSOR_TYPE ==0X02)\
+    188            ||(SENSOR_TYPE ==0X06)||(SENSOR_TYPE ==0X20)||(SENSOR_TYPE ==0X07)||(SENSOR_TYPE ==0X08)||(SENSOR_TYPE ==0X09)\
+    189              ||(SENSOR_TYPE ==0X0A)||(SENSOR_TYPE ==0X0B)||(SENSOR_TYPE ==0X23)||(SENSOR_TYPE ==0X13)||(SENSOR_TYPE ==0X14)\
+    190                ||(SENSOR_TYPE ==0X0D)||(SENSOR_TYPE ==0X16)||(SENSOR_TYPE ==0XA3)||(SENSOR_TYPE ==0X6B)||(SENSOR_TYPE ==0X5A)||(SENSOR_TYPE ==0X5B)\
+    191                  ||(SENSOR_TYPE ==0X25) ||(SENSOR_TYPE ==0X26)||(SENSOR_TYPE ==0X66)||(SENSOR_TYPE ==0X6E)||(SENSOR_TYPE ==0X27)\
+    192                    ||(SENSOR_TYPE ==0X6F)||(SENSOR_TYPE ==0X70)||(SENSOR_TYPE ==0X71)||(SENSOR_TYPE ==0X0E)||(SENSOR_TYPE ==0X73)||(SENSOR_TYPE ==0X74)\
+    193                      ||(SENSOR_TYPE ==0X86) ||(SENSOR_TYPE ==0X87)||(SENSOR_TYPE ==0X76)||(SENSOR_TYPE ==0X79)||(SENSOR_TYPE ==0X7B)||(SENSOR_TYPE ==0X7C))
+    194          /*GenericAppRouterEB_nub++;
+    195          if(GenericAppRouterEB_nub>200)
+    196          {  GenericAppRouterEB_nub=0;
+    197            //HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );
+    198             GenericAppEndDeviceEB(); //E 传感器 事件处理
+    199          }  
+    200           if(GenericAppRouterEB_nub>30000)
+    201          {  GenericAppRouterEB_nub=0;
+    202            //HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );
+    203           //  GenericAppEndDeviceEB(); //E 传感器 事件处理
+    204          }
+    205                */
+    206          
+    207          #else
+    208            if(!OSAL_SET_CPU_INTO_SLEEP)
+    209          {OSAL_SET_CPU_INTO_SLEEP( next );
+    210          GenericAppRouterEB_nub++;
+    211          if(GenericAppRouterEB_nub>2)
+    212          {  GenericAppRouterEB_nub=0;
+    213            /*HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );*/
+    214             GenericAppEndDeviceEB(); /*E 传感器 事件处理*/
+    215          }
+    216          }
+    217          #endif
+    218                // Put the processor into sleep mode
+    219              }
+    220            }
+    221          }
+    222          #endif /* POWER_SAVING */
+    223          
+    224          /*********************************************************************
+    225          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function               ISTACK PSTACK XSTACK
+     --------               ------ ------ ------
+     osal_pwrmgr_device         2      0      0
+     osal_pwrmgr_init           2      0      0
+     osal_pwrmgr_task_state     1      0     10
+
+
+   Segment part sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     pwrmgr_attribute                  7
+     GenericAppRouterEB_nub            2
+     osal_pwrmgr_init                 14
+     ?Subroutine0                      8
+     osal_pwrmgr_device               10
+     osal_pwrmgr_task_state           74
+     ??osal_pwrmgr_init?relay          6
+     ??osal_pwrmgr_device?relay        6
+     ??osal_pwrmgr_task_state?relay    6
+
+ 
+ 106 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   9 bytes in segment XDATA_Z
+ 
+ 124 bytes of CODE  memory
+   9 bytes of XDATA memory
+
+Errors: none
+Warnings: none

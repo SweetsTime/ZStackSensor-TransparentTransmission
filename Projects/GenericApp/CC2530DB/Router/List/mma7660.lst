@@ -1,0 +1,1321 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.60.1.40026 for 8051             08/Jun/2018  08:43:40 #
+# Copyright (C) 2004-2010 IAR Systems AB.                                     #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\Source #
+#                          \mma7660.c                                         #
+#    Command line       =  -f "C:\Users\win7\Desktop\ZStack传感器透明传输源程 #
+#                          序V2.45-13(带回码2018-5-20)\Projects\GenericApp\CC #
+#                          2530DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wRoute #
+#                          r.cfg" (-DCPU32MHZ -DROOT=__near_func              #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\Tools\CC2530DB\f8wConfig.c #
+#                          fg" (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR  #
+#                          -DNWK_START_DELAY=1000 -DEXTENDED_JOINING_RANDOM_M #
+#                          ASK=0x007F -DBEACON_REQUEST_DELAY=1000             #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "C:\Users\win7\Desktop\ZSta #
+#                          ck传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pr #
+#                          ojects\GenericApp\Source\mma7660.c" -D ZTOOL_P1    #
+#                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D        #
+#                          xNV_RESTORE -D SERIAL_SUPPORTED=DEBUG -D           #
+#                          SENSOR_TYPE=0X31 -D CHANLIST_C_R_E=25 -D           #
+#                          ZDAPP_CONFIG_PAN_ID=0x0004 -D                      #
+#                          ZigBee_C_R_E_Engineering -D ZigBee_C_R_E_IEEE -D   #
+#                          xSENSOR_TYPE_R_E=0X01 -lC                          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\List\" -lA "C:\Users\win7\Desktop\ZStac #
+#                          k传感器透明传输源程序V2.45-13(带回码2018-5-20)\Pro #
+#                          jects\GenericApp\CC2530DB\Router\List\"            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\Router\Obj\" -e --require_prototypes --debug   #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Users\win7\Desktop\ZSt #
+#                          ack传感器透明传输源程序V2.45-13(带回码2018-5-20)\P #
+#                          rojects\GenericApp\CC2530DB\" -I                   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\SOURCE\" -I "C:\Users\win7\Desktop\ZStack传 #
+#                          感器透明传输源程序V2.45-13(带回码2018-5-20)\Projec #
+#                          ts\GenericApp\CC2530DB\..\..\..\COMPONENTS\ZMAIN\T #
+#                          I2530DB\" -I "C:\Users\win7\Desktop\ZStack传感器透 #
+#                          明传输源程序V2.45-13(带回码2018-5-20)\Projects\Gen #
+#                          ericApp\CC2530DB\..\..\..\COMPONENTS\MT\" -I       #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I          #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\AF\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\NWK\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SEC\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SAPI\" -I            #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\SYS\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\STACK\ZDO\" -I             #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\F8W\" -I              #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\ZMAC\" -I                  #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SADDR\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\SERVICES\SDATA\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\INCLUDE\" -I           #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I        #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I   #
+#                          "C:\Users\win7\Desktop\ZStack传感器透明传输源程序V #
+#                          2.45-13(带回码2018-5-20)\Projects\GenericApp\CC253 #
+#                          0DB\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE #
+#                          _CHIP\" -I "C:\Program Files (x86)\IAR             #
+#                          Systems\Embedded Workbench 5.4\8051\INC\" -I       #
+#                          "C:\Program Files (x86)\IAR Systems\Embedded       #
+#                          Workbench 5.4\8051\INC\CLIB\" -Ohz                 #
+#    List file          =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\List\mma7660.lst                         #
+#    Object file        =  C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2 #
+#                          .45-13(带回码2018-5-20)\Projects\GenericApp\CC2530 #
+#                          DB\Router\Obj\mma7660.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\win7\Desktop\ZStack传感器透明传输源程序V2.45-13(带回码2018-5-20)\Projects\GenericApp\Source\mma7660.c
+      1          
+      2          #include  "mma7660.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          
+      4          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      5          int MMA7660_SPCNT_Value;
+   \                     MMA7660_SPCNT_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      6          int MMA7660_INTSU_Value;
+   \                     MMA7660_INTSU_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          int MMA7660_MODE_Value;
+   \                     MMA7660_MODE_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          int MMA7660_SR_Value;
+   \                     MMA7660_SR_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      9          int MMA7660_PDET_Value;
+   \                     MMA7660_PDET_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     10          int MMA7660_PD_Value;
+   \                     MMA7660_PD_Value:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     11          void mma_delay(int time) ;
+     12          void IIC_OneClk(void);
+     13          int IIC_ReadByteNCK(void)  ;
+     14          
+     15          
+     16          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          void mma_delay(int time)                      //Time delay function
+   \                     mma_delay:
+     18          {             
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19              int i;
+     20              for (i=0; i<time; i++) ;                //Software loop for time delay
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??mma_delay_0
+   \                     ??mma_delay_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??mma_delay_0:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9A           SUBB    A,R2
+   \   000011   E9           MOV     A,R1
+   \   000012   9B           SUBB    A,R3
+   \   000013   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000015   65D0         XRL     A,PSW
+   \   000017   33           RLC     A
+   \   000018   40EC         JC      ??mma_delay_1
+     21          }
+   \   00001A   02....       LJMP    ?BRET
+     22          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void IIC_OneClk(void)                           //I2C CLK pin output one clock: CLK pin rises up before falls down
+   \                     IIC_OneClk:
+     24          {                
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     25              mma_delay(Delay5us);
+   \   000004                ; Setup parameters for call to function mma_delay
+   \   000004   7A05         MOV     R2,#0x5
+   \   000006   12....       LCALL   ?Subroutine5 & 0xFFFF
+     26              I2C_SCL=1;		        //I2C CLK pin output high(1)		
+     27              mma_delay(Delay10us);                   //Delay 10uS
+     28              I2C_SCL=0;                        //I2C CLK pin output low(0)
+   \                     ??CrossCallReturnLabel_2:
+   \   000009   C293         CLR     0x90.3
+     29              mma_delay(Delay5us);	
+   \   00000B                ; Setup parameters for call to function mma_delay
+   \   00000B   7A05         MOV     R2,#0x5
+   \   00000D   80..         SJMP    ??Subroutine8_0
+   \   00000F                REQUIRE _A_P1
+     30          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ??mma_delay?relay
+   \   000005   D293         SETB    0x90.3
+   \   000007                ; Setup parameters for call to function mma_delay
+   \   000007                ; Setup parameters for call to function mma_delay
+   \   000007   7A0E         MOV     R2,#0xe
+   \   000009   7B00         MOV     R3,#0x0
+   \   00000B   12....       LCALL   ??mma_delay?relay
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   12....       LCALL   ??mma_delay?relay
+   \   000005                REQUIRE ??Subroutine9_0
+   \   000005                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     31          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void IIC_Start(void) 
+   \                     IIC_Start:
+     33          {                    
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     34              DATAOUT;                   //Set I2C DATA pin as output
+   \   000004   43FE18       ORL     0xfe,#0x18
+   \   000007   E5FE         MOV     A,0xfe
+     35             I2C_SCL=1;                    //I2C CLK pin output high(1)
+   \   000009   D293         SETB    0x90.3
+     36              I2C_SDA=1; 	            //I2C DATA pin output high(1)
+   \   00000B   D294         SETB    0x90.4
+     37              mma_delay(Delay20us);                   //Delay 20uS
+   \   00000D                ; Setup parameters for call to function mma_delay
+   \   00000D   80..         SJMP    ?Subroutine0
+   \   00000F                REQUIRE _A_P1
+   \   00000F                REQUIRE P1DIR
+     38              I2C_SDA=0;                  //I2C DATA pin output low(0)
+     39              mma_delay(Delay10us);                   //Delay 10uS
+     40              I2C_SCL=0;                  //I2C CLK pin output low(0)
+     41              mma_delay(Delay10us);                   //Delay 10uS
+     42          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7A22         MOV     R2,#0x22
+   \   000002   7B00         MOV     R3,#0x0
+   \   000004   12....       LCALL   ??mma_delay?relay
+   \   000007   C294         CLR     0x90.4
+   \   000009                ; Setup parameters for call to function mma_delay
+   \   000009                ; Setup parameters for call to function mma_delay
+   \   000009   7A0E         MOV     R2,#0xe
+   \   00000B   7B00         MOV     R3,#0x0
+   \   00000D   12....       LCALL   ??mma_delay?relay
+   \   000010   C293         CLR     0x90.3
+   \   000012                ; Setup parameters for call to function mma_delay
+   \   000012                ; Setup parameters for call to function mma_delay
+   \   000012   7A0E         MOV     R2,#0xe
+   \   000014                REQUIRE ??Subroutine8_0
+   \   000014                ; // Fall through to label ??Subroutine8_0
+     43          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void IIC_Stop (void)                            //I2C Stop signal generation: Data pin rises up when clock in is high
+   \                     IIC_Stop:
+     45          {                   
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     46              mma_delay(Delay10us);                   //Delay 10uS
+   \   000004                ; Setup parameters for call to function mma_delay
+   \   000004   7A0E         MOV     R2,#0xe
+   \   000006   12....       LCALL   ?Subroutine5 & 0xFFFF
+     47              I2C_SCL=1;		           //I2C CLK pin output high(1)
+     48              mma_delay(Delay10us);                   //Delay 10uS
+     49              I2C_SDA=1;	                    //I2C DATA pin output high(1)
+   \                     ??CrossCallReturnLabel_3:
+   \   000009   D294         SETB    0x90.4
+     50          }
+   \   00000B   80..         SJMP    ??Subroutine9_0
+   \   00000D                REQUIRE _A_P1
+     51           
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     52          void IIC_SendByte(int sData)                 //I2C send one byte out
+   \                     IIC_SendByte:
+     53          {        
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     54              int i;
+     55              for (i=7; i>=0; i--)                        //Loop 8 times to send 8 bits
+   \   000009   75..07       MOV     ?V0 + 0,#0x7
+   \   00000C   75..00       MOV     ?V0 + 1,#0x0
+     56              {                  
+     57          	if ((sData>>i)&0x01)                    //Judge output 1 or 0
+   \                     ??IIC_SendByte_0:
+   \   00000F   8E..         MOV     ?V0 + 2,R6
+   \   000011   8F..         MOV     ?V0 + 3,R7
+   \   000013   E5..         MOV     A,?V0 + 0
+   \   000015   78..         MOV     R0,#?V0 + 2
+   \   000017   12....       LCALL   ?SS_SHR
+   \   00001A   E5..         MOV     A,?V0 + 2
+   \   00001C   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00001E   5004         JNC     ??IIC_SendByte_1
+     58                  {                
+     59          	  I2C_SDA=1;	                //I2C DATA pin output high(1) if output 1
+   \   000020   D294         SETB    0x90.4
+   \   000022   8002         SJMP    ??IIC_SendByte_2
+     60          	} 
+     61                  else 
+     62                  { 
+     63          	 I2C_SDA=0;                   //I2C DATA pin output low(0) if output 0
+   \                     ??IIC_SendByte_1:
+   \   000024   C294         CLR     0x90.4
+     64          	}
+     65          	  IIC_OneClk();                         //Output one clock pulse after data pin is ready
+   \                     ??IIC_SendByte_2:
+   \   000026                ; Setup parameters for call to function IIC_OneClk
+   \   000026   12....       LCALL   ??IIC_OneClk?relay
+     66              }		
+   \   000029   E5..         MOV     A,?V0 + 0
+   \   00002B   24FF         ADD     A,#-0x1
+   \   00002D   F5..         MOV     ?V0 + 0,A
+   \   00002F   E5..         MOV     A,?V0 + 1
+   \   000031   34FF         ADDC    A,#-0x1
+   \   000033   F5..         MOV     ?V0 + 1,A
+   \   000035   C3           CLR     C
+   \   000036   9400         SUBB    A,#0x0
+   \   000038   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00003A   65D0         XRL     A,PSW
+   \   00003C   33           RLC     A
+   \   00003D   50D0         JNC     ??IIC_SendByte_0
+     67          }
+   \   00003F                REQUIRE ?Subroutine1
+   \   00003F                REQUIRE _A_P1
+   \   00003F                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     68          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     69          int  IIC_ChkAck(void)                     //Check I2C Acknowledgement signal
+   \                     IIC_ChkAck:
+     70          {     
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     71              DATAIN;                      //Set I2C DATA pin as input
+   \   000004   53F4EF       ANL     0xf4,#0xef
+   \   000007   53FEEF       ANL     0xfe,#0xef
+     72              mma_delay(Delay5us);
+   \   00000A                ; Setup parameters for call to function mma_delay
+   \   00000A   7A05         MOV     R2,#0x5
+   \   00000C   7B00         MOV     R3,#0x0
+   \   00000E   12....       LCALL   ??mma_delay?relay
+     73               I2C_SCL=1;		        //I2C CLK pin output high(1)	
+   \   000011   D293         SETB    0x90.3
+     74              mma_delay(Delay5us);                 //Delay 10uS
+   \   000013                ; Setup parameters for call to function mma_delay
+   \   000013   7A05         MOV     R2,#0x5
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   12....       LCALL   ??mma_delay?relay
+     75              if (I2C_SDA)
+   \   00001A   A294         MOV     C,0x90.4
+   \   00001C   7A05         MOV     R2,#0x5
+   \   00001E   7B00         MOV     R3,#0x0
+   \   000020   5007         JNC     ??IIC_ChkAck_0
+     76              {                 //Read I2C DATA pin
+     77                mma_delay(Delay5us);                  //Delay 5uS
+   \   000022                ; Setup parameters for call to function mma_delay
+   \   000022   12....       LCALL   ?Subroutine3 & 0xFFFF
+     78               I2C_SCL=0;                     //I2C CLK pin output low(0)
+     79                mma_delay(Delay5us);                   //Delay 5us again
+     80                DATAOUT;                   //Set I2C DATA pin as output
+     81                I2C_SDA=0;                    //I2C DATA pin output low(0)
+     82                return 1;                             //Return 1 if read 1 from I2C DATA pin
+   \                     ??CrossCallReturnLabel_0:
+   \   000025   7A01         MOV     R2,#0x1
+   \   000027   8005         SJMP    ??IIC_ChkAck_1
+     83              } 
+     84              else 
+     85              {                              //If I2C DATA pin is invalid for acknowledgement signal
+     86                mma_delay(Delay5us);                  //Delay 5uS
+   \                     ??IIC_ChkAck_0:
+   \   000029                ; Setup parameters for call to function mma_delay
+   \   000029   12....       LCALL   ?Subroutine3 & 0xFFFF
+     87                I2C_SCL=0;                     //I2C CLK pin output low(0)
+     88                mma_delay(Delay5us);                  //Delay 5uS again
+     89               DATAOUT;                    //Set I2C DATA pin as output
+     90                I2C_SDA=0;                    //I2C DATA pin output low(0)
+     91                return 0;                             //Return 0 if read 0 from I2C DATA pin
+   \                     ??CrossCallReturnLabel_1:
+   \   00002C   7A00         MOV     R2,#0x0
+   \                     ??IIC_ChkAck_1:
+   \   00002E   7B00         MOV     R3,#0x0
+     92              }			
+   \   000030   80..         SJMP    ??Subroutine9_0
+   \   000032                REQUIRE _A_P1
+   \   000032                REQUIRE P1SEL
+   \   000032                REQUIRE P1DIR
+     93              	
+     94              
+     95          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??mma_delay?relay
+   \   000003   C293         CLR     0x90.3
+   \   000005                ; Setup parameters for call to function mma_delay
+   \   000005                ; Setup parameters for call to function mma_delay
+   \   000005   7A05         MOV     R2,#0x5
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   12....       LCALL   ??mma_delay?relay
+   \   00000C   43FE18       ORL     0xfe,#0x18
+   \   00000F   E5FE         MOV     A,0xfe
+   \   000011   C294         CLR     0x90.4
+   \   000013   22           RET
+     96          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     97          void IIC_RepeatedStart(void) 
+   \                     IIC_RepeatedStart:
+     98          {            //I2C Repeat Start signal generation: Data pin falls down when clock is high
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     99              mma_delay(Delay20us);                   //Delay 20uS
+   \   000004                ; Setup parameters for call to function mma_delay
+   \   000004   7A22         MOV     R2,#0x22
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   ??mma_delay?relay
+    100              mma_delay(Delay20us);                   //Delay 20uS
+   \   00000B                ; Setup parameters for call to function mma_delay
+   \   00000B   7A22         MOV     R2,#0x22
+   \   00000D   7B00         MOV     R3,#0x0
+   \   00000F   12....       LCALL   ??mma_delay?relay
+    101              I2C_SDA=1;	                     //I2C DATA pin output high(1)
+   \   000012   D294         SETB    0x90.4
+    102              mma_delay(Delay10us);                   //Delay 10uS
+   \   000014                ; Setup parameters for call to function mma_delay
+   \   000014   7A0E         MOV     R2,#0xe
+   \   000016   7B00         MOV     R3,#0x0
+   \   000018   12....       LCALL   ??mma_delay?relay
+    103              I2C_SCL=1;	                    //I2C CLK pin output high(1)
+   \   00001B   D293         SETB    0x90.3
+    104              mma_delay(Delay20us);                   //Delay 20uS
+   \   00001D                ; Setup parameters for call to function mma_delay
+   \   00001D   7A22         MOV     R2,#0x22
+   \   00001F   7B00         MOV     R3,#0x0
+   \   000021   12....       LCALL   ??mma_delay?relay
+    105              mma_delay(Delay20us);                   //Delay 20uS
+   \   000024                ; Setup parameters for call to function mma_delay
+   \   000024   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   000027                REQUIRE _A_P1
+    106              I2C_SDA=0;                       //I2C DATA pin output low(0)
+    107              mma_delay(Delay10us);                   //Delay 10uS
+    108              I2C_SCL=0;                       //I2C CLK pin output low(0)
+    109              mma_delay(Delay10us);                   //Delay 10uS	
+    110          }
+    111          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    112          int IIC_ReadByteNCK(void)               //Read one byte but do not send acknowledgement signal
+   \                     IIC_ReadByteNCK:
+    113          {            
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    114              int i;
+    115              int data;
+    116              DATAIN;                    //Set I2C DATA pin as input
+   \   000005   53F4EF       ANL     0xf4,#0xef
+   \   000008   53FEEF       ANL     0xfe,#0xef
+    117              data = 0;                               //Prepare to receive data
+   \   00000B   75..00       MOV     ?V0 + 0,#0x0
+   \   00000E   75..00       MOV     ?V0 + 1,#0x0
+    118              for (i=7; i>=0; i--) 
+   \   000011   7E07         MOV     R6,#0x7
+   \   000013   7F00         MOV     R7,#0x0
+    119              {                  //Loop 8 times to receive 8 bits
+    120                if (I2C_SDA) 
+   \                     ??IIC_ReadByteNCK_0:
+   \   000015   A294         MOV     C,0x90.4
+   \   000017   5018         JNC     ??IIC_ReadByteNCK_1
+    121                  data |= (0x01<<i);    //If read a 1, set to data bit
+   \   000019   75..01       MOV     ?V0 + 2,#0x1
+   \   00001C   75..00       MOV     ?V0 + 3,#0x0
+   \   00001F   EE           MOV     A,R6
+   \   000020   78..         MOV     R0,#?V0 + 2
+   \   000022   12....       LCALL   ?S_SHL
+   \   000025   E5..         MOV     A,?V0 + 2
+   \   000027   45..         ORL     A,?V0 + 0
+   \   000029   F5..         MOV     ?V0 + 0,A
+   \   00002B   E5..         MOV     A,?V0 + 3
+   \   00002D   45..         ORL     A,?V0 + 1
+   \   00002F   F5..         MOV     ?V0 + 1,A
+    122                IIC_OneClk();
+   \                     ??IIC_ReadByteNCK_1:
+   \   000031                ; Setup parameters for call to function IIC_OneClk
+   \   000031   12....       LCALL   ??IIC_OneClk?relay
+    123              }			                                //Output one clock pulse after a bit is read
+   \   000034   EE           MOV     A,R6
+   \   000035   24FF         ADD     A,#-0x1
+   \   000037   1E           DEC     R6
+   \   000038   EF           MOV     A,R7
+   \   000039   34FF         ADDC    A,#-0x1
+   \   00003B   FF           MOV     R7,A
+   \   00003C   C3           CLR     C
+   \   00003D   9400         SUBB    A,#0x0
+   \   00003F   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000041   65D0         XRL     A,PSW
+   \   000043   33           RLC     A
+   \   000044   50CF         JNC     ??IIC_ReadByteNCK_0
+    124          
+    125              DATAOUT;                    //Set I2C DATA pin as output
+   \   000046   43FE18       ORL     0xfe,#0x18
+   \   000049   E5FE         MOV     A,0xfe
+    126              I2C_SDA=1;                    //I2C DATA pin output high(1): no acknowledge
+   \   00004B   D294         SETB    0x90.4
+    127              IIC_OneClk();                           //Output one clock pulse after data pin is ready
+   \   00004D                ; Setup parameters for call to function IIC_OneClk
+   \   00004D   12....       LCALL   ??IIC_OneClk?relay
+    128              I2C_SDA=0;                      //I2C DATA pin output low(0)
+   \   000050   C294         CLR     0x90.4
+    129              return data;                            //Return received data
+   \   000052   AA..         MOV     R2,?V0 + 0
+   \   000054   AB..         MOV     R3,?V0 + 1
+   \   000056   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000059                REQUIRE _A_P1
+   \   000059                REQUIRE P1SEL
+   \   000059                REQUIRE P1DIR
+    130          }
+    131          
+    132          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    133          void FSL_MMA_IICWrite(int RegAdd, int Data)          //Write one byte to a sensor register via I2C
+   \                     FSL_MMA_IICWrite:
+    134          {   
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   12....       LCALL   ?Subroutine4 & 0xFFFF
+    135              //Start
+    136              IIC_Start();                                        //Output a START signal
+    137          
+    138              // Device hardware address
+    139              IIC_SendByte(FSL_MMA_AddW);                         //Send one byte of sensor IIC address for writing
+    140              if (IIC_ChkAck()) 
+   \                     ??CrossCallReturnLabel_10:
+   \   00000F   7001         JNZ     ??FSL_MMA_IICWrite_0
+   \   000011   EB           MOV     A,R3
+   \                     ??FSL_MMA_IICWrite_0:
+   \   000012   6006         JZ      ??FSL_MMA_IICWrite_1
+    141              {                                 //Check acknowledge signal
+    142                #ifdef ACC_DEBUG	                                //Only for debug
+    143                  prompt_trace(MOD_MMA, "# Device Write Address Error #\r\n");   //Print error information
+    144                #endif
+    145                  IIC_Stop();	                                      //Output a STOP signal
+   \                     ??FSL_MMA_IICWrite_2:
+   \   000014                ; Setup parameters for call to function IIC_Stop
+   \   000014   12....       LCALL   ??IIC_Stop?relay
+    146                return;                                           //If acknowledgement signal is read as 1, then return to end
+   \   000017   02....       LJMP    ?Subroutine1 & 0xFFFF
+    147              }
+    148                                                                //If acknowledgement signal is read as 0, then go to next step
+    149              // Register address to read                         
+    150              IIC_SendByte(RegAdd);                               //Send one byte of register address in the sensor
+   \                     ??FSL_MMA_IICWrite_1:
+   \   00001A                ; Setup parameters for call to function IIC_SendByte
+   \   00001A   AA..         MOV     R2,?V0 + 0
+   \   00001C   AB..         MOV     R3,?V0 + 1
+   \   00001E   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+    151              if (IIC_ChkAck()) 
+   \                     ??CrossCallReturnLabel_12:
+   \   000021   7001         JNZ     ??FSL_MMA_IICWrite_3
+   \   000023   EB           MOV     A,R3
+   \                     ??FSL_MMA_IICWrite_3:
+   \   000024   70EE         JNZ     ??FSL_MMA_IICWrite_2
+    152               {                                 //Check acknowledgement signal
+    153                #ifdef ACC_DEBUG	                                //Only for debug
+    154                  prompt_trace(MOD_MMA, "# Sensor Reg Address NACK #\r\n");   //Print error information
+    155                #endif                                              
+    156                  IIC_Stop();                                       //Output a STOP signal
+    157                return;    	                                      //If acknowledgement signal is read as 1, then return to end
+    158               }                                                     //If acknowledgement signal is read as 0, then go to next step
+    159          
+    160              // Data to send
+    161              IIC_SendByte(Data);                                 //Send one byte of data
+   \   000026                ; Setup parameters for call to function IIC_SendByte
+   \   000026   EE           MOV     A,R6
+   \   000027   FA           MOV     R2,A
+   \   000028   EF           MOV     A,R7
+   \   000029   FB           MOV     R3,A
+   \   00002A   12....       LCALL   ?Subroutine7 & 0xFFFF
+    162              if (IIC_ChkAck())
+   \                     ??CrossCallReturnLabel_14:
+   \   00002D   80E5         SJMP    ??FSL_MMA_IICWrite_2
+    163              {                                 //Check acknowledgement signal
+    164                #ifdef ACC_DEBUG	                                //Only for debug
+    165                  prompt_trace(MOD_MMA, "# Sensor Data NACK #\r\n");    //Print error information
+    166                #endif
+    167                  IIC_Stop();	                                      //Output a STOP signal
+    168                return;                                           //If acknowledgement signal is read as 1, then return to end
+    169              }
+    170                                                                //If acknowledgement signal is read as 0, then go to next step
+    171              // Stop	
+    172              IIC_Stop();	                                        //Output a STOP signal	
+    173          
+    174          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ??IIC_SendByte?relay
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003                ; Setup parameters for call to function IIC_ChkAck
+   \   000003   12....       LCALL   ??IIC_ChkAck?relay
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   FF           MOV     R7,A
+   \   000001                ; Setup parameters for call to function IIC_Start
+   \   000001                ; Setup parameters for call to function IIC_Start
+   \   000001   12....       LCALL   ??IIC_Start?relay
+   \   000004                ; Setup parameters for call to function IIC_SendByte
+   \   000004                ; Setup parameters for call to function IIC_SendByte
+   \   000004   7A98         MOV     R2,#-0x68
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008                REQUIRE ??Subroutine10_0
+   \   000008                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   000003   EA           MOV     A,R2
+   \   000004   22           RET
+    175          
+    176          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    177          int FSL_MMA_IICRead(int RegAdd)              //Read a byte from sensor register via I2C
+   \                     FSL_MMA_IICRead:
+    178          {                
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   12....       LCALL   ?Subroutine4 & 0xFFFF
+    179              int Data;
+    180          
+    181              //Start
+    182              IIC_Start();                                        //Output a START signal
+    183                                                                
+    184              // Device hardware address
+    185              IIC_SendByte(FSL_MMA_AddW);                         //Send a byte of sensor IIC address for writing
+    186              if (IIC_ChkAck()) 
+   \                     ??CrossCallReturnLabel_11:
+   \   00000B   7001         JNZ     ??FSL_MMA_IICRead_0
+   \   00000D   EB           MOV     A,R3
+   \                     ??FSL_MMA_IICRead_0:
+   \   00000E   6009         JZ      ??FSL_MMA_IICRead_1
+    187              {                                 //Check acknowledge signal 
+    188                #ifdef ACC_DEBUG	                                //Only for debug
+    189                  prompt_trace(MOD_MMA, "# Device Write Address Error #\r\n");   //Print error information
+    190                #endif
+    191          	IIC_Stop();	                                      //Output a STOP signal	
+   \                     ??FSL_MMA_IICRead_2:
+   \   000010                ; Setup parameters for call to function IIC_Stop
+   \   000010   12....       LCALL   ??IIC_Stop?relay
+    192          	return 0;                                         //If acknowledgement signal is read as 1, then return to end
+   \   000013   7A00         MOV     R2,#0x0
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   8024         SJMP    ??FSL_MMA_IICRead_3
+    193              }
+    194                                                                //If acknowledgement signal is read as 0, then go to next step
+    195              // Register address to read
+    196              IIC_SendByte(RegAdd);                               //Send one byte of register address in the sensor
+   \                     ??FSL_MMA_IICRead_1:
+   \   000019                ; Setup parameters for call to function IIC_SendByte
+   \   000019   EE           MOV     A,R6
+   \   00001A   FA           MOV     R2,A
+   \   00001B   EF           MOV     A,R7
+   \   00001C   FB           MOV     R3,A
+   \   00001D   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+    197              if (IIC_ChkAck()) 
+   \                     ??CrossCallReturnLabel_13:
+   \   000020   7001         JNZ     ??FSL_MMA_IICRead_4
+   \   000022   EB           MOV     A,R3
+   \                     ??FSL_MMA_IICRead_4:
+   \   000023   70EB         JNZ     ??FSL_MMA_IICRead_2
+    198              {                                 //Check acknowledge signal 
+    199              #ifdef ACC_DEBUG	                                //Only for debug
+    200                prompt_trace(MOD_MMA, "# Sensor Reg Address NACK #\r\n");   //Print error information
+    201              #endif
+    202                IIC_Stop();	                                      //Output a STOP signal	
+    203                return 0;                                         //If acknowledgement signal is read as 1, then return to end
+    204              }
+    205                                                                //If acknowledgement signal is read as 0, then go to next step
+    206              // Repeated Start
+    207              IIC_RepeatedStart();                                //Output a REPEAT START signal
+   \   000025                ; Setup parameters for call to function IIC_RepeatedStart
+   \   000025   12....       LCALL   ??IIC_RepeatedStart?relay
+    208          	// IIC_Start(); 
+    209              // Device hardware address                          
+    210              IIC_SendByte(FSL_MMA_AddR);                         //Send the sensor IIC address for reading
+   \   000028                ; Setup parameters for call to function IIC_SendByte
+   \   000028   7A99         MOV     R2,#-0x67
+   \   00002A   7B00         MOV     R3,#0x0
+   \   00002C   12....       LCALL   ?Subroutine7 & 0xFFFF
+    211              if (IIC_ChkAck()) 
+    212              {                                 //Check acknowledge signal 
+    213                #ifdef ACC_DEBUG	                                //Only for debug
+    214                  prompt_trace(MOD_MMA, "# Device Read Address Error #\r\n");    //Print error information
+    215                #endif
+    216              }                                                 //If acknowledgement signal is read as 1, do nothing
+    217                                                                //If acknowledgement signal is read as 0, then go to next step
+    218              Data = IIC_ReadByteNCK();                           //Read one byte but do not output acknowledgement
+   \                     ??CrossCallReturnLabel_15:
+   \   00002F                ; Setup parameters for call to function IIC_ReadByteNCK
+   \   00002F   12....       LCALL   ??IIC_ReadByteNCK?relay
+   \   000032   8A..         MOV     ?V0 + 0,R2
+   \   000034   8B..         MOV     ?V0 + 1,R3
+    219             // #ifdef ACC_DEBUG	                                //Only for debug
+    220               //  prompt_trace(MOD_MMA, "# Sensor Read Data = %d #\r\n", Data);   //Print received data
+    221              //#endif
+    222          
+    223              // Stop	
+    224              IIC_Stop();	                                        //Output a STOP signal
+   \   000036                ; Setup parameters for call to function IIC_Stop
+   \   000036   12....       LCALL   ??IIC_Stop?relay
+    225              
+    226              return Data;                                        //Return received data
+   \   000039   AA..         MOV     R2,?V0 + 0
+   \   00003B   AB..         MOV     R3,?V0 + 1
+   \                     ??FSL_MMA_IICRead_3:
+   \   00003D                REQUIRE ?Subroutine2
+   \   00003D                ; // Fall through to label ?Subroutine2
+    227          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    228          void MMA7660_Init(void)
+   \                     MMA7660_Init:
+    229          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    230            FSL_MMA_IICWrite(MMA7660_MODE, 0);              //Make 7660 enter standby mode to set registers
+   \   000004                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   000004   7C00         MOV     R4,#0x0
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A07         MOV     R2,#0x7
+   \   00000A   7B00         MOV     R3,#0x0
+   \   00000C   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    231          
+    232            FSL_MMA_IICWrite(MMA7660_SPCNT, MMA7660_SPCNT_Value);//Sleep Counter Register: SPCNT
+   \   00000F                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   00000F   90....       MOV     DPTR,#MMA7660_SPCNT_Value
+   \   000012   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000015   7A05         MOV     R2,#0x5
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    233          //                                                  b00000000 :Default
+    234          //                                                  if SCPS = 0, Sleep clock is 64Hz~1Hz, maximum sleep time is 4s~256s
+    235          //                                                  if SCPS = 1, Sleep clock is 4Hz~1/16Hz, maximum sleep time is 64s~4096s
+    236            FSL_MMA_IICWrite(MMA7660_INTSU, MMA7660_INTSU_Value);//Interrupt Setup Register: INTSU
+   \   00001C                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   00001C   90....       MOV     DPTR,#MMA7660_INTSU_Value
+   \   00001F   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000022   7A06         MOV     R2,#0x6
+   \   000024   7B00         MOV     R3,#0x0
+   \   000026   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    237          //                                                  b00000000 :Default
+    238          //                                                   ||||||||
+    239          //                                                   |||||||+- FBINT: Frount/Back position causes an interrupt or not
+    240          //                                                   ||||||+-- PLINT: Up/Down/Right/Left position causes an interrupt or not
+    241          //                                                   |||||+--- PDINT: Successful pulse detection causes an interrupt or not
+    242          //                                                   ||||+---- ASINT: Exiting Auto-Sleep causes an interrupt or not
+    243          //                                                   |||+----- GINT:  Every measurement causes an interrupt or not
+    244          //                                                   ||+------ SHINTX:Shake on X axis causes an interrupt and set the Shake bit in TILT register or not
+    245          //                                                   |+------- SHINTY:Shake on Y axis causes an interrupt and set the Shake bit in TILT register or not
+    246          //                                                   +-------- SHINTZ:Shake on Z axis causes an interrupt and set the Shake bit in TILT register or not
+    247            FSL_MMA_IICWrite(MMA7660_SR, MMA7660_SR_Value); //Sample Rates Register: SR
+   \   000029                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   000029   90....       MOV     DPTR,#MMA7660_SR_Value
+   \   00002C   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00002F   7A08         MOV     R2,#0x8
+   \   000031   7B00         MOV     R3,#0x0
+   \   000033   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    248          //                                                  b00000001 :Default
+    249          //                                                   ||||||||
+    250          //                                                   |||||+++- AMSR[2:0]: Sample rates in Active mode and Auto-Sleep mode
+    251          //                                                   |||++---- AWSR[1:0]: Sample rates in Auto-Wake mode
+    252          //                                                   +++------ FILT[2:0]: Tilt debounce filter
+    253            FSL_MMA_IICWrite(MMA7660_PDET, MMA7660_PDET_Value);//Pulse Detection Register: PDET
+   \   000036                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   000036   90....       MOV     DPTR,#MMA7660_PDET_Value
+   \   000039   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   00003C   7A09         MOV     R2,#0x9
+   \   00003E   7B00         MOV     R3,#0x0
+   \   000040   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    254          //                                                  b00000000 :Default
+    255          //                                                   ||||||||
+    256          //                                                   |||+++++- PDTH[4:0]: Pulse detection threshold
+    257          //                                                   ||+------ XDA: 0-X axis is enabled for pulse detection; 1-disabled
+    258          //                                                   |+------- YDA: 0-Y axis is enabled for pulse detection; 1-disabled
+    259          //                                                   +-------- ZDA: 0-Z axis is enabled for pulse detection; 1-disabled
+    260            FSL_MMA_IICWrite(MMA7660_PD, MMA7660_PD_Value); //Pulse Debounce Count: PD
+   \   000043                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   000043   90....       MOV     DPTR,#MMA7660_PD_Value
+   \   000046   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000049   7A0A         MOV     R2,#0xa
+   \   00004B   7B00         MOV     R3,#0x0
+   \   00004D   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    261          //                                                  b00000000 :Default
+    262          //                                                   ||||||||
+    263          //                                                   ++++++++- PD[7:0]: Pulse detection debounce filter
+    264            FSL_MMA_IICWrite(MMA7660_MODE, MMA7660_MODE_Value);//Mode Register: MODE
+   \   000050                ; Setup parameters for call to function FSL_MMA_IICWrite
+   \   000050   90....       MOV     DPTR,#MMA7660_MODE_Value
+   \   000053   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000056   7A07         MOV     R2,#0x7
+   \   000058   7B00         MOV     R3,#0x0
+   \   00005A   12....       LCALL   ??FSL_MMA_IICWrite?relay
+    265          //                                                  b00000000 :Default
+    266          //                                                   ||||||||
+    267          //                                                   |||||||+- MODE:0-Standby or test mode; 1-Active mode
+    268          //                                                   ||||||+-- Reserved: 0
+    269          //                                                   |||||+--- TON: 0-Normal mode; 1-Test mode
+    270          //                                                   ||||+---- AWE: 0-Auto-Wake disabled; 1-Enabled
+    271          //                                                   |||+----- ASE: 0-Auto-Sleep disabled; 1-Enabled
+    272          //                                                   ||+------ SCPS:0-Sleep counter prescaler is divided by 1; 1-divided by 16
+    273          //                                                   |+------- IPP: 0-Interrupt output is open-drain; 1-push-pull
+    274          //                                                   +-------- IAH: 0-Interrupt is active low; 1-active high
+    275          }
+   \   00005D   02....       LJMP    ??Subroutine9_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   FC           MOV     R4,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   FD           MOV     R5,A
+   \   000005   22           RET
+    276          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    277          void MMA7660_Startup(void)
+   \                     MMA7660_Startup:
+    278          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    279            MMA7660_SPCNT_Value = 240;     //Sleep delay = 60/16*16 = 60s
+   \   000004   90....       MOV     DPTR,#MMA7660_SPCNT_Value
+   \   000007   74F0         MOV     A,#-0x10
+   \   000009   F0           MOVX    @DPTR,A
+   \   00000A   A3           INC     DPTR
+   \   00000B   E4           CLR     A
+   \   00000C   F0           MOVX    @DPTR,A
+    280            MMA7660_INTSU_Value = 0x10;   //Only Front/Back position change and Up/Down/Right/Left Position change cause interrupts
+   \   00000D   90....       MOV     DPTR,#MMA7660_INTSU_Value
+   \   000010   7410         MOV     A,#0x10
+   \   000012   F0           MOVX    @DPTR,A
+   \   000013   A3           INC     DPTR
+   \   000014   E4           CLR     A
+   \   000015   F0           MOVX    @DPTR,A
+    281            MMA7660_SR_Value = 0xF1;      //FILT[2:0] = 111 - 8 samples per filter
+   \   000016   90....       MOV     DPTR,#MMA7660_SR_Value
+   \   000019   74F1         MOV     A,#-0xf
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E4           CLR     A
+   \   00001E   F0           MOVX    @DPTR,A
+    282                                          //AWSR[1:0] = 11  - 1 samples/second on auto-wake mode
+    283                                          //AMSR[2:0] = 100 - 8 samples/second on active mode
+    284            MMA7660_MODE_Value = 0x39;    //Interrupt output high active
+   \   00001F   90....       MOV     DPTR,#MMA7660_MODE_Value
+   \   000022   7439         MOV     A,#0x39
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+    285                                          //Interrupt output open drain
+    286                                          //Sleep counter clock divided by 16
+    287                                          //Auto-Sleep enabled
+    288                                          //Auto-Wake enabled
+    289                                          //Test Mode off
+    290                                          //Active Mode
+    291            MMA7660_Init();
+   \   000028                ; Setup parameters for call to function MMA7660_Init
+   \   000028   12....       LCALL   ??MMA7660_Init?relay
+    292          }
+   \   00002B   02....       LJMP    ??Subroutine9_0 & 0xFFFF
+    293          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    294          int mma7660_IICRead_Alert(int RegAdd)
+   \                     mma7660_IICRead_Alert:
+    295          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    296          
+    297            int temp8u;
+    298            
+    299            do{
+    300              temp8u = FSL_MMA_IICRead(RegAdd);
+   \                     ??mma7660_IICRead_Alert_0:
+   \   000009                ; Setup parameters for call to function FSL_MMA_IICRead
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FB           MOV     R3,A
+   \   00000D   12....       LCALL   ??FSL_MMA_IICRead?relay
+    301            } while (temp8u&0x40);
+   \   000010   EA           MOV     A,R2
+   \   000011   5440         ANL     A,#0x40
+   \   000013   70F4         JNZ     ??mma7660_IICRead_Alert_0
+    302            return temp8u;
+   \   000015   02....       LJMP    ?Subroutine2 & 0xFFFF
+    303          }
+    304          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    305          void IIC_Read_MMA7660_XYZ6(int *pX, int *pY, int *pZ)
+   \                     IIC_Read_MMA7660_XYZ6:
+    306          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   740C         MOV     A,#0xc
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F8           MOV     R0,A
+   \   000014   A3           INC     DPTR
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F9           MOV     R1,A
+   \   000017   88..         MOV     ?V0 + 2,R0
+   \   000019   89..         MOV     ?V0 + 3,R1
+    307              *pX = (int)mma7660_IICRead_Alert(MMA7660_XOUT);
+   \   00001B                ; Setup parameters for call to function mma7660_IICRead_Alert
+   \   00001B   7A00         MOV     R2,#0x0
+   \   00001D   7B00         MOV     R3,#0x0
+   \   00001F   12....       LCALL   ??mma7660_IICRead_Alert?relay
+   \   000022   8E82         MOV     DPL,R6
+   \   000024   8F83         MOV     DPH,R7
+   \   000026   EA           MOV     A,R2
+   \   000027   F0           MOVX    @DPTR,A
+   \   000028   A3           INC     DPTR
+   \   000029   EB           MOV     A,R3
+   \   00002A   F0           MOVX    @DPTR,A
+    308              //Sign extend
+    309             // if (*pX&0x20) *pX |= 0xC0;  
+    310              *pY = (int)mma7660_IICRead_Alert(MMA7660_YOUT);  
+   \   00002B                ; Setup parameters for call to function mma7660_IICRead_Alert
+   \   00002B   7A01         MOV     R2,#0x1
+   \   00002D   7B00         MOV     R3,#0x0
+   \   00002F   12....       LCALL   ??mma7660_IICRead_Alert?relay
+   \   000032   85..82       MOV     DPL,?V0 + 0
+   \   000035   85..83       MOV     DPH,?V0 + 1
+   \   000038   EA           MOV     A,R2
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   EB           MOV     A,R3
+   \   00003C   F0           MOVX    @DPTR,A
+    311              //Sign extend
+    312              //if (*pY&0x20) *pY |= 0xC0;  
+    313              *pZ = (int)mma7660_IICRead_Alert(MMA7660_ZOUT);  
+   \   00003D                ; Setup parameters for call to function mma7660_IICRead_Alert
+   \   00003D   7A02         MOV     R2,#0x2
+   \   00003F   7B00         MOV     R3,#0x0
+   \   000041   12....       LCALL   ??mma7660_IICRead_Alert?relay
+   \   000044   85..82       MOV     DPL,?V0 + 2
+   \   000047   85..83       MOV     DPH,?V0 + 3
+   \   00004A   EA           MOV     A,R2
+   \   00004B   F0           MOVX    @DPTR,A
+   \   00004C   A3           INC     DPTR
+   \   00004D   EB           MOV     A,R3
+   \   00004E   F0           MOVX    @DPTR,A
+    314              //Sign extend
+    315              //if (*pZ&0x20) *pZ |= 0xC0;  
+    316          }
+   \   00004F   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??mma_delay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    mma_delay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_OneClk?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_OneClk
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_ChkAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_ChkAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_RepeatedStart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_RepeatedStart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_ReadByteNCK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_ReadByteNCK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FSL_MMA_IICWrite?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FSL_MMA_IICWrite
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FSL_MMA_IICRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FSL_MMA_IICRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MMA7660_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MMA7660_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MMA7660_Startup?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MMA7660_Startup
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??mma7660_IICRead_Alert?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    mma7660_IICRead_Alert
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Read_MMA7660_XYZ6?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Read_MMA7660_XYZ6
+    317          
+
+   Maximum stack usage in bytes:
+
+     Function                   ISTACK PSTACK XSTACK
+     --------                   ------ ------ ------
+     FSL_MMA_IICRead                0      0     20
+       -> IIC_Start                 0      0     20
+       -> IIC_SendByte              0      0     20
+       -> IIC_ChkAck                0      0     20
+       -> IIC_Stop                  0      0     20
+       -> IIC_SendByte              0      0     20
+       -> IIC_ChkAck                0      0     20
+       -> IIC_RepeatedStart         0      0     20
+       -> IIC_SendByte              0      0     20
+       -> IIC_ChkAck                0      0     20
+       -> IIC_ReadByteNCK           0      0     20
+       -> IIC_Stop                  0      0     20
+     FSL_MMA_IICWrite               0      0     12
+       -> IIC_Start                 0      0     24
+       -> IIC_SendByte              0      0     24
+       -> IIC_ChkAck                0      0     24
+       -> IIC_Stop                  0      0     24
+       -> IIC_SendByte              0      0     24
+       -> IIC_ChkAck                0      0     24
+       -> IIC_SendByte              0      0     24
+       -> IIC_ChkAck                0      0     24
+     IIC_ChkAck                     2      0     12
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+     IIC_OneClk                     2      0     12
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+     IIC_ReadByteNCK                0      0     22
+       -> IIC_OneClk                0      0     24
+       -> IIC_OneClk                0      0     24
+     IIC_Read_MMA7660_XYZ6          0      0     14
+       -> mma7660_IICRead_Alert     0      0     24
+       -> mma7660_IICRead_Alert     0      0     24
+       -> mma7660_IICRead_Alert     0      0     24
+     IIC_RepeatedStart              2      0     10
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+     IIC_SendByte                   0      0     24
+       -> IIC_OneClk                0      0     24
+     IIC_Start                      2      0     12
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+     IIC_Stop                       2      0     12
+       -> mma_delay                 4      0      0
+       -> mma_delay                 4      0      0
+     MMA7660_Init                   2      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+       -> FSL_MMA_IICWrite          4      0      0
+     MMA7660_Startup                2      0      0
+       -> MMA7660_Init              4      0      0
+     mma7660_IICRead_Alert          0      0     22
+       -> FSL_MMA_IICRead           0      0     20
+     mma_delay                      0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P1                            1
+     P1SEL                            1
+     P1DIR                            1
+     MMA7660_SPCNT_Value              2
+     MMA7660_INTSU_Value              2
+     MMA7660_MODE_Value               2
+     MMA7660_SR_Value                 2
+     MMA7660_PDET_Value               2
+     MMA7660_PD_Value                 2
+     mma_delay                       29
+     IIC_OneClk                      15
+     ?Subroutine5                    15
+     ??Subroutine8_0                  5
+     ??Subroutine9_0                  7
+     IIC_Start                       15
+     ?Subroutine0                    20
+     IIC_Stop                        13
+     IIC_SendByte                    63
+     ?Subroutine1                     5
+     IIC_ChkAck                      50
+     ?Subroutine3                    20
+     IIC_RepeatedStart               39
+     IIC_ReadByteNCK                 89
+     FSL_MMA_IICWrite                47
+     ?Subroutine7                     7
+     ?Subroutine4                     8
+     ??Subroutine10_0                 5
+     FSL_MMA_IICRead                 61
+     ?Subroutine2                     5
+     MMA7660_Init                    96
+     ?Subroutine6                     6
+     MMA7660_Startup                 46
+     mma7660_IICRead_Alert           24
+     IIC_Read_MMA7660_XYZ6           82
+     ??mma_delay?relay                6
+     ??IIC_OneClk?relay               6
+     ??IIC_Start?relay                6
+     ??IIC_Stop?relay                 6
+     ??IIC_SendByte?relay             6
+     ??IIC_ChkAck?relay               6
+     ??IIC_RepeatedStart?relay        6
+     ??IIC_ReadByteNCK?relay          6
+     ??FSL_MMA_IICWrite?relay         6
+     ??FSL_MMA_IICRead?relay          6
+     ??MMA7660_Init?relay             6
+     ??MMA7660_Startup?relay          6
+     ??mma7660_IICRead_Alert?relay    6
+     ??IIC_Read_MMA7660_XYZ6?relay    6
+
+ 
+ 772 bytes in segment BANKED_CODE
+  84 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  12 bytes in segment XDATA_Z
+ 
+ 856 bytes of CODE  memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+  12 bytes of XDATA memory
+
+Errors: none
+Warnings: none
